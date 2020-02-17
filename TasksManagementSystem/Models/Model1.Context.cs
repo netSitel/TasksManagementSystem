@@ -9422,5 +9422,1452 @@ namespace TasksManagementSystem.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_teknologjia_tip_info_ch", nrrendorParameter, id_supParameter, considerNull_id_supParameter, tip_info_idParameter, considerNull_tip_info_idParameter, emertimiParameter, considerNull_EmertimiParameter, pershkrimiParameter, considerNull_pershkrimiParameter, emertimiangParameter, considerNull_EmertimiangParameter, pershkrimiangParameter, considerNull_pershkrimiangParameter, aktivParameter, considerNull_AktivParameter, perdorues_idParameter, considerNull_Perdorues_idParameter);
         }
+    
+        public virtual int spI_tbl_nder_pyetje_kategori(ObjectParameter nrrendor, string id_gen, Nullable<int> id_sup, string id_sup_gen, Nullable<int> id_ndr, string id_ndr_gen, Nullable<int> pyetje_id, string pyetje_id_gen, Nullable<int> pyetje_kategori_id, string pyetje_kategori_id_gen, Nullable<bool> aktiv, Nullable<System.DateTime> data_krijimit, Nullable<int> perdorues_id, string perdorues_id_gen)
+        {
+            var id_genParameter = id_gen != null ?
+                new ObjectParameter("id_gen", id_gen) :
+                new ObjectParameter("id_gen", typeof(string));
+    
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var id_sup_genParameter = id_sup_gen != null ?
+                new ObjectParameter("id_sup_gen", id_sup_gen) :
+                new ObjectParameter("id_sup_gen", typeof(string));
+    
+            var id_ndrParameter = id_ndr.HasValue ?
+                new ObjectParameter("id_ndr", id_ndr) :
+                new ObjectParameter("id_ndr", typeof(int));
+    
+            var id_ndr_genParameter = id_ndr_gen != null ?
+                new ObjectParameter("id_ndr_gen", id_ndr_gen) :
+                new ObjectParameter("id_ndr_gen", typeof(string));
+    
+            var pyetje_idParameter = pyetje_id.HasValue ?
+                new ObjectParameter("pyetje_id", pyetje_id) :
+                new ObjectParameter("pyetje_id", typeof(int));
+    
+            var pyetje_id_genParameter = pyetje_id_gen != null ?
+                new ObjectParameter("pyetje_id_gen", pyetje_id_gen) :
+                new ObjectParameter("pyetje_id_gen", typeof(string));
+    
+            var pyetje_kategori_idParameter = pyetje_kategori_id.HasValue ?
+                new ObjectParameter("pyetje_kategori_id", pyetje_kategori_id) :
+                new ObjectParameter("pyetje_kategori_id", typeof(int));
+    
+            var pyetje_kategori_id_genParameter = pyetje_kategori_id_gen != null ?
+                new ObjectParameter("pyetje_kategori_id_gen", pyetje_kategori_id_gen) :
+                new ObjectParameter("pyetje_kategori_id_gen", typeof(string));
+    
+            var aktivParameter = aktiv.HasValue ?
+                new ObjectParameter("aktiv", aktiv) :
+                new ObjectParameter("aktiv", typeof(bool));
+    
+            var data_krijimitParameter = data_krijimit.HasValue ?
+                new ObjectParameter("data_krijimit", data_krijimit) :
+                new ObjectParameter("data_krijimit", typeof(System.DateTime));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            var perdorues_id_genParameter = perdorues_id_gen != null ?
+                new ObjectParameter("perdorues_id_gen", perdorues_id_gen) :
+                new ObjectParameter("perdorues_id_gen", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_pyetje_kategori", nrrendor, id_genParameter, id_supParameter, id_sup_genParameter, id_ndrParameter, id_ndr_genParameter, pyetje_idParameter, pyetje_id_genParameter, pyetje_kategori_idParameter, pyetje_kategori_id_genParameter, aktivParameter, data_krijimitParameter, perdorues_idParameter, perdorues_id_genParameter);
+        }
+    
+        public virtual int spI_tbl_nder_pyetje_tip_kategori(Nullable<int> id_sup, Nullable<int> pyetje_tip_id, Nullable<int> pyetje_tip_kategori_id, Nullable<int> perdorues_id)
+        {
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var pyetje_tip_idParameter = pyetje_tip_id.HasValue ?
+                new ObjectParameter("pyetje_tip_id", pyetje_tip_id) :
+                new ObjectParameter("pyetje_tip_id", typeof(int));
+    
+            var pyetje_tip_kategori_idParameter = pyetje_tip_kategori_id.HasValue ?
+                new ObjectParameter("pyetje_tip_kategori_id", pyetje_tip_kategori_id) :
+                new ObjectParameter("pyetje_tip_kategori_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_pyetje_tip_kategori", id_supParameter, pyetje_tip_idParameter, pyetje_tip_kategori_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_pyetje(Nullable<int> id_sup, Nullable<int> tip_id, string kodi, string emertimi, string pershkrimi, string emertimiang, string pershkrimiang, Nullable<int> perdorues_id, Nullable<int> kategoria, Nullable<bool> kompleks)
+        {
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var tip_idParameter = tip_id.HasValue ?
+                new ObjectParameter("tip_id", tip_id) :
+                new ObjectParameter("tip_id", typeof(int));
+    
+            var kodiParameter = kodi != null ?
+                new ObjectParameter("kodi", kodi) :
+                new ObjectParameter("kodi", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            var kategoriaParameter = kategoria.HasValue ?
+                new ObjectParameter("kategoria", kategoria) :
+                new ObjectParameter("kategoria", typeof(int));
+    
+            var kompleksParameter = kompleks.HasValue ?
+                new ObjectParameter("kompleks", kompleks) :
+                new ObjectParameter("kompleks", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_pyetje", id_supParameter, tip_idParameter, kodiParameter, emertimiParameter, pershkrimiParameter, emertimiangParameter, pershkrimiangParameter, perdorues_idParameter, kategoriaParameter, kompleksParameter);
+        }
+    
+        public virtual int spI_tbl_pyetje_access(string id_gen, Nullable<int> id_sup, string id_sup_gen, Nullable<int> id_ndr, string id_ndr_gen, Nullable<int> pyetje_id, string pyetje_id_gen, Nullable<int> perdoruesi_id, string perdoruesi_id_gen, Nullable<bool> aktiv, Nullable<System.DateTime> data_krijimit, Nullable<int> perdorues_id, string perdorues_id_gen)
+        {
+            var id_genParameter = id_gen != null ?
+                new ObjectParameter("id_gen", id_gen) :
+                new ObjectParameter("id_gen", typeof(string));
+    
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var id_sup_genParameter = id_sup_gen != null ?
+                new ObjectParameter("id_sup_gen", id_sup_gen) :
+                new ObjectParameter("id_sup_gen", typeof(string));
+    
+            var id_ndrParameter = id_ndr.HasValue ?
+                new ObjectParameter("id_ndr", id_ndr) :
+                new ObjectParameter("id_ndr", typeof(int));
+    
+            var id_ndr_genParameter = id_ndr_gen != null ?
+                new ObjectParameter("id_ndr_gen", id_ndr_gen) :
+                new ObjectParameter("id_ndr_gen", typeof(string));
+    
+            var pyetje_idParameter = pyetje_id.HasValue ?
+                new ObjectParameter("pyetje_id", pyetje_id) :
+                new ObjectParameter("pyetje_id", typeof(int));
+    
+            var pyetje_id_genParameter = pyetje_id_gen != null ?
+                new ObjectParameter("pyetje_id_gen", pyetje_id_gen) :
+                new ObjectParameter("pyetje_id_gen", typeof(string));
+    
+            var perdoruesi_idParameter = perdoruesi_id.HasValue ?
+                new ObjectParameter("perdoruesi_id", perdoruesi_id) :
+                new ObjectParameter("perdoruesi_id", typeof(int));
+    
+            var perdoruesi_id_genParameter = perdoruesi_id_gen != null ?
+                new ObjectParameter("perdoruesi_id_gen", perdoruesi_id_gen) :
+                new ObjectParameter("perdoruesi_id_gen", typeof(string));
+    
+            var aktivParameter = aktiv.HasValue ?
+                new ObjectParameter("aktiv", aktiv) :
+                new ObjectParameter("aktiv", typeof(bool));
+    
+            var data_krijimitParameter = data_krijimit.HasValue ?
+                new ObjectParameter("data_krijimit", data_krijimit) :
+                new ObjectParameter("data_krijimit", typeof(System.DateTime));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            var perdorues_id_genParameter = perdorues_id_gen != null ?
+                new ObjectParameter("perdorues_id_gen", perdorues_id_gen) :
+                new ObjectParameter("perdorues_id_gen", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_pyetje_access", id_genParameter, id_supParameter, id_sup_genParameter, id_ndrParameter, id_ndr_genParameter, pyetje_idParameter, pyetje_id_genParameter, perdoruesi_idParameter, perdoruesi_id_genParameter, aktivParameter, data_krijimitParameter, perdorues_idParameter, perdorues_id_genParameter);
+        }
+    
+        public virtual int spI_tbl_pyetje_info(Nullable<int> id_sup, Nullable<int> element_id, Nullable<int> tip_info_id, string emertimi, string pershkrimi, string emertimiang, string pershkrimiang, Nullable<int> perdorues_id)
+        {
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var element_idParameter = element_id.HasValue ?
+                new ObjectParameter("element_id", element_id) :
+                new ObjectParameter("element_id", typeof(int));
+    
+            var tip_info_idParameter = tip_info_id.HasValue ?
+                new ObjectParameter("tip_info_id", tip_info_id) :
+                new ObjectParameter("tip_info_id", typeof(int));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_pyetje_info", id_supParameter, element_idParameter, tip_info_idParameter, emertimiParameter, pershkrimiParameter, emertimiangParameter, pershkrimiangParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_pyetje_kategori(Nullable<int> id_sup, Nullable<bool> elcat, string kodi, string emertimi, string pershkrimi, string emertimiang, string pershkrimiang, Nullable<double> rradha, Nullable<int> perdorues_id)
+        {
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var elcatParameter = elcat.HasValue ?
+                new ObjectParameter("elcat", elcat) :
+                new ObjectParameter("elcat", typeof(bool));
+    
+            var kodiParameter = kodi != null ?
+                new ObjectParameter("kodi", kodi) :
+                new ObjectParameter("kodi", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var rradhaParameter = rradha.HasValue ?
+                new ObjectParameter("rradha", rradha) :
+                new ObjectParameter("rradha", typeof(double));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_pyetje_kategori", id_supParameter, elcatParameter, kodiParameter, emertimiParameter, pershkrimiParameter, emertimiangParameter, pershkrimiangParameter, rradhaParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_pyetje_tip(Nullable<int> id_sup, Nullable<bool> elcat, string kodi, Nullable<int> kodifillim, Nullable<int> kodimbarim, Nullable<int> kodiaktual, string emertimi, string pershkrimi, string emertimiang, string pershkrimiang, Nullable<double> rradha, Nullable<int> perdorues_id)
+        {
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var elcatParameter = elcat.HasValue ?
+                new ObjectParameter("elcat", elcat) :
+                new ObjectParameter("elcat", typeof(bool));
+    
+            var kodiParameter = kodi != null ?
+                new ObjectParameter("kodi", kodi) :
+                new ObjectParameter("kodi", typeof(string));
+    
+            var kodifillimParameter = kodifillim.HasValue ?
+                new ObjectParameter("kodifillim", kodifillim) :
+                new ObjectParameter("kodifillim", typeof(int));
+    
+            var kodimbarimParameter = kodimbarim.HasValue ?
+                new ObjectParameter("kodimbarim", kodimbarim) :
+                new ObjectParameter("kodimbarim", typeof(int));
+    
+            var kodiaktualParameter = kodiaktual.HasValue ?
+                new ObjectParameter("kodiaktual", kodiaktual) :
+                new ObjectParameter("kodiaktual", typeof(int));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var rradhaParameter = rradha.HasValue ?
+                new ObjectParameter("rradha", rradha) :
+                new ObjectParameter("rradha", typeof(double));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_pyetje_tip", id_supParameter, elcatParameter, kodiParameter, kodifillimParameter, kodimbarimParameter, kodiaktualParameter, emertimiParameter, pershkrimiParameter, emertimiangParameter, pershkrimiangParameter, rradhaParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_pyetje_tip_info(Nullable<int> id_sup, Nullable<int> tip_id, string emertimi, string pershkrimi, string emertimiang, string pershkrimiang, Nullable<int> veti, Nullable<bool> detyrueshme, Nullable<double> rradha, Nullable<int> db, Nullable<bool> skedar, Nullable<int> perdorues_id)
+        {
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var tip_idParameter = tip_id.HasValue ?
+                new ObjectParameter("tip_id", tip_id) :
+                new ObjectParameter("tip_id", typeof(int));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var vetiParameter = veti.HasValue ?
+                new ObjectParameter("veti", veti) :
+                new ObjectParameter("veti", typeof(int));
+    
+            var detyrueshmeParameter = detyrueshme.HasValue ?
+                new ObjectParameter("detyrueshme", detyrueshme) :
+                new ObjectParameter("detyrueshme", typeof(bool));
+    
+            var rradhaParameter = rradha.HasValue ?
+                new ObjectParameter("Rradha", rradha) :
+                new ObjectParameter("Rradha", typeof(double));
+    
+            var dbParameter = db.HasValue ?
+                new ObjectParameter("db", db) :
+                new ObjectParameter("db", typeof(int));
+    
+            var skedarParameter = skedar.HasValue ?
+                new ObjectParameter("skedar", skedar) :
+                new ObjectParameter("skedar", typeof(bool));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_pyetje_tip_info", id_supParameter, tip_idParameter, emertimiParameter, pershkrimiParameter, emertimiangParameter, pershkrimiangParameter, vetiParameter, detyrueshmeParameter, rradhaParameter, dbParameter, skedarParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_pyetje_tip_info_ch(Nullable<int> id_sup, Nullable<int> tip_info_id, string emertimi, string pershkrimi, string emertimiang, string pershkrimiang, Nullable<int> perdorues_id, Nullable<bool> vA)
+        {
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var tip_info_idParameter = tip_info_id.HasValue ?
+                new ObjectParameter("tip_info_id", tip_info_id) :
+                new ObjectParameter("tip_info_id", typeof(int));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            var vAParameter = vA.HasValue ?
+                new ObjectParameter("VA", vA) :
+                new ObjectParameter("VA", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_pyetje_tip_info_ch", id_supParameter, tip_info_idParameter, emertimiParameter, pershkrimiParameter, emertimiangParameter, pershkrimiangParameter, perdorues_idParameter, vAParameter);
+        }
+    
+        public virtual int spU_tbl_nder_pyetje_kategori(Nullable<int> nrrendor, string id_gen, Nullable<bool> considerNull_id_gen, Nullable<int> id_sup, Nullable<bool> considerNull_id_sup, string id_sup_gen, Nullable<bool> considerNull_id_sup_gen, Nullable<int> pyetje_id, Nullable<bool> considerNull_pyetje_id, string pyetje_id_gen, Nullable<bool> considerNull_pyetje_id_gen, Nullable<int> pyetje_kategori_id, Nullable<bool> considerNull_pyetje_kategori_id, string pyetje_kategori_id_gen, Nullable<bool> considerNull_pyetje_kategori_id_gen, Nullable<bool> aktiv, Nullable<bool> considerNull_aktiv, Nullable<System.DateTime> data_krijimit, Nullable<bool> considerNull_data_krijimit, Nullable<int> perdorues_id, Nullable<bool> considerNull_perdorues_id, string perdorues_id_gen, Nullable<bool> considerNull_perdorues_id_gen)
+        {
+            var nrrendorParameter = nrrendor.HasValue ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(int));
+    
+            var id_genParameter = id_gen != null ?
+                new ObjectParameter("id_gen", id_gen) :
+                new ObjectParameter("id_gen", typeof(string));
+    
+            var considerNull_id_genParameter = considerNull_id_gen.HasValue ?
+                new ObjectParameter("ConsiderNull_id_gen", considerNull_id_gen) :
+                new ObjectParameter("ConsiderNull_id_gen", typeof(bool));
+    
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var considerNull_id_supParameter = considerNull_id_sup.HasValue ?
+                new ObjectParameter("ConsiderNull_id_sup", considerNull_id_sup) :
+                new ObjectParameter("ConsiderNull_id_sup", typeof(bool));
+    
+            var id_sup_genParameter = id_sup_gen != null ?
+                new ObjectParameter("id_sup_gen", id_sup_gen) :
+                new ObjectParameter("id_sup_gen", typeof(string));
+    
+            var considerNull_id_sup_genParameter = considerNull_id_sup_gen.HasValue ?
+                new ObjectParameter("ConsiderNull_id_sup_gen", considerNull_id_sup_gen) :
+                new ObjectParameter("ConsiderNull_id_sup_gen", typeof(bool));
+    
+            var pyetje_idParameter = pyetje_id.HasValue ?
+                new ObjectParameter("pyetje_id", pyetje_id) :
+                new ObjectParameter("pyetje_id", typeof(int));
+    
+            var considerNull_pyetje_idParameter = considerNull_pyetje_id.HasValue ?
+                new ObjectParameter("ConsiderNull_pyetje_id", considerNull_pyetje_id) :
+                new ObjectParameter("ConsiderNull_pyetje_id", typeof(bool));
+    
+            var pyetje_id_genParameter = pyetje_id_gen != null ?
+                new ObjectParameter("pyetje_id_gen", pyetje_id_gen) :
+                new ObjectParameter("pyetje_id_gen", typeof(string));
+    
+            var considerNull_pyetje_id_genParameter = considerNull_pyetje_id_gen.HasValue ?
+                new ObjectParameter("ConsiderNull_pyetje_id_gen", considerNull_pyetje_id_gen) :
+                new ObjectParameter("ConsiderNull_pyetje_id_gen", typeof(bool));
+    
+            var pyetje_kategori_idParameter = pyetje_kategori_id.HasValue ?
+                new ObjectParameter("pyetje_kategori_id", pyetje_kategori_id) :
+                new ObjectParameter("pyetje_kategori_id", typeof(int));
+    
+            var considerNull_pyetje_kategori_idParameter = considerNull_pyetje_kategori_id.HasValue ?
+                new ObjectParameter("ConsiderNull_pyetje_kategori_id", considerNull_pyetje_kategori_id) :
+                new ObjectParameter("ConsiderNull_pyetje_kategori_id", typeof(bool));
+    
+            var pyetje_kategori_id_genParameter = pyetje_kategori_id_gen != null ?
+                new ObjectParameter("pyetje_kategori_id_gen", pyetje_kategori_id_gen) :
+                new ObjectParameter("pyetje_kategori_id_gen", typeof(string));
+    
+            var considerNull_pyetje_kategori_id_genParameter = considerNull_pyetje_kategori_id_gen.HasValue ?
+                new ObjectParameter("ConsiderNull_pyetje_kategori_id_gen", considerNull_pyetje_kategori_id_gen) :
+                new ObjectParameter("ConsiderNull_pyetje_kategori_id_gen", typeof(bool));
+    
+            var aktivParameter = aktiv.HasValue ?
+                new ObjectParameter("aktiv", aktiv) :
+                new ObjectParameter("aktiv", typeof(bool));
+    
+            var considerNull_aktivParameter = considerNull_aktiv.HasValue ?
+                new ObjectParameter("ConsiderNull_aktiv", considerNull_aktiv) :
+                new ObjectParameter("ConsiderNull_aktiv", typeof(bool));
+    
+            var data_krijimitParameter = data_krijimit.HasValue ?
+                new ObjectParameter("data_krijimit", data_krijimit) :
+                new ObjectParameter("data_krijimit", typeof(System.DateTime));
+    
+            var considerNull_data_krijimitParameter = considerNull_data_krijimit.HasValue ?
+                new ObjectParameter("ConsiderNull_data_krijimit", considerNull_data_krijimit) :
+                new ObjectParameter("ConsiderNull_data_krijimit", typeof(bool));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            var considerNull_perdorues_idParameter = considerNull_perdorues_id.HasValue ?
+                new ObjectParameter("ConsiderNull_perdorues_id", considerNull_perdorues_id) :
+                new ObjectParameter("ConsiderNull_perdorues_id", typeof(bool));
+    
+            var perdorues_id_genParameter = perdorues_id_gen != null ?
+                new ObjectParameter("perdorues_id_gen", perdorues_id_gen) :
+                new ObjectParameter("perdorues_id_gen", typeof(string));
+    
+            var considerNull_perdorues_id_genParameter = considerNull_perdorues_id_gen.HasValue ?
+                new ObjectParameter("ConsiderNull_perdorues_id_gen", considerNull_perdorues_id_gen) :
+                new ObjectParameter("ConsiderNull_perdorues_id_gen", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_nder_pyetje_kategori", nrrendorParameter, id_genParameter, considerNull_id_genParameter, id_supParameter, considerNull_id_supParameter, id_sup_genParameter, considerNull_id_sup_genParameter, pyetje_idParameter, considerNull_pyetje_idParameter, pyetje_id_genParameter, considerNull_pyetje_id_genParameter, pyetje_kategori_idParameter, considerNull_pyetje_kategori_idParameter, pyetje_kategori_id_genParameter, considerNull_pyetje_kategori_id_genParameter, aktivParameter, considerNull_aktivParameter, data_krijimitParameter, considerNull_data_krijimitParameter, perdorues_idParameter, considerNull_perdorues_idParameter, perdorues_id_genParameter, considerNull_perdorues_id_genParameter);
+        }
+    
+        public virtual int spU_tbl_nder_pyetje_tip_kategori(Nullable<int> nrrendor, string id_gen, Nullable<bool> considerNull_id_gen, Nullable<int> id_sup, Nullable<bool> considerNull_id_sup, string id_sup_gen, Nullable<bool> considerNull_id_sup_gen, Nullable<int> pyetje_tip_id, Nullable<bool> considerNull_pyetje_tip_id, string pyetje_tip_id_gen, Nullable<bool> considerNull_pyetje_tip_id_gen, Nullable<int> pyetje_tip_kategori_id, Nullable<bool> considerNull_pyetje_tip_kategori_id, string pyetje_tip_kategori_id_gen, Nullable<bool> considerNull_pyetje_tip_kategori_id_gen, Nullable<bool> aktiv, Nullable<bool> considerNull_aktiv, Nullable<System.DateTime> data_krijimit, Nullable<bool> considerNull_data_krijimit, Nullable<int> perdorues_id, Nullable<bool> considerNull_perdorues_id, string perdorues_id_gen, Nullable<bool> considerNull_perdorues_id_gen)
+        {
+            var nrrendorParameter = nrrendor.HasValue ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(int));
+    
+            var id_genParameter = id_gen != null ?
+                new ObjectParameter("id_gen", id_gen) :
+                new ObjectParameter("id_gen", typeof(string));
+    
+            var considerNull_id_genParameter = considerNull_id_gen.HasValue ?
+                new ObjectParameter("ConsiderNull_id_gen", considerNull_id_gen) :
+                new ObjectParameter("ConsiderNull_id_gen", typeof(bool));
+    
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var considerNull_id_supParameter = considerNull_id_sup.HasValue ?
+                new ObjectParameter("ConsiderNull_id_sup", considerNull_id_sup) :
+                new ObjectParameter("ConsiderNull_id_sup", typeof(bool));
+    
+            var id_sup_genParameter = id_sup_gen != null ?
+                new ObjectParameter("id_sup_gen", id_sup_gen) :
+                new ObjectParameter("id_sup_gen", typeof(string));
+    
+            var considerNull_id_sup_genParameter = considerNull_id_sup_gen.HasValue ?
+                new ObjectParameter("ConsiderNull_id_sup_gen", considerNull_id_sup_gen) :
+                new ObjectParameter("ConsiderNull_id_sup_gen", typeof(bool));
+    
+            var pyetje_tip_idParameter = pyetje_tip_id.HasValue ?
+                new ObjectParameter("pyetje_tip_id", pyetje_tip_id) :
+                new ObjectParameter("pyetje_tip_id", typeof(int));
+    
+            var considerNull_pyetje_tip_idParameter = considerNull_pyetje_tip_id.HasValue ?
+                new ObjectParameter("ConsiderNull_pyetje_tip_id", considerNull_pyetje_tip_id) :
+                new ObjectParameter("ConsiderNull_pyetje_tip_id", typeof(bool));
+    
+            var pyetje_tip_id_genParameter = pyetje_tip_id_gen != null ?
+                new ObjectParameter("pyetje_tip_id_gen", pyetje_tip_id_gen) :
+                new ObjectParameter("pyetje_tip_id_gen", typeof(string));
+    
+            var considerNull_pyetje_tip_id_genParameter = considerNull_pyetje_tip_id_gen.HasValue ?
+                new ObjectParameter("ConsiderNull_pyetje_tip_id_gen", considerNull_pyetje_tip_id_gen) :
+                new ObjectParameter("ConsiderNull_pyetje_tip_id_gen", typeof(bool));
+    
+            var pyetje_tip_kategori_idParameter = pyetje_tip_kategori_id.HasValue ?
+                new ObjectParameter("pyetje_tip_kategori_id", pyetje_tip_kategori_id) :
+                new ObjectParameter("pyetje_tip_kategori_id", typeof(int));
+    
+            var considerNull_pyetje_tip_kategori_idParameter = considerNull_pyetje_tip_kategori_id.HasValue ?
+                new ObjectParameter("ConsiderNull_pyetje_tip_kategori_id", considerNull_pyetje_tip_kategori_id) :
+                new ObjectParameter("ConsiderNull_pyetje_tip_kategori_id", typeof(bool));
+    
+            var pyetje_tip_kategori_id_genParameter = pyetje_tip_kategori_id_gen != null ?
+                new ObjectParameter("pyetje_tip_kategori_id_gen", pyetje_tip_kategori_id_gen) :
+                new ObjectParameter("pyetje_tip_kategori_id_gen", typeof(string));
+    
+            var considerNull_pyetje_tip_kategori_id_genParameter = considerNull_pyetje_tip_kategori_id_gen.HasValue ?
+                new ObjectParameter("ConsiderNull_pyetje_tip_kategori_id_gen", considerNull_pyetje_tip_kategori_id_gen) :
+                new ObjectParameter("ConsiderNull_pyetje_tip_kategori_id_gen", typeof(bool));
+    
+            var aktivParameter = aktiv.HasValue ?
+                new ObjectParameter("aktiv", aktiv) :
+                new ObjectParameter("aktiv", typeof(bool));
+    
+            var considerNull_aktivParameter = considerNull_aktiv.HasValue ?
+                new ObjectParameter("ConsiderNull_aktiv", considerNull_aktiv) :
+                new ObjectParameter("ConsiderNull_aktiv", typeof(bool));
+    
+            var data_krijimitParameter = data_krijimit.HasValue ?
+                new ObjectParameter("data_krijimit", data_krijimit) :
+                new ObjectParameter("data_krijimit", typeof(System.DateTime));
+    
+            var considerNull_data_krijimitParameter = considerNull_data_krijimit.HasValue ?
+                new ObjectParameter("ConsiderNull_data_krijimit", considerNull_data_krijimit) :
+                new ObjectParameter("ConsiderNull_data_krijimit", typeof(bool));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            var considerNull_perdorues_idParameter = considerNull_perdorues_id.HasValue ?
+                new ObjectParameter("ConsiderNull_perdorues_id", considerNull_perdorues_id) :
+                new ObjectParameter("ConsiderNull_perdorues_id", typeof(bool));
+    
+            var perdorues_id_genParameter = perdorues_id_gen != null ?
+                new ObjectParameter("perdorues_id_gen", perdorues_id_gen) :
+                new ObjectParameter("perdorues_id_gen", typeof(string));
+    
+            var considerNull_perdorues_id_genParameter = considerNull_perdorues_id_gen.HasValue ?
+                new ObjectParameter("ConsiderNull_perdorues_id_gen", considerNull_perdorues_id_gen) :
+                new ObjectParameter("ConsiderNull_perdorues_id_gen", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_nder_pyetje_tip_kategori", nrrendorParameter, id_genParameter, considerNull_id_genParameter, id_supParameter, considerNull_id_supParameter, id_sup_genParameter, considerNull_id_sup_genParameter, pyetje_tip_idParameter, considerNull_pyetje_tip_idParameter, pyetje_tip_id_genParameter, considerNull_pyetje_tip_id_genParameter, pyetje_tip_kategori_idParameter, considerNull_pyetje_tip_kategori_idParameter, pyetje_tip_kategori_id_genParameter, considerNull_pyetje_tip_kategori_id_genParameter, aktivParameter, considerNull_aktivParameter, data_krijimitParameter, considerNull_data_krijimitParameter, perdorues_idParameter, considerNull_perdorues_idParameter, perdorues_id_genParameter, considerNull_perdorues_id_genParameter);
+        }
+    
+        public virtual int spU_tbl_pyetje(Nullable<int> nrrendor, Nullable<int> id_sup, Nullable<bool> considerNull_id_sup, Nullable<int> tip_id, Nullable<bool> considerNull_tip_id, string kodi, Nullable<bool> considerNull_kodi, string emertimi, Nullable<bool> considerNull_Emertimi, string pershkrimi, Nullable<bool> considerNull_pershkrimi, string emertimiang, Nullable<bool> considerNull_Emertimiang, string pershkrimiang, Nullable<bool> considerNull_pershkrimiang, Nullable<bool> aktiv, Nullable<bool> considerNull_Aktiv, Nullable<int> perdorues_id, Nullable<bool> considerNull_Perdorues_id, Nullable<bool> kompleks, Nullable<bool> considerNull_kompleks)
+        {
+            var nrrendorParameter = nrrendor.HasValue ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(int));
+    
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var considerNull_id_supParameter = considerNull_id_sup.HasValue ?
+                new ObjectParameter("ConsiderNull_id_sup", considerNull_id_sup) :
+                new ObjectParameter("ConsiderNull_id_sup", typeof(bool));
+    
+            var tip_idParameter = tip_id.HasValue ?
+                new ObjectParameter("tip_id", tip_id) :
+                new ObjectParameter("tip_id", typeof(int));
+    
+            var considerNull_tip_idParameter = considerNull_tip_id.HasValue ?
+                new ObjectParameter("ConsiderNull_tip_id", considerNull_tip_id) :
+                new ObjectParameter("ConsiderNull_tip_id", typeof(bool));
+    
+            var kodiParameter = kodi != null ?
+                new ObjectParameter("kodi", kodi) :
+                new ObjectParameter("kodi", typeof(string));
+    
+            var considerNull_kodiParameter = considerNull_kodi.HasValue ?
+                new ObjectParameter("ConsiderNull_kodi", considerNull_kodi) :
+                new ObjectParameter("ConsiderNull_kodi", typeof(bool));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var considerNull_EmertimiParameter = considerNull_Emertimi.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimi", considerNull_Emertimi) :
+                new ObjectParameter("ConsiderNull_Emertimi", typeof(bool));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var considerNull_pershkrimiParameter = considerNull_pershkrimi.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimi", considerNull_pershkrimi) :
+                new ObjectParameter("ConsiderNull_pershkrimi", typeof(bool));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var considerNull_EmertimiangParameter = considerNull_Emertimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimiang", considerNull_Emertimiang) :
+                new ObjectParameter("ConsiderNull_Emertimiang", typeof(bool));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var considerNull_pershkrimiangParameter = considerNull_pershkrimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimiang", considerNull_pershkrimiang) :
+                new ObjectParameter("ConsiderNull_pershkrimiang", typeof(bool));
+    
+            var aktivParameter = aktiv.HasValue ?
+                new ObjectParameter("Aktiv", aktiv) :
+                new ObjectParameter("Aktiv", typeof(bool));
+    
+            var considerNull_AktivParameter = considerNull_Aktiv.HasValue ?
+                new ObjectParameter("ConsiderNull_Aktiv", considerNull_Aktiv) :
+                new ObjectParameter("ConsiderNull_Aktiv", typeof(bool));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            var considerNull_Perdorues_idParameter = considerNull_Perdorues_id.HasValue ?
+                new ObjectParameter("ConsiderNull_Perdorues_id", considerNull_Perdorues_id) :
+                new ObjectParameter("ConsiderNull_Perdorues_id", typeof(bool));
+    
+            var kompleksParameter = kompleks.HasValue ?
+                new ObjectParameter("kompleks", kompleks) :
+                new ObjectParameter("kompleks", typeof(bool));
+    
+            var considerNull_kompleksParameter = considerNull_kompleks.HasValue ?
+                new ObjectParameter("ConsiderNull_kompleks", considerNull_kompleks) :
+                new ObjectParameter("ConsiderNull_kompleks", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_pyetje", nrrendorParameter, id_supParameter, considerNull_id_supParameter, tip_idParameter, considerNull_tip_idParameter, kodiParameter, considerNull_kodiParameter, emertimiParameter, considerNull_EmertimiParameter, pershkrimiParameter, considerNull_pershkrimiParameter, emertimiangParameter, considerNull_EmertimiangParameter, pershkrimiangParameter, considerNull_pershkrimiangParameter, aktivParameter, considerNull_AktivParameter, perdorues_idParameter, considerNull_Perdorues_idParameter, kompleksParameter, considerNull_kompleksParameter);
+        }
+    
+        public virtual int spU_tbl_pyetje_access(Nullable<int> pyetje_id, Nullable<int> perdoruesi_id)
+        {
+            var pyetje_idParameter = pyetje_id.HasValue ?
+                new ObjectParameter("pyetje_id", pyetje_id) :
+                new ObjectParameter("pyetje_id", typeof(int));
+    
+            var perdoruesi_idParameter = perdoruesi_id.HasValue ?
+                new ObjectParameter("perdoruesi_id", perdoruesi_id) :
+                new ObjectParameter("perdoruesi_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_pyetje_access", pyetje_idParameter, perdoruesi_idParameter);
+        }
+    
+        public virtual int spU_tbl_pyetje_info(Nullable<int> nrrendor, Nullable<int> id_sup, Nullable<bool> considerNull_id_sup, Nullable<int> element_id, Nullable<bool> considerNull_element_id, Nullable<int> tip_info_id, Nullable<bool> considerNull_tip_info_id, string emertimi, Nullable<bool> considerNull_Emertimi, string pershkrimi, Nullable<bool> considerNull_pershkrimi, string emertimiang, Nullable<bool> considerNull_Emertimiang, string pershkrimiang, Nullable<bool> considerNull_pershkrimiang, Nullable<bool> aktiv, Nullable<bool> considerNull_Aktiv, Nullable<int> perdorues_id, Nullable<bool> considerNull_Perdorues_id)
+        {
+            var nrrendorParameter = nrrendor.HasValue ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(int));
+    
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var considerNull_id_supParameter = considerNull_id_sup.HasValue ?
+                new ObjectParameter("ConsiderNull_id_sup", considerNull_id_sup) :
+                new ObjectParameter("ConsiderNull_id_sup", typeof(bool));
+    
+            var element_idParameter = element_id.HasValue ?
+                new ObjectParameter("element_id", element_id) :
+                new ObjectParameter("element_id", typeof(int));
+    
+            var considerNull_element_idParameter = considerNull_element_id.HasValue ?
+                new ObjectParameter("ConsiderNull_element_id", considerNull_element_id) :
+                new ObjectParameter("ConsiderNull_element_id", typeof(bool));
+    
+            var tip_info_idParameter = tip_info_id.HasValue ?
+                new ObjectParameter("tip_info_id", tip_info_id) :
+                new ObjectParameter("tip_info_id", typeof(int));
+    
+            var considerNull_tip_info_idParameter = considerNull_tip_info_id.HasValue ?
+                new ObjectParameter("ConsiderNull_tip_info_id", considerNull_tip_info_id) :
+                new ObjectParameter("ConsiderNull_tip_info_id", typeof(bool));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var considerNull_EmertimiParameter = considerNull_Emertimi.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimi", considerNull_Emertimi) :
+                new ObjectParameter("ConsiderNull_Emertimi", typeof(bool));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var considerNull_pershkrimiParameter = considerNull_pershkrimi.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimi", considerNull_pershkrimi) :
+                new ObjectParameter("ConsiderNull_pershkrimi", typeof(bool));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var considerNull_EmertimiangParameter = considerNull_Emertimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimiang", considerNull_Emertimiang) :
+                new ObjectParameter("ConsiderNull_Emertimiang", typeof(bool));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var considerNull_pershkrimiangParameter = considerNull_pershkrimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimiang", considerNull_pershkrimiang) :
+                new ObjectParameter("ConsiderNull_pershkrimiang", typeof(bool));
+    
+            var aktivParameter = aktiv.HasValue ?
+                new ObjectParameter("Aktiv", aktiv) :
+                new ObjectParameter("Aktiv", typeof(bool));
+    
+            var considerNull_AktivParameter = considerNull_Aktiv.HasValue ?
+                new ObjectParameter("ConsiderNull_Aktiv", considerNull_Aktiv) :
+                new ObjectParameter("ConsiderNull_Aktiv", typeof(bool));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            var considerNull_Perdorues_idParameter = considerNull_Perdorues_id.HasValue ?
+                new ObjectParameter("ConsiderNull_Perdorues_id", considerNull_Perdorues_id) :
+                new ObjectParameter("ConsiderNull_Perdorues_id", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_pyetje_info", nrrendorParameter, id_supParameter, considerNull_id_supParameter, element_idParameter, considerNull_element_idParameter, tip_info_idParameter, considerNull_tip_info_idParameter, emertimiParameter, considerNull_EmertimiParameter, pershkrimiParameter, considerNull_pershkrimiParameter, emertimiangParameter, considerNull_EmertimiangParameter, pershkrimiangParameter, considerNull_pershkrimiangParameter, aktivParameter, considerNull_AktivParameter, perdorues_idParameter, considerNull_Perdorues_idParameter);
+        }
+    
+        public virtual int spU_tbl_pyetje_kategori(Nullable<int> nrrendor, Nullable<int> id_sup, Nullable<bool> considerNull_id_sup, Nullable<int> elcat, Nullable<bool> considerNull_elcat, string kodi, Nullable<bool> considerNull_kodi, string emertimi, Nullable<bool> considerNull_Emertimi, string pershkrimi, Nullable<bool> considerNull_pershkrimi, string emertimiang, Nullable<bool> considerNull_Emertimiang, string pershkrimiang, Nullable<bool> considerNull_pershkrimiang, Nullable<bool> aktiv, Nullable<bool> considerNull_Aktiv, Nullable<int> perdorues_id, Nullable<bool> considerNull_Perdorues_id)
+        {
+            var nrrendorParameter = nrrendor.HasValue ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(int));
+    
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var considerNull_id_supParameter = considerNull_id_sup.HasValue ?
+                new ObjectParameter("ConsiderNull_id_sup", considerNull_id_sup) :
+                new ObjectParameter("ConsiderNull_id_sup", typeof(bool));
+    
+            var elcatParameter = elcat.HasValue ?
+                new ObjectParameter("elcat", elcat) :
+                new ObjectParameter("elcat", typeof(int));
+    
+            var considerNull_elcatParameter = considerNull_elcat.HasValue ?
+                new ObjectParameter("ConsiderNull_elcat", considerNull_elcat) :
+                new ObjectParameter("ConsiderNull_elcat", typeof(bool));
+    
+            var kodiParameter = kodi != null ?
+                new ObjectParameter("kodi", kodi) :
+                new ObjectParameter("kodi", typeof(string));
+    
+            var considerNull_kodiParameter = considerNull_kodi.HasValue ?
+                new ObjectParameter("ConsiderNull_kodi", considerNull_kodi) :
+                new ObjectParameter("ConsiderNull_kodi", typeof(bool));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var considerNull_EmertimiParameter = considerNull_Emertimi.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimi", considerNull_Emertimi) :
+                new ObjectParameter("ConsiderNull_Emertimi", typeof(bool));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var considerNull_pershkrimiParameter = considerNull_pershkrimi.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimi", considerNull_pershkrimi) :
+                new ObjectParameter("ConsiderNull_pershkrimi", typeof(bool));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var considerNull_EmertimiangParameter = considerNull_Emertimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimiang", considerNull_Emertimiang) :
+                new ObjectParameter("ConsiderNull_Emertimiang", typeof(bool));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var considerNull_pershkrimiangParameter = considerNull_pershkrimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimiang", considerNull_pershkrimiang) :
+                new ObjectParameter("ConsiderNull_pershkrimiang", typeof(bool));
+    
+            var aktivParameter = aktiv.HasValue ?
+                new ObjectParameter("Aktiv", aktiv) :
+                new ObjectParameter("Aktiv", typeof(bool));
+    
+            var considerNull_AktivParameter = considerNull_Aktiv.HasValue ?
+                new ObjectParameter("ConsiderNull_Aktiv", considerNull_Aktiv) :
+                new ObjectParameter("ConsiderNull_Aktiv", typeof(bool));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            var considerNull_Perdorues_idParameter = considerNull_Perdorues_id.HasValue ?
+                new ObjectParameter("ConsiderNull_Perdorues_id", considerNull_Perdorues_id) :
+                new ObjectParameter("ConsiderNull_Perdorues_id", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_pyetje_kategori", nrrendorParameter, id_supParameter, considerNull_id_supParameter, elcatParameter, considerNull_elcatParameter, kodiParameter, considerNull_kodiParameter, emertimiParameter, considerNull_EmertimiParameter, pershkrimiParameter, considerNull_pershkrimiParameter, emertimiangParameter, considerNull_EmertimiangParameter, pershkrimiangParameter, considerNull_pershkrimiangParameter, aktivParameter, considerNull_AktivParameter, perdorues_idParameter, considerNull_Perdorues_idParameter);
+        }
+    
+        public virtual int spU_tbl_pyetje_tip(Nullable<int> nrrendor, Nullable<int> id_sup, Nullable<bool> considerNull_id_sup, Nullable<int> elcat, Nullable<bool> considerNull_elcat, string kodi, Nullable<bool> considerNull_kodi, Nullable<int> kodifillim, Nullable<bool> considerNull_kodifillim, Nullable<int> kodiaktual, Nullable<bool> considerNull_kodiaktual, Nullable<int> kodimbarim, Nullable<bool> considerNull_kodimbarim, string emertimi, Nullable<bool> considerNull_Emertimi, string pershkrimi, Nullable<bool> considerNull_pershkrimi, string emertimiang, Nullable<bool> considerNull_Emertimiang, string pershkrimiang, Nullable<bool> considerNull_pershkrimiang, Nullable<bool> aktiv, Nullable<bool> considerNull_Aktiv, Nullable<int> perdorues_id, Nullable<bool> considerNull_Perdorues_id)
+        {
+            var nrrendorParameter = nrrendor.HasValue ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(int));
+    
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var considerNull_id_supParameter = considerNull_id_sup.HasValue ?
+                new ObjectParameter("ConsiderNull_id_sup", considerNull_id_sup) :
+                new ObjectParameter("ConsiderNull_id_sup", typeof(bool));
+    
+            var elcatParameter = elcat.HasValue ?
+                new ObjectParameter("elcat", elcat) :
+                new ObjectParameter("elcat", typeof(int));
+    
+            var considerNull_elcatParameter = considerNull_elcat.HasValue ?
+                new ObjectParameter("ConsiderNull_elcat", considerNull_elcat) :
+                new ObjectParameter("ConsiderNull_elcat", typeof(bool));
+    
+            var kodiParameter = kodi != null ?
+                new ObjectParameter("kodi", kodi) :
+                new ObjectParameter("kodi", typeof(string));
+    
+            var considerNull_kodiParameter = considerNull_kodi.HasValue ?
+                new ObjectParameter("ConsiderNull_kodi", considerNull_kodi) :
+                new ObjectParameter("ConsiderNull_kodi", typeof(bool));
+    
+            var kodifillimParameter = kodifillim.HasValue ?
+                new ObjectParameter("kodifillim", kodifillim) :
+                new ObjectParameter("kodifillim", typeof(int));
+    
+            var considerNull_kodifillimParameter = considerNull_kodifillim.HasValue ?
+                new ObjectParameter("ConsiderNull_kodifillim", considerNull_kodifillim) :
+                new ObjectParameter("ConsiderNull_kodifillim", typeof(bool));
+    
+            var kodiaktualParameter = kodiaktual.HasValue ?
+                new ObjectParameter("kodiaktual", kodiaktual) :
+                new ObjectParameter("kodiaktual", typeof(int));
+    
+            var considerNull_kodiaktualParameter = considerNull_kodiaktual.HasValue ?
+                new ObjectParameter("ConsiderNull_kodiaktual", considerNull_kodiaktual) :
+                new ObjectParameter("ConsiderNull_kodiaktual", typeof(bool));
+    
+            var kodimbarimParameter = kodimbarim.HasValue ?
+                new ObjectParameter("kodimbarim", kodimbarim) :
+                new ObjectParameter("kodimbarim", typeof(int));
+    
+            var considerNull_kodimbarimParameter = considerNull_kodimbarim.HasValue ?
+                new ObjectParameter("ConsiderNull_kodimbarim", considerNull_kodimbarim) :
+                new ObjectParameter("ConsiderNull_kodimbarim", typeof(bool));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var considerNull_EmertimiParameter = considerNull_Emertimi.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimi", considerNull_Emertimi) :
+                new ObjectParameter("ConsiderNull_Emertimi", typeof(bool));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var considerNull_pershkrimiParameter = considerNull_pershkrimi.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimi", considerNull_pershkrimi) :
+                new ObjectParameter("ConsiderNull_pershkrimi", typeof(bool));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var considerNull_EmertimiangParameter = considerNull_Emertimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimiang", considerNull_Emertimiang) :
+                new ObjectParameter("ConsiderNull_Emertimiang", typeof(bool));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var considerNull_pershkrimiangParameter = considerNull_pershkrimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimiang", considerNull_pershkrimiang) :
+                new ObjectParameter("ConsiderNull_pershkrimiang", typeof(bool));
+    
+            var aktivParameter = aktiv.HasValue ?
+                new ObjectParameter("Aktiv", aktiv) :
+                new ObjectParameter("Aktiv", typeof(bool));
+    
+            var considerNull_AktivParameter = considerNull_Aktiv.HasValue ?
+                new ObjectParameter("ConsiderNull_Aktiv", considerNull_Aktiv) :
+                new ObjectParameter("ConsiderNull_Aktiv", typeof(bool));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            var considerNull_Perdorues_idParameter = considerNull_Perdorues_id.HasValue ?
+                new ObjectParameter("ConsiderNull_Perdorues_id", considerNull_Perdorues_id) :
+                new ObjectParameter("ConsiderNull_Perdorues_id", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_pyetje_tip", nrrendorParameter, id_supParameter, considerNull_id_supParameter, elcatParameter, considerNull_elcatParameter, kodiParameter, considerNull_kodiParameter, kodifillimParameter, considerNull_kodifillimParameter, kodiaktualParameter, considerNull_kodiaktualParameter, kodimbarimParameter, considerNull_kodimbarimParameter, emertimiParameter, considerNull_EmertimiParameter, pershkrimiParameter, considerNull_pershkrimiParameter, emertimiangParameter, considerNull_EmertimiangParameter, pershkrimiangParameter, considerNull_pershkrimiangParameter, aktivParameter, considerNull_AktivParameter, perdorues_idParameter, considerNull_Perdorues_idParameter);
+        }
+    
+        public virtual int spU_tbl_pyetje_tip_info(Nullable<int> nrrendor, Nullable<int> id_sup, Nullable<bool> considerNull_id_sup, Nullable<int> tip_id, Nullable<bool> considerNull_tip_id, string emertimi, Nullable<bool> considerNull_Emertimi, string pershkrimi, Nullable<bool> considerNull_pershkrimi, string emertimiang, Nullable<bool> considerNull_Emertimiang, string pershkrimiang, Nullable<bool> considerNull_pershkrimiang, Nullable<int> veti, Nullable<bool> considerNull_veti, Nullable<bool> skedar, Nullable<bool> considerNull_skedar, Nullable<bool> detyrueshme, Nullable<bool> considerNull_detyrueshme, Nullable<double> rradha, Nullable<bool> considerNull_Rradha, Nullable<bool> aktiv, Nullable<bool> considerNull_Aktiv, Nullable<int> perdorues_id, Nullable<bool> considerNull_Perdorues_id)
+        {
+            var nrrendorParameter = nrrendor.HasValue ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(int));
+    
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var considerNull_id_supParameter = considerNull_id_sup.HasValue ?
+                new ObjectParameter("ConsiderNull_id_sup", considerNull_id_sup) :
+                new ObjectParameter("ConsiderNull_id_sup", typeof(bool));
+    
+            var tip_idParameter = tip_id.HasValue ?
+                new ObjectParameter("tip_id", tip_id) :
+                new ObjectParameter("tip_id", typeof(int));
+    
+            var considerNull_tip_idParameter = considerNull_tip_id.HasValue ?
+                new ObjectParameter("ConsiderNull_tip_id", considerNull_tip_id) :
+                new ObjectParameter("ConsiderNull_tip_id", typeof(bool));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var considerNull_EmertimiParameter = considerNull_Emertimi.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimi", considerNull_Emertimi) :
+                new ObjectParameter("ConsiderNull_Emertimi", typeof(bool));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var considerNull_pershkrimiParameter = considerNull_pershkrimi.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimi", considerNull_pershkrimi) :
+                new ObjectParameter("ConsiderNull_pershkrimi", typeof(bool));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var considerNull_EmertimiangParameter = considerNull_Emertimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimiang", considerNull_Emertimiang) :
+                new ObjectParameter("ConsiderNull_Emertimiang", typeof(bool));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var considerNull_pershkrimiangParameter = considerNull_pershkrimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimiang", considerNull_pershkrimiang) :
+                new ObjectParameter("ConsiderNull_pershkrimiang", typeof(bool));
+    
+            var vetiParameter = veti.HasValue ?
+                new ObjectParameter("veti", veti) :
+                new ObjectParameter("veti", typeof(int));
+    
+            var considerNull_vetiParameter = considerNull_veti.HasValue ?
+                new ObjectParameter("ConsiderNull_veti", considerNull_veti) :
+                new ObjectParameter("ConsiderNull_veti", typeof(bool));
+    
+            var skedarParameter = skedar.HasValue ?
+                new ObjectParameter("skedar", skedar) :
+                new ObjectParameter("skedar", typeof(bool));
+    
+            var considerNull_skedarParameter = considerNull_skedar.HasValue ?
+                new ObjectParameter("ConsiderNull_skedar", considerNull_skedar) :
+                new ObjectParameter("ConsiderNull_skedar", typeof(bool));
+    
+            var detyrueshmeParameter = detyrueshme.HasValue ?
+                new ObjectParameter("detyrueshme", detyrueshme) :
+                new ObjectParameter("detyrueshme", typeof(bool));
+    
+            var considerNull_detyrueshmeParameter = considerNull_detyrueshme.HasValue ?
+                new ObjectParameter("ConsiderNull_detyrueshme", considerNull_detyrueshme) :
+                new ObjectParameter("ConsiderNull_detyrueshme", typeof(bool));
+    
+            var rradhaParameter = rradha.HasValue ?
+                new ObjectParameter("Rradha", rradha) :
+                new ObjectParameter("Rradha", typeof(double));
+    
+            var considerNull_RradhaParameter = considerNull_Rradha.HasValue ?
+                new ObjectParameter("ConsiderNull_Rradha", considerNull_Rradha) :
+                new ObjectParameter("ConsiderNull_Rradha", typeof(bool));
+    
+            var aktivParameter = aktiv.HasValue ?
+                new ObjectParameter("Aktiv", aktiv) :
+                new ObjectParameter("Aktiv", typeof(bool));
+    
+            var considerNull_AktivParameter = considerNull_Aktiv.HasValue ?
+                new ObjectParameter("ConsiderNull_Aktiv", considerNull_Aktiv) :
+                new ObjectParameter("ConsiderNull_Aktiv", typeof(bool));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            var considerNull_Perdorues_idParameter = considerNull_Perdorues_id.HasValue ?
+                new ObjectParameter("ConsiderNull_Perdorues_id", considerNull_Perdorues_id) :
+                new ObjectParameter("ConsiderNull_Perdorues_id", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_pyetje_tip_info", nrrendorParameter, id_supParameter, considerNull_id_supParameter, tip_idParameter, considerNull_tip_idParameter, emertimiParameter, considerNull_EmertimiParameter, pershkrimiParameter, considerNull_pershkrimiParameter, emertimiangParameter, considerNull_EmertimiangParameter, pershkrimiangParameter, considerNull_pershkrimiangParameter, vetiParameter, considerNull_vetiParameter, skedarParameter, considerNull_skedarParameter, detyrueshmeParameter, considerNull_detyrueshmeParameter, rradhaParameter, considerNull_RradhaParameter, aktivParameter, considerNull_AktivParameter, perdorues_idParameter, considerNull_Perdorues_idParameter);
+        }
+    
+        public virtual int spU_tbl_pyetje_tip_info_ch(Nullable<int> nrrendor, Nullable<int> id_sup, Nullable<bool> considerNull_id_sup, Nullable<int> tip_info_id, Nullable<bool> considerNull_tip_info_id, string emertimi, Nullable<bool> considerNull_Emertimi, string pershkrimi, Nullable<bool> considerNull_pershkrimi, string emertimiang, Nullable<bool> considerNull_Emertimiang, string pershkrimiang, Nullable<bool> considerNull_pershkrimiang, Nullable<bool> aktiv, Nullable<bool> considerNull_Aktiv, Nullable<int> perdorues_id, Nullable<bool> considerNull_Perdorues_id)
+        {
+            var nrrendorParameter = nrrendor.HasValue ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(int));
+    
+            var id_supParameter = id_sup.HasValue ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(int));
+    
+            var considerNull_id_supParameter = considerNull_id_sup.HasValue ?
+                new ObjectParameter("ConsiderNull_id_sup", considerNull_id_sup) :
+                new ObjectParameter("ConsiderNull_id_sup", typeof(bool));
+    
+            var tip_info_idParameter = tip_info_id.HasValue ?
+                new ObjectParameter("tip_info_id", tip_info_id) :
+                new ObjectParameter("tip_info_id", typeof(int));
+    
+            var considerNull_tip_info_idParameter = considerNull_tip_info_id.HasValue ?
+                new ObjectParameter("ConsiderNull_tip_info_id", considerNull_tip_info_id) :
+                new ObjectParameter("ConsiderNull_tip_info_id", typeof(bool));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("Emertimi", emertimi) :
+                new ObjectParameter("Emertimi", typeof(string));
+    
+            var considerNull_EmertimiParameter = considerNull_Emertimi.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimi", considerNull_Emertimi) :
+                new ObjectParameter("ConsiderNull_Emertimi", typeof(bool));
+    
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var considerNull_pershkrimiParameter = considerNull_pershkrimi.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimi", considerNull_pershkrimi) :
+                new ObjectParameter("ConsiderNull_pershkrimi", typeof(bool));
+    
+            var emertimiangParameter = emertimiang != null ?
+                new ObjectParameter("Emertimiang", emertimiang) :
+                new ObjectParameter("Emertimiang", typeof(string));
+    
+            var considerNull_EmertimiangParameter = considerNull_Emertimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_Emertimiang", considerNull_Emertimiang) :
+                new ObjectParameter("ConsiderNull_Emertimiang", typeof(bool));
+    
+            var pershkrimiangParameter = pershkrimiang != null ?
+                new ObjectParameter("pershkrimiang", pershkrimiang) :
+                new ObjectParameter("pershkrimiang", typeof(string));
+    
+            var considerNull_pershkrimiangParameter = considerNull_pershkrimiang.HasValue ?
+                new ObjectParameter("ConsiderNull_pershkrimiang", considerNull_pershkrimiang) :
+                new ObjectParameter("ConsiderNull_pershkrimiang", typeof(bool));
+    
+            var aktivParameter = aktiv.HasValue ?
+                new ObjectParameter("Aktiv", aktiv) :
+                new ObjectParameter("Aktiv", typeof(bool));
+    
+            var considerNull_AktivParameter = considerNull_Aktiv.HasValue ?
+                new ObjectParameter("ConsiderNull_Aktiv", considerNull_Aktiv) :
+                new ObjectParameter("ConsiderNull_Aktiv", typeof(bool));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("Perdorues_id", perdorues_id) :
+                new ObjectParameter("Perdorues_id", typeof(int));
+    
+            var considerNull_Perdorues_idParameter = considerNull_Perdorues_id.HasValue ?
+                new ObjectParameter("ConsiderNull_Perdorues_id", considerNull_Perdorues_id) :
+                new ObjectParameter("ConsiderNull_Perdorues_id", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_pyetje_tip_info_ch", nrrendorParameter, id_supParameter, considerNull_id_supParameter, tip_info_idParameter, considerNull_tip_info_idParameter, emertimiParameter, considerNull_EmertimiParameter, pershkrimiParameter, considerNull_pershkrimiParameter, emertimiangParameter, considerNull_EmertimiangParameter, pershkrimiangParameter, considerNull_pershkrimiangParameter, aktivParameter, considerNull_AktivParameter, perdorues_idParameter, considerNull_Perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_analize_task(Nullable<int> analize_id, Nullable<int> task_id, Nullable<int> perdorues_id)
+        {
+            var analize_idParameter = analize_id.HasValue ?
+                new ObjectParameter("analize_id", analize_id) :
+                new ObjectParameter("analize_id", typeof(int));
+    
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_analize_task", analize_idParameter, task_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_klient_project(Nullable<int> klient_id, Nullable<int> project_id, Nullable<int> perdorues_id)
+        {
+            var klient_idParameter = klient_id.HasValue ?
+                new ObjectParameter("klient_id", klient_id) :
+                new ObjectParameter("klient_id", typeof(int));
+    
+            var project_idParameter = project_id.HasValue ?
+                new ObjectParameter("project_id", project_id) :
+                new ObjectParameter("project_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_klient_project", klient_idParameter, project_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_nivel_teknologji(Nullable<int> nivel_id, Nullable<int> teknologji_id, Nullable<int> perdorues_id)
+        {
+            var nivel_idParameter = nivel_id.HasValue ?
+                new ObjectParameter("nivel_id", nivel_id) :
+                new ObjectParameter("nivel_id", typeof(int));
+    
+            var teknologji_idParameter = teknologji_id.HasValue ?
+                new ObjectParameter("teknologji_id", teknologji_id) :
+                new ObjectParameter("teknologji_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_nivel_teknologji", nivel_idParameter, teknologji_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_niveli_personel(Nullable<int> niveli_id, Nullable<int> personel_id, Nullable<int> perdorues_id)
+        {
+            var niveli_idParameter = niveli_id.HasValue ?
+                new ObjectParameter("niveli_id", niveli_id) :
+                new ObjectParameter("niveli_id", typeof(int));
+    
+            var personel_idParameter = personel_id.HasValue ?
+                new ObjectParameter("personel_id", personel_id) :
+                new ObjectParameter("personel_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_niveli_personel", niveli_idParameter, personel_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_niveli_skeda(Nullable<int> niveli_id, Nullable<int> skeda_id, Nullable<int> perdorues_id)
+        {
+            var niveli_idParameter = niveli_id.HasValue ?
+                new ObjectParameter("niveli_id", niveli_id) :
+                new ObjectParameter("niveli_id", typeof(int));
+    
+            var skeda_idParameter = skeda_id.HasValue ?
+                new ObjectParameter("skeda_id", skeda_id) :
+                new ObjectParameter("skeda_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_niveli_skeda", niveli_idParameter, skeda_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_personel_analize(Nullable<int> personel_id, Nullable<int> analize_id, Nullable<int> perdorues_id)
+        {
+            var personel_idParameter = personel_id.HasValue ?
+                new ObjectParameter("personel_id", personel_id) :
+                new ObjectParameter("personel_id", typeof(int));
+    
+            var analize_idParameter = analize_id.HasValue ?
+                new ObjectParameter("analize_id", analize_id) :
+                new ObjectParameter("analize_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_personel_analize", personel_idParameter, analize_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_personel_task(Nullable<int> personel_id, Nullable<int> task_id, Nullable<int> perdorues_id)
+        {
+            var personel_idParameter = personel_id.HasValue ?
+                new ObjectParameter("personel_id", personel_id) :
+                new ObjectParameter("personel_id", typeof(int));
+    
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_personel_task", personel_idParameter, task_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_personel_teknologji(Nullable<int> personel_id, Nullable<int> teknologji_id, Nullable<int> perdorues_id)
+        {
+            var personel_idParameter = personel_id.HasValue ?
+                new ObjectParameter("personel_id", personel_id) :
+                new ObjectParameter("personel_id", typeof(int));
+    
+            var teknologji_idParameter = teknologji_id.HasValue ?
+                new ObjectParameter("teknologji_id", teknologji_id) :
+                new ObjectParameter("teknologji_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_personel_teknologji", personel_idParameter, teknologji_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_personel_teknologji_nivel(Nullable<int> personel_id, Nullable<int> teknologji_id, Nullable<int> nivel_id, Nullable<int> perdorues_id)
+        {
+            var personel_idParameter = personel_id.HasValue ?
+                new ObjectParameter("personel_id", personel_id) :
+                new ObjectParameter("personel_id", typeof(int));
+    
+            var teknologji_idParameter = teknologji_id.HasValue ?
+                new ObjectParameter("teknologji_id", teknologji_id) :
+                new ObjectParameter("teknologji_id", typeof(int));
+    
+            var nivel_idParameter = nivel_id.HasValue ?
+                new ObjectParameter("nivel_id", nivel_id) :
+                new ObjectParameter("nivel_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_personel_teknologji_nivel", personel_idParameter, teknologji_idParameter, nivel_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_project_analize(Nullable<int> project_id, Nullable<int> analize_id, Nullable<int> perdorues_id)
+        {
+            var project_idParameter = project_id.HasValue ?
+                new ObjectParameter("project_id", project_id) :
+                new ObjectParameter("project_id", typeof(int));
+    
+            var analize_idParameter = analize_id.HasValue ?
+                new ObjectParameter("analize_id", analize_id) :
+                new ObjectParameter("analize_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_project_analize", project_idParameter, analize_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_project_personel(Nullable<int> project_id, Nullable<int> personel_id, Nullable<int> perdorues_id)
+        {
+            var project_idParameter = project_id.HasValue ?
+                new ObjectParameter("project_id", project_id) :
+                new ObjectParameter("project_id", typeof(int));
+    
+            var personel_idParameter = personel_id.HasValue ?
+                new ObjectParameter("personel_id", personel_id) :
+                new ObjectParameter("personel_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_project_personel", project_idParameter, personel_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_project_task(Nullable<int> project_id, Nullable<int> task_id, Nullable<int> perdorues_id)
+        {
+            var project_idParameter = project_id.HasValue ?
+                new ObjectParameter("project_id", project_id) :
+                new ObjectParameter("project_id", typeof(int));
+    
+            var task_idParameter = task_id.HasValue ?
+                new ObjectParameter("task_id", task_id) :
+                new ObjectParameter("task_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_project_task", project_idParameter, task_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_project_teknologji(Nullable<int> project_id, Nullable<int> teknologji_id, Nullable<int> perdorues_id)
+        {
+            var project_idParameter = project_id.HasValue ?
+                new ObjectParameter("project_id", project_id) :
+                new ObjectParameter("project_id", typeof(int));
+    
+            var teknologji_idParameter = teknologji_id.HasValue ?
+                new ObjectParameter("teknologji_id", teknologji_id) :
+                new ObjectParameter("teknologji_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_project_teknologji", project_idParameter, teknologji_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_pyetje_nivel(Nullable<int> pyetje_id, Nullable<int> nivel_id, Nullable<int> perdorues_id)
+        {
+            var pyetje_idParameter = pyetje_id.HasValue ?
+                new ObjectParameter("pyetje_id", pyetje_id) :
+                new ObjectParameter("pyetje_id", typeof(int));
+    
+            var nivel_idParameter = nivel_id.HasValue ?
+                new ObjectParameter("nivel_id", nivel_id) :
+                new ObjectParameter("nivel_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_pyetje_nivel", pyetje_idParameter, nivel_idParameter, perdorues_idParameter);
+        }
+        
+        public virtual int spI_tbl_nder_skeda_personel(Nullable<int> skeda_id, Nullable<int> personel_id, Nullable<int> perdorues_id)
+        {
+            var skeda_idParameter = skeda_id.HasValue ?
+                new ObjectParameter("skeda_id", skeda_id) :
+                new ObjectParameter("skeda_id", typeof(int));
+    
+            var personel_idParameter = personel_id.HasValue ?
+                new ObjectParameter("personel_id", personel_id) :
+                new ObjectParameter("personel_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_skeda_personel", skeda_idParameter, personel_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_skeda_project(Nullable<int> skeda_id, Nullable<int> project_id, Nullable<int> perdorues_id)
+        {
+            var skeda_idParameter = skeda_id.HasValue ?
+                new ObjectParameter("skeda_id", skeda_id) :
+                new ObjectParameter("skeda_id", typeof(int));
+    
+            var project_idParameter = project_id.HasValue ?
+                new ObjectParameter("project_id", project_id) :
+                new ObjectParameter("project_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_skeda_project", skeda_idParameter, project_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo(Nullable<int> pyetje_id, Nullable<int> pyetje_info_id, Nullable<int> testim_id, Nullable<int> personel_id, Nullable<int> nivel_id, Nullable<int> perdorues_id)
+        {
+            var pyetje_idParameter = pyetje_id.HasValue ?
+                new ObjectParameter("pyetje_id", pyetje_id) :
+                new ObjectParameter("pyetje_id", typeof(int));
+    
+            var pyetje_info_idParameter = pyetje_info_id.HasValue ?
+                new ObjectParameter("pyetje_info_id", pyetje_info_id) :
+                new ObjectParameter("pyetje_info_id", typeof(int));
+    
+            var testim_idParameter = testim_id.HasValue ?
+                new ObjectParameter("testim_id", testim_id) :
+                new ObjectParameter("testim_id", typeof(int));
+    
+            var personel_idParameter = personel_id.HasValue ?
+                new ObjectParameter("personel_id", personel_id) :
+                new ObjectParameter("personel_id", typeof(int));
+    
+            var nivel_idParameter = nivel_id.HasValue ?
+                new ObjectParameter("nivel_id", nivel_id) :
+                new ObjectParameter("nivel_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo", pyetje_idParameter, pyetje_info_idParameter, testim_idParameter, personel_idParameter, nivel_idParameter, perdorues_idParameter);
+        }
     }
 }

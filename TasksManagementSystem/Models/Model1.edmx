@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="tasketModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="tasketModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="FSHIJALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
@@ -272,6 +272,11 @@
           <Parameter Name="perdorues_id" Type="int" Mode="In" />
           <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="spI_tbl_nder_analize_task" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="analize_id" Type="int" Mode="In" />
+          <Parameter Name="task_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
         <Function Name="spI_tbl_nder_Analize_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_sup" Type="int" Mode="In" />
           <Parameter Name="Analize_tip_id" Type="int" Mode="In" />
@@ -294,10 +299,20 @@
           <Parameter Name="perdorues_id" Type="int" Mode="In" />
           <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="spI_tbl_nder_klient_project" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="klient_id" Type="int" Mode="In" />
+          <Parameter Name="project_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
         <Function Name="spI_tbl_nder_klient_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_sup" Type="int" Mode="In" />
           <Parameter Name="klient_tip_id" Type="int" Mode="In" />
           <Parameter Name="klient_tip_kategori_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_nivel_teknologji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nivel_id" Type="int" Mode="In" />
+          <Parameter Name="teknologji_id" Type="int" Mode="In" />
           <Parameter Name="perdorues_id" Type="int" Mode="In" />
         </Function>
         <Function Name="spI_tbl_nder_niveli_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -316,10 +331,25 @@
           <Parameter Name="perdorues_id" Type="int" Mode="In" />
           <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="spI_tbl_nder_niveli_personel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="niveli_id" Type="int" Mode="In" />
+          <Parameter Name="personel_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_niveli_skeda" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="niveli_id" Type="int" Mode="In" />
+          <Parameter Name="skeda_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
         <Function Name="spI_tbl_nder_niveli_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_sup" Type="int" Mode="In" />
           <Parameter Name="niveli_tip_id" Type="int" Mode="In" />
           <Parameter Name="niveli_tip_kategori_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_personel_analize" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="personel_id" Type="int" Mode="In" />
+          <Parameter Name="analize_id" Type="int" Mode="In" />
           <Parameter Name="perdorues_id" Type="int" Mode="In" />
         </Function>
         <Function Name="spI_tbl_nder_personel_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -338,10 +368,31 @@
           <Parameter Name="perdorues_id" Type="int" Mode="In" />
           <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="spI_tbl_nder_personel_task" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="personel_id" Type="int" Mode="In" />
+          <Parameter Name="task_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_personel_teknologji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="personel_id" Type="int" Mode="In" />
+          <Parameter Name="teknologji_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_personel_teknologji_nivel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="personel_id" Type="int" Mode="In" />
+          <Parameter Name="teknologji_id" Type="int" Mode="In" />
+          <Parameter Name="nivel_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
         <Function Name="spI_tbl_nder_personel_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_sup" Type="int" Mode="In" />
           <Parameter Name="personel_tip_id" Type="int" Mode="In" />
           <Parameter Name="personel_tip_kategori_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_project_analize" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="project_id" Type="int" Mode="In" />
+          <Parameter Name="analize_id" Type="int" Mode="In" />
           <Parameter Name="perdorues_id" Type="int" Mode="In" />
         </Function>
         <Function Name="spI_tbl_nder_project_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -360,10 +411,60 @@
           <Parameter Name="perdorues_id" Type="int" Mode="In" />
           <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="spI_tbl_nder_project_personel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="project_id" Type="int" Mode="In" />
+          <Parameter Name="personel_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_project_task" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="project_id" Type="int" Mode="In" />
+          <Parameter Name="task_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_project_teknologji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="project_id" Type="int" Mode="In" />
+          <Parameter Name="teknologji_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
         <Function Name="spI_tbl_nder_project_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_sup" Type="int" Mode="In" />
           <Parameter Name="project_tip_id" Type="int" Mode="In" />
           <Parameter Name="project_tip_kategori_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_pyetje_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nrrendor" Type="int" Mode="InOut" />
+          <Parameter Name="id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="id_sup_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_ndr" Type="int" Mode="In" />
+          <Parameter Name="id_ndr_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="pyetje_id" Type="int" Mode="In" />
+          <Parameter Name="pyetje_id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="pyetje_kategori_id" Type="int" Mode="In" />
+          <Parameter Name="pyetje_kategori_id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="aktiv" Type="bit" Mode="In" />
+          <Parameter Name="data_krijimit" Type="datetime" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_pyetje_nivel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pyetje_id" Type="int" Mode="In" />
+          <Parameter Name="nivel_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pyetje_id" Type="int" Mode="In" />
+          <Parameter Name="pyetje_info_id" Type="int" Mode="In" />
+          <Parameter Name="testim_id" Type="int" Mode="In" />
+          <Parameter Name="personel_id" Type="int" Mode="In" />
+          <Parameter Name="nivel_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_pyetje_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="pyetje_tip_id" Type="int" Mode="In" />
+          <Parameter Name="pyetje_tip_kategori_id" Type="int" Mode="In" />
           <Parameter Name="perdorues_id" Type="int" Mode="In" />
         </Function>
         <Function Name="spI_tbl_nder_skeda_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -381,6 +482,16 @@
           <Parameter Name="data_krijimit" Type="datetime" Mode="In" />
           <Parameter Name="perdorues_id" Type="int" Mode="In" />
           <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_skeda_personel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="skeda_id" Type="int" Mode="In" />
+          <Parameter Name="personel_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_nder_skeda_project" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="skeda_id" Type="int" Mode="In" />
+          <Parameter Name="project_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
         </Function>
         <Function Name="spI_tbl_nder_skeda_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_sup" Type="int" Mode="In" />
@@ -681,6 +792,92 @@
           <Parameter Name="Perdorues_id" Type="int" Mode="In" />
         </Function>
         <Function Name="spI_tbl_project_tip_info_ch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="tip_info_id" Type="int" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="VA" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_pyetje" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="tip_id" Type="int" Mode="In" />
+          <Parameter Name="kodi" Type="varchar" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="kategoria" Type="int" Mode="In" />
+          <Parameter Name="kompleks" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_pyetje_access" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="id_sup_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_ndr" Type="int" Mode="In" />
+          <Parameter Name="id_ndr_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="pyetje_id" Type="int" Mode="In" />
+          <Parameter Name="pyetje_id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="perdoruesi_id" Type="int" Mode="In" />
+          <Parameter Name="perdoruesi_id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="aktiv" Type="bit" Mode="In" />
+          <Parameter Name="data_krijimit" Type="datetime" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_pyetje_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="element_id" Type="int" Mode="In" />
+          <Parameter Name="tip_info_id" Type="int" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_pyetje_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="elcat" Type="bit" Mode="In" />
+          <Parameter Name="kodi" Type="varchar" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar(max)" Mode="In" />
+          <Parameter Name="rradha" Type="float" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_pyetje_tip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="elcat" Type="bit" Mode="In" />
+          <Parameter Name="kodi" Type="varchar" Mode="In" />
+          <Parameter Name="kodifillim" Type="int" Mode="In" />
+          <Parameter Name="kodimbarim" Type="int" Mode="In" />
+          <Parameter Name="kodiaktual" Type="int" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar(max)" Mode="In" />
+          <Parameter Name="rradha" Type="float" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_pyetje_tip_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="tip_id" Type="int" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar(max)" Mode="In" />
+          <Parameter Name="veti" Type="int" Mode="In" />
+          <Parameter Name="detyrueshme" Type="bit" Mode="In" />
+          <Parameter Name="Rradha" Type="float" Mode="In" />
+          <Parameter Name="db" Type="int" Mode="In" />
+          <Parameter Name="skedar" Type="bit" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_pyetje_tip_info_ch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_sup" Type="int" Mode="In" />
           <Parameter Name="tip_info_id" Type="int" Mode="In" />
           <Parameter Name="Emertimi" Type="varchar" Mode="In" />
@@ -1482,6 +1679,56 @@
           <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
           <Parameter Name="ConsiderNull_perdorues_id_gen" Type="bit" Mode="In" />
         </Function>
+        <Function Name="spU_tbl_nder_pyetje_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nrrendor" Type="int" Mode="In" />
+          <Parameter Name="id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConsiderNull_id_gen" Type="bit" Mode="In" />
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_id_sup" Type="bit" Mode="In" />
+          <Parameter Name="id_sup_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConsiderNull_id_sup_gen" Type="bit" Mode="In" />
+          <Parameter Name="pyetje_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_pyetje_id" Type="bit" Mode="In" />
+          <Parameter Name="pyetje_id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pyetje_id_gen" Type="bit" Mode="In" />
+          <Parameter Name="pyetje_kategori_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_pyetje_kategori_id" Type="bit" Mode="In" />
+          <Parameter Name="pyetje_kategori_id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pyetje_kategori_id_gen" Type="bit" Mode="In" />
+          <Parameter Name="aktiv" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_aktiv" Type="bit" Mode="In" />
+          <Parameter Name="data_krijimit" Type="datetime" Mode="In" />
+          <Parameter Name="ConsiderNull_data_krijimit" Type="bit" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_perdorues_id" Type="bit" Mode="In" />
+          <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConsiderNull_perdorues_id_gen" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spU_tbl_nder_pyetje_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nrrendor" Type="int" Mode="In" />
+          <Parameter Name="id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConsiderNull_id_gen" Type="bit" Mode="In" />
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_id_sup" Type="bit" Mode="In" />
+          <Parameter Name="id_sup_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConsiderNull_id_sup_gen" Type="bit" Mode="In" />
+          <Parameter Name="pyetje_tip_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_pyetje_tip_id" Type="bit" Mode="In" />
+          <Parameter Name="pyetje_tip_id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pyetje_tip_id_gen" Type="bit" Mode="In" />
+          <Parameter Name="pyetje_tip_kategori_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_pyetje_tip_kategori_id" Type="bit" Mode="In" />
+          <Parameter Name="pyetje_tip_kategori_id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pyetje_tip_kategori_id_gen" Type="bit" Mode="In" />
+          <Parameter Name="aktiv" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_aktiv" Type="bit" Mode="In" />
+          <Parameter Name="data_krijimit" Type="datetime" Mode="In" />
+          <Parameter Name="ConsiderNull_data_krijimit" Type="bit" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_perdorues_id" Type="bit" Mode="In" />
+          <Parameter Name="perdorues_id_gen" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConsiderNull_perdorues_id_gen" Type="bit" Mode="In" />
+        </Function>
         <Function Name="spU_tbl_nder_skeda_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nrrendor" Type="int" Mode="In" />
           <Parameter Name="id_gen" Type="nvarchar" Mode="In" />
@@ -2058,6 +2305,148 @@
           <Parameter Name="Perdorues_id" Type="int" Mode="In" />
           <Parameter Name="ConsiderNull_Perdorues_id" Type="bit" Mode="In" />
         </Function>
+        <Function Name="spU_tbl_pyetje" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nrrendor" Type="int" Mode="In" />
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_id_sup" Type="bit" Mode="In" />
+          <Parameter Name="tip_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_tip_id" Type="bit" Mode="In" />
+          <Parameter Name="kodi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_kodi" Type="bit" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimi" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimi" Type="bit" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimiang" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimiang" Type="bit" Mode="In" />
+          <Parameter Name="Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_Perdorues_id" Type="bit" Mode="In" />
+          <Parameter Name="kompleks" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_kompleks" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spU_tbl_pyetje_access" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pyetje_id" Type="int" Mode="In" />
+          <Parameter Name="perdoruesi_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spU_tbl_pyetje_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nrrendor" Type="int" Mode="In" />
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_id_sup" Type="bit" Mode="In" />
+          <Parameter Name="element_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_element_id" Type="bit" Mode="In" />
+          <Parameter Name="tip_info_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_tip_info_id" Type="bit" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimi" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimi" Type="bit" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimiang" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimiang" Type="bit" Mode="In" />
+          <Parameter Name="Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_Perdorues_id" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spU_tbl_pyetje_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nrrendor" Type="int" Mode="In" />
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_id_sup" Type="bit" Mode="In" />
+          <Parameter Name="elcat" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_elcat" Type="bit" Mode="In" />
+          <Parameter Name="kodi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_kodi" Type="bit" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimi" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimi" Type="bit" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimiang" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimiang" Type="bit" Mode="In" />
+          <Parameter Name="Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_Perdorues_id" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spU_tbl_pyetje_tip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nrrendor" Type="int" Mode="In" />
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_id_sup" Type="bit" Mode="In" />
+          <Parameter Name="elcat" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_elcat" Type="bit" Mode="In" />
+          <Parameter Name="kodi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_kodi" Type="bit" Mode="In" />
+          <Parameter Name="kodifillim" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_kodifillim" Type="bit" Mode="In" />
+          <Parameter Name="kodiaktual" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_kodiaktual" Type="bit" Mode="In" />
+          <Parameter Name="kodimbarim" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_kodimbarim" Type="bit" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimi" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimi" Type="bit" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimiang" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimiang" Type="bit" Mode="In" />
+          <Parameter Name="Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_Perdorues_id" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spU_tbl_pyetje_tip_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nrrendor" Type="int" Mode="In" />
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_id_sup" Type="bit" Mode="In" />
+          <Parameter Name="tip_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_tip_id" Type="bit" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimi" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimi" Type="bit" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimiang" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimiang" Type="bit" Mode="In" />
+          <Parameter Name="veti" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_veti" Type="bit" Mode="In" />
+          <Parameter Name="skedar" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_skedar" Type="bit" Mode="In" />
+          <Parameter Name="detyrueshme" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_detyrueshme" Type="bit" Mode="In" />
+          <Parameter Name="Rradha" Type="float" Mode="In" />
+          <Parameter Name="ConsiderNull_Rradha" Type="bit" Mode="In" />
+          <Parameter Name="Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_Perdorues_id" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spU_tbl_pyetje_tip_info_ch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nrrendor" Type="int" Mode="In" />
+          <Parameter Name="id_sup" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_id_sup" Type="bit" Mode="In" />
+          <Parameter Name="tip_info_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_tip_info_id" Type="bit" Mode="In" />
+          <Parameter Name="Emertimi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimi" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimi" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimi" Type="bit" Mode="In" />
+          <Parameter Name="Emertimiang" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_Emertimiang" Type="bit" Mode="In" />
+          <Parameter Name="pershkrimiang" Type="varchar" Mode="In" />
+          <Parameter Name="ConsiderNull_pershkrimiang" Type="bit" Mode="In" />
+          <Parameter Name="Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="ConsiderNull_Aktiv" Type="bit" Mode="In" />
+          <Parameter Name="Perdorues_id" Type="int" Mode="In" />
+          <Parameter Name="ConsiderNull_Perdorues_id" Type="bit" Mode="In" />
+        </Function>
         <Function Name="spU_tbl_skeda" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nrrendor" Type="int" Mode="In" />
           <Parameter Name="id_sup" Type="int" Mode="In" />
@@ -2485,17 +2874,16 @@
           <Parameter Name="ConsiderNull_Perdorues_id" Type="bit" Mode="In" />
         </Function>
         <EntityContainer Name="tasketModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="tasketModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="tasketEntities1" annotation:LazyLoadingEnabled="true" >
           <FunctionImport Name="FSHIJALL">
-            <Parameter Name="tabela" Mode="In" Type="String" />
+          <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRec">
-            <Parameter Name="tabela" Mode="In" Type="String" />
+          <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRecByEmertimi">
             <Parameter Name="tabela" Mode="In" Type="String" />
@@ -4969,6 +5357,401 @@
             <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_pyetje_kategori">
+            <Parameter Name="nrrendor" Mode="InOut" Type="Int32" />
+            <Parameter Name="id_gen" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
+            <Parameter Name="id_ndr" Mode="In" Type="Int32" />
+            <Parameter Name="id_ndr_gen" Mode="In" Type="String" />
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_id_gen" Mode="In" Type="String" />
+            <Parameter Name="pyetje_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_kategori_id_gen" Mode="In" Type="String" />
+            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_pyetje_tip_kategori">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_tip_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="kategoria" Mode="In" Type="Int32" />
+            <Parameter Name="kompleks" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_access">
+            <Parameter Name="id_gen" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
+            <Parameter Name="id_ndr" Mode="In" Type="Int32" />
+            <Parameter Name="id_ndr_gen" Mode="In" Type="String" />
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_id_gen" Mode="In" Type="String" />
+            <Parameter Name="perdoruesi_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdoruesi_id_gen" Mode="In" Type="String" />
+            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_info">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="element_id" Mode="In" Type="Int32" />
+            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_kategori">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="elcat" Mode="In" Type="Boolean" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="rradha" Mode="In" Type="Double" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_tip">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="elcat" Mode="In" Type="Boolean" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="kodifillim" Mode="In" Type="Int32" />
+            <Parameter Name="kodimbarim" Mode="In" Type="Int32" />
+            <Parameter Name="kodiaktual" Mode="In" Type="Int32" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="rradha" Mode="In" Type="Double" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_tip_info">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="veti" Mode="In" Type="Int32" />
+            <Parameter Name="detyrueshme" Mode="In" Type="Boolean" />
+            <Parameter Name="Rradha" Mode="In" Type="Double" />
+            <Parameter Name="db" Mode="In" Type="Int32" />
+            <Parameter Name="skedar" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_tip_info_ch">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="VA" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_nder_pyetje_kategori">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_id_sup_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_pyetje_id" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pyetje_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_pyetje_kategori_id" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_kategori_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pyetje_kategori_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
+            <Parameter Name="ConsiderNull_data_krijimit" Mode="In" Type="Boolean" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_perdorues_id" Mode="In" Type="Boolean" />
+            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_perdorues_id_gen" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_nder_pyetje_tip_kategori">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_id_sup_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_pyetje_tip_id" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_tip_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pyetje_tip_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_tip_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_pyetje_tip_kategori_id" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_tip_kategori_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pyetje_tip_kategori_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
+            <Parameter Name="ConsiderNull_data_krijimit" Mode="In" Type="Boolean" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_perdorues_id" Mode="In" Type="Boolean" />
+            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_perdorues_id_gen" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_tip_id" Mode="In" Type="Boolean" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_kodi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+            <Parameter Name="kompleks" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_kompleks" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_access">
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdoruesi_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_info">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="element_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_element_id" Mode="In" Type="Boolean" />
+            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_tip_info_id" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_kategori">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="elcat" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_elcat" Mode="In" Type="Boolean" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_kodi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_tip">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="elcat" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_elcat" Mode="In" Type="Boolean" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_kodi" Mode="In" Type="Boolean" />
+            <Parameter Name="kodifillim" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_kodifillim" Mode="In" Type="Boolean" />
+            <Parameter Name="kodiaktual" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_kodiaktual" Mode="In" Type="Boolean" />
+            <Parameter Name="kodimbarim" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_kodimbarim" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_tip_info">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_tip_id" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="veti" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_veti" Mode="In" Type="Boolean" />
+            <Parameter Name="skedar" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_skedar" Mode="In" Type="Boolean" />
+            <Parameter Name="detyrueshme" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_detyrueshme" Mode="In" Type="Boolean" />
+            <Parameter Name="Rradha" Mode="In" Type="Double" />
+            <Parameter Name="ConsiderNull_Rradha" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_tip_info_ch">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_tip_info_id" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_analize_task">
+            <Parameter Name="analize_id" Mode="In" Type="Int32" />
+            <Parameter Name="task_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_klient_project">
+            <Parameter Name="klient_id" Mode="In" Type="Int32" />
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_nivel_teknologji">
+            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
+            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_niveli_personel">
+            <Parameter Name="niveli_id" Mode="In" Type="Int32" />
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_niveli_skeda">
+            <Parameter Name="niveli_id" Mode="In" Type="Int32" />
+            <Parameter Name="skeda_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_personel_analize">
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="analize_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_personel_task">
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="task_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_personel_teknologji">
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_personel_teknologji_nivel">
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
+            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_project_analize">
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="analize_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_project_personel">
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_project_task">
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="task_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_project_teknologji">
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_pyetje_nivel">
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_pyetje_personel_nivel">
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_skeda_personel">
+            <Parameter Name="skeda_id" Mode="In" Type="Int32" />
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_skeda_project">
+            <Parameter Name="skeda_id" Mode="In" Type="Int32" />
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo">
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_info_id" Mode="In" Type="Int32" />
+            <Parameter Name="testim_id" Mode="In" Type="Int32" />
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -5167,6 +5950,41 @@
           <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip" />
           <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip_info" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip_info" />
           <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje" FunctionName="tasketModel.Store.spI_tbl_pyetje" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_access" FunctionName="tasketModel.Store.spI_tbl_pyetje_access" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_info" FunctionName="tasketModel.Store.spI_tbl_pyetje_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_kategori" FunctionName="tasketModel.Store.spI_tbl_pyetje_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_tip" FunctionName="tasketModel.Store.spI_tbl_pyetje_tip" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_tip_info" FunctionName="tasketModel.Store.spI_tbl_pyetje_tip_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_pyetje_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_pyetje_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_pyetje_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_pyetje_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_pyetje_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje" FunctionName="tasketModel.Store.spU_tbl_pyetje" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_access" FunctionName="tasketModel.Store.spU_tbl_pyetje_access" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_info" FunctionName="tasketModel.Store.spU_tbl_pyetje_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_kategori" FunctionName="tasketModel.Store.spU_tbl_pyetje_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_tip" FunctionName="tasketModel.Store.spU_tbl_pyetje_tip" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_tip_info" FunctionName="tasketModel.Store.spU_tbl_pyetje_tip_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_pyetje_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_analize_task" FunctionName="tasketModel.Store.spI_tbl_nder_analize_task" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_klient_project" FunctionName="tasketModel.Store.spI_tbl_nder_klient_project" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_nivel_teknologji" FunctionName="tasketModel.Store.spI_tbl_nder_nivel_teknologji" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_niveli_personel" FunctionName="tasketModel.Store.spI_tbl_nder_niveli_personel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_niveli_skeda" FunctionName="tasketModel.Store.spI_tbl_nder_niveli_skeda" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_analize" FunctionName="tasketModel.Store.spI_tbl_nder_personel_analize" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_task" FunctionName="tasketModel.Store.spI_tbl_nder_personel_task" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_teknologji" FunctionName="tasketModel.Store.spI_tbl_nder_personel_teknologji" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_teknologji_nivel" FunctionName="tasketModel.Store.spI_tbl_nder_personel_teknologji_nivel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_analize" FunctionName="tasketModel.Store.spI_tbl_nder_project_analize" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_personel" FunctionName="tasketModel.Store.spI_tbl_nder_project_personel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_task" FunctionName="tasketModel.Store.spI_tbl_nder_project_task" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_teknologji" FunctionName="tasketModel.Store.spI_tbl_nder_project_teknologji" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_nivel" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_nivel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_personel" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_personel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_project" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_project" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -5181,7 +5999,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
