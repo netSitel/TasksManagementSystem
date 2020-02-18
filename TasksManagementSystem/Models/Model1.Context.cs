@@ -37,153 +37,6 @@ namespace TasksManagementSystem.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("FSHIJALL", tabelaParameter);
         }
     
-        public virtual int SelectAllActiveRec(string tabela)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRec", tabelaParameter);
-        }
-    
-        public virtual int SelectAllActiveRecByEmertimi(string tabela, string emertimi)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var emertimiParameter = emertimi != null ?
-                new ObjectParameter("emertimi", emertimi) :
-                new ObjectParameter("emertimi", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByEmertimi", tabelaParameter, emertimiParameter);
-        }
-    
-        public virtual int SelectAllActiveRecByEmertimi2(string tabela, string emertimi)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var emertimiParameter = emertimi != null ?
-                new ObjectParameter("emertimi", emertimi) :
-                new ObjectParameter("emertimi", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByEmertimi2", tabelaParameter, emertimiParameter);
-        }
-    
-        public virtual int SelectAllActiveRecByEmertimiAndSup(string tabela, string id_sup, string emertimi)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var id_supParameter = id_sup != null ?
-                new ObjectParameter("id_sup", id_sup) :
-                new ObjectParameter("id_sup", typeof(string));
-    
-            var emertimiParameter = emertimi != null ?
-                new ObjectParameter("emertimi", emertimi) :
-                new ObjectParameter("emertimi", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByEmertimiAndSup", tabelaParameter, id_supParameter, emertimiParameter);
-        }
-    
-        public virtual int SelectAllActiveRecByKodi(string tabela, string kodi)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var kodiParameter = kodi != null ?
-                new ObjectParameter("kodi", kodi) :
-                new ObjectParameter("kodi", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByKodi", tabelaParameter, kodiParameter);
-        }
-    
-        public virtual int SelectAllActiveRecByKodiAndSup(string tabela, string kodi, string id_sup)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var kodiParameter = kodi != null ?
-                new ObjectParameter("kodi", kodi) :
-                new ObjectParameter("kodi", typeof(string));
-    
-            var id_supParameter = id_sup != null ?
-                new ObjectParameter("id_sup", id_sup) :
-                new ObjectParameter("id_sup", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByKodiAndSup", tabelaParameter, kodiParameter, id_supParameter);
-        }
-    
-        public virtual int SelectAllActiveRecByNrrendor(string tabela, string nrrendor)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var nrrendorParameter = nrrendor != null ?
-                new ObjectParameter("nrrendor", nrrendor) :
-                new ObjectParameter("nrrendor", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByNrrendor", tabelaParameter, nrrendorParameter);
-        }
-    
-        public virtual int SelectAllActiveRecBySup(string tabela, string id_sup)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var id_supParameter = id_sup != null ?
-                new ObjectParameter("id_sup", id_sup) :
-                new ObjectParameter("id_sup", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecBySup", tabelaParameter, id_supParameter);
-        }
-    
-        public virtual int SelectAllActiveRecByTipId(string tabela, string tip_id)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var tip_idParameter = tip_id != null ?
-                new ObjectParameter("tip_id", tip_id) :
-                new ObjectParameter("tip_id", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByTipId", tabelaParameter, tip_idParameter);
-        }
-    
-        public virtual int SelectAllActiveRecByTipId2(string tabela, string tip_id)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var tip_idParameter = tip_id != null ?
-                new ObjectParameter("tip_id", tip_id) :
-                new ObjectParameter("tip_id", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByTipId2", tabelaParameter, tip_idParameter);
-        }
-    
-        public virtual int SelectAllActiveRecByTipInfoId(string tabela, string tip_info_id)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var tip_info_idParameter = tip_info_id != null ?
-                new ObjectParameter("tip_info_id", tip_info_id) :
-                new ObjectParameter("tip_info_id", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByTipInfoId", tabelaParameter, tip_info_idParameter);
-        }
-    
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
             var diagramnameParameter = diagramname != null ?
@@ -10806,7 +10659,28 @@ namespace TasksManagementSystem.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_pyetje_nivel", pyetje_idParameter, nivel_idParameter, perdorues_idParameter);
         }
-        
+    
+        public virtual int spI_tbl_nder_pyetje_personel_nivel(Nullable<int> pyetje_id, Nullable<int> personel_id, Nullable<int> nivel_id, Nullable<int> perdorues_id)
+        {
+            var pyetje_idParameter = pyetje_id.HasValue ?
+                new ObjectParameter("pyetje_id", pyetje_id) :
+                new ObjectParameter("pyetje_id", typeof(int));
+    
+            var personel_idParameter = personel_id.HasValue ?
+                new ObjectParameter("personel_id", personel_id) :
+                new ObjectParameter("personel_id", typeof(int));
+    
+            var nivel_idParameter = nivel_id.HasValue ?
+                new ObjectParameter("nivel_id", nivel_id) :
+                new ObjectParameter("nivel_id", typeof(int));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_pyetje_personel_nivel", pyetje_idParameter, personel_idParameter, nivel_idParameter, perdorues_idParameter);
+        }
+    
         public virtual int spI_tbl_nder_skeda_personel(Nullable<int> skeda_id, Nullable<int> personel_id, Nullable<int> perdorues_id)
         {
             var skeda_idParameter = skeda_id.HasValue ?
@@ -10868,6 +10742,673 @@ namespace TasksManagementSystem.Models
                 new ObjectParameter("perdorues_id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo", pyetje_idParameter, pyetje_info_idParameter, testim_idParameter, personel_idParameter, nivel_idParameter, perdorues_idParameter);
+        }
+    
+        public virtual int spI_tbl_error(string pershkrimi, string emertimi, Nullable<int> perdorues_id)
+        {
+            var pershkrimiParameter = pershkrimi != null ?
+                new ObjectParameter("pershkrimi", pershkrimi) :
+                new ObjectParameter("pershkrimi", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            var perdorues_idParameter = perdorues_id.HasValue ?
+                new ObjectParameter("perdorues_id", perdorues_id) :
+                new ObjectParameter("perdorues_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spI_tbl_error", pershkrimiParameter, emertimiParameter, perdorues_idParameter);
+        }
+    
+        public virtual ObjectResult<SelectA_Result> SelectA(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectA_Result>("SelectA", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRec_Entitet_Result> SelectAllActiveRec_Entitet(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRec_Entitet_Result>("SelectAllActiveRec_Entitet", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRec_Entitet_access_Result> SelectAllActiveRec_Entitet_access(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRec_Entitet_access_Result>("SelectAllActiveRec_Entitet_access", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRec_Entitet_info_Result> SelectAllActiveRec_Entitet_info(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRec_Entitet_info_Result>("SelectAllActiveRec_Entitet_info", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRec_Entitet_kategori_Result> SelectAllActiveRec_Entitet_kategori(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRec_Entitet_kategori_Result>("SelectAllActiveRec_Entitet_kategori", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRec_Entitet_tip_Result> SelectAllActiveRec_Entitet_tip(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRec_Entitet_tip_Result>("SelectAllActiveRec_Entitet_tip", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRec_Entitet_tip_info_Result> SelectAllActiveRec_Entitet_tip_info(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRec_Entitet_tip_info_Result>("SelectAllActiveRec_Entitet_tip_info", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRec_Entitet_tip_info_ch_Result> SelectAllActiveRec_Entitet_tip_info_ch(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRec_Entitet_tip_info_ch_Result>("SelectAllActiveRec_Entitet_tip_info_ch", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRec_nder_Entitet_kategori_Result> SelectAllActiveRec_nder_Entitet_kategori(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRec_nder_Entitet_kategori_Result>("SelectAllActiveRec_nder_Entitet_kategori", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRec_nder_Entitet_tip_kategori_Result> SelectAllActiveRec_nder_Entitet_tip_kategori(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRec_nder_Entitet_tip_kategori_Result>("SelectAllActiveRec_nder_Entitet_tip_kategori", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimi_Entitet_Result> SelectAllActiveRecByEmertimi_Entitet(string tabela, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimi_Entitet_Result>("SelectAllActiveRecByEmertimi_Entitet", tabelaParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimi_Entitet_access_Result> SelectAllActiveRecByEmertimi_Entitet_access(string tabela, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimi_Entitet_access_Result>("SelectAllActiveRecByEmertimi_Entitet_access", tabelaParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimi_Entitet_info_Result> SelectAllActiveRecByEmertimi_Entitet_info(string tabela, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimi_Entitet_info_Result>("SelectAllActiveRecByEmertimi_Entitet_info", tabelaParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimi_Entitet_kategori_Result> SelectAllActiveRecByEmertimi_Entitet_kategori(string tabela, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimi_Entitet_kategori_Result>("SelectAllActiveRecByEmertimi_Entitet_kategori", tabelaParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimi_Entitet_tip_Result> SelectAllActiveRecByEmertimi_Entitet_tip(string tabela, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimi_Entitet_tip_Result>("SelectAllActiveRecByEmertimi_Entitet_tip", tabelaParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimi_Entitet_tip_info_Result> SelectAllActiveRecByEmertimi_Entitet_tip_info(string tabela, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimi_Entitet_tip_info_Result>("SelectAllActiveRecByEmertimi_Entitet_tip_info", tabelaParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimi_Entitet_tip_info_ch_Result> SelectAllActiveRecByEmertimi_Entitet_tip_info_ch(string tabela, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimi_Entitet_tip_info_ch_Result>("SelectAllActiveRecByEmertimi_Entitet_tip_info_ch", tabelaParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimi_nder_Entitet_kategori_Result> SelectAllActiveRecByEmertimi_nder_Entitet_kategori(string tabela, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimi_nder_Entitet_kategori_Result>("SelectAllActiveRecByEmertimi_nder_Entitet_kategori", tabelaParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori_Result> SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori(string tabela, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori_Result>("SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori", tabelaParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_Result> SelectAllActiveRecByEmertimiAndSup_Entitet(string tabela, string id_sup, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimiAndSup_Entitet_Result>("SelectAllActiveRecByEmertimiAndSup_Entitet", tabelaParameter, id_supParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_access(string tabela, string id_sup, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result>("SelectAllActiveRecByEmertimiAndSup_Entitet_access", tabelaParameter, id_supParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_info_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_info(string tabela, string id_sup, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimiAndSup_Entitet_info_Result>("SelectAllActiveRecByEmertimiAndSup_Entitet_info", tabelaParameter, id_supParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_kategori_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_kategori(string tabela, string id_sup, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimiAndSup_Entitet_kategori_Result>("SelectAllActiveRecByEmertimiAndSup_Entitet_kategori", tabelaParameter, id_supParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_tip(string tabela, string id_sup, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_Result>("SelectAllActiveRecByEmertimiAndSup_Entitet_tip", tabelaParameter, id_supParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info(string tabela, string id_sup, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_Result>("SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info", tabelaParameter, id_supParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch(string tabela, string id_sup, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch_Result>("SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch", tabelaParameter, id_supParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori_Result> SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori(string tabela, string id_sup, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori_Result>("SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori", tabelaParameter, id_supParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori_Result> SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori(string tabela, string id_sup, string emertimi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            var emertimiParameter = emertimi != null ?
+                new ObjectParameter("emertimi", emertimi) :
+                new ObjectParameter("emertimi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori_Result>("SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori", tabelaParameter, id_supParameter, emertimiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByKodi_Entitet_Result> SelectAllActiveRecByKodi_Entitet(string tabela, string kodi)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var kodiParameter = kodi != null ?
+                new ObjectParameter("kodi", kodi) :
+                new ObjectParameter("kodi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByKodi_Entitet_Result>("SelectAllActiveRecByKodi_Entitet", tabelaParameter, kodiParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByKodiAndSup_Entitet_Result> SelectAllActiveRecByKodiAndSup_Entitet(string tabela, string kodi, string id_sup)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var kodiParameter = kodi != null ?
+                new ObjectParameter("kodi", kodi) :
+                new ObjectParameter("kodi", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByKodiAndSup_Entitet_Result>("SelectAllActiveRecByKodiAndSup_Entitet", tabelaParameter, kodiParameter, id_supParameter);
+        }
+    
+        public virtual int SelectAllActiveRecByNrrendor_Entitet(string tabela, string nrrendor)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrrendorParameter = nrrendor != null ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByNrrendor_Entitet", tabelaParameter, nrrendorParameter);
+        }
+    
+        public virtual int SelectAllActiveRecByNrrendor_Entitet_access(string tabela, string nrrendor)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrrendorParameter = nrrendor != null ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByNrrendor_Entitet_access", tabelaParameter, nrrendorParameter);
+        }
+    
+        public virtual int SelectAllActiveRecByNrrendor_Entitet_info(string tabela, string nrrendor)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrrendorParameter = nrrendor != null ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByNrrendor_Entitet_info", tabelaParameter, nrrendorParameter);
+        }
+    
+        public virtual int SelectAllActiveRecByNrrendor_Entitet_kategori(string tabela, string nrrendor)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrrendorParameter = nrrendor != null ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByNrrendor_Entitet_kategori", tabelaParameter, nrrendorParameter);
+        }
+    
+        public virtual int SelectAllActiveRecByNrrendor_Entitet_tip(string tabela, string nrrendor)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrrendorParameter = nrrendor != null ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByNrrendor_Entitet_tip", tabelaParameter, nrrendorParameter);
+        }
+    
+        public virtual int SelectAllActiveRecByNrrendor_Entitet_tip_info(string tabela, string nrrendor)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrrendorParameter = nrrendor != null ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByNrrendor_Entitet_tip_info", tabelaParameter, nrrendorParameter);
+        }
+    
+        public virtual int SelectAllActiveRecByNrrendor_Entitet_tip_info_ch(string tabela, string nrrendor)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrrendorParameter = nrrendor != null ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByNrrendor_Entitet_tip_info_ch", tabelaParameter, nrrendorParameter);
+        }
+    
+        public virtual int SelectAllActiveRecByNrrendor_nder_Entitet_kategori(string tabela, string nrrendor)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrrendorParameter = nrrendor != null ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByNrrendor_nder_Entitet_kategori", tabelaParameter, nrrendorParameter);
+        }
+    
+        public virtual int SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori(string tabela, string nrrendor)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrrendorParameter = nrrendor != null ?
+                new ObjectParameter("nrrendor", nrrendor) :
+                new ObjectParameter("nrrendor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori", tabelaParameter, nrrendorParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecBySup_Entitet_Result> SelectAllActiveRecBySup_Entitet(string tabela, string id_sup)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecBySup_Entitet_Result>("SelectAllActiveRecBySup_Entitet", tabelaParameter, id_supParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecBySup_Entitet_access_Result> SelectAllActiveRecBySup_Entitet_access(string tabela, string id_sup)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecBySup_Entitet_access_Result>("SelectAllActiveRecBySup_Entitet_access", tabelaParameter, id_supParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecBySup_Entitet_info_Result> SelectAllActiveRecBySup_Entitet_info(string tabela, string id_sup)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecBySup_Entitet_info_Result>("SelectAllActiveRecBySup_Entitet_info", tabelaParameter, id_supParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecBySup_Entitet_kategori_Result> SelectAllActiveRecBySup_Entitet_kategori(string tabela, string id_sup)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecBySup_Entitet_kategori_Result>("SelectAllActiveRecBySup_Entitet_kategori", tabelaParameter, id_supParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecBySup_Entitet_tip_Result> SelectAllActiveRecBySup_Entitet_tip(string tabela, string id_sup)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecBySup_Entitet_tip_Result>("SelectAllActiveRecBySup_Entitet_tip", tabelaParameter, id_supParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecBySup_Entitet_tip_info_Result> SelectAllActiveRecBySup_Entitet_tip_info(string tabela, string id_sup)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecBySup_Entitet_tip_info_Result>("SelectAllActiveRecBySup_Entitet_tip_info", tabelaParameter, id_supParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecBySup_Entitet_tip_info_ch_Result> SelectAllActiveRecBySup_Entitet_tip_info_ch(string tabela, string id_sup)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecBySup_Entitet_tip_info_ch_Result>("SelectAllActiveRecBySup_Entitet_tip_info_ch", tabelaParameter, id_supParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecBySup_nder_Entitet_kategori_Result> SelectAllActiveRecBySup_nder_Entitet_kategori(string tabela, string id_sup)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecBySup_nder_Entitet_kategori_Result>("SelectAllActiveRecBySup_nder_Entitet_kategori", tabelaParameter, id_supParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecBySup_nder_Entitet_tip_kategori_Result> SelectAllActiveRecBySup_nder_Entitet_tip_kategori(string tabela, string id_sup)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var id_supParameter = id_sup != null ?
+                new ObjectParameter("id_sup", id_sup) :
+                new ObjectParameter("id_sup", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecBySup_nder_Entitet_tip_kategori_Result>("SelectAllActiveRecBySup_nder_Entitet_tip_kategori", tabelaParameter, id_supParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByTipId_Entitet_Result> SelectAllActiveRecByTipId_Entitet(string tabela, string tip_id)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var tip_idParameter = tip_id != null ?
+                new ObjectParameter("tip_id", tip_id) :
+                new ObjectParameter("tip_id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByTipId_Entitet_Result>("SelectAllActiveRecByTipId_Entitet", tabelaParameter, tip_idParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result> SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch(string tabela, string tip_info_id)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var tip_info_idParameter = tip_info_id != null ?
+                new ObjectParameter("tip_info_id", tip_info_id) :
+                new ObjectParameter("tip_info_id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result>("SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch", tabelaParameter, tip_info_idParameter);
         }
     }
 }

@@ -9,48 +9,203 @@
         <Function Name="FSHIJALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SelectAllActiveRec" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SelectA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SelectAllActiveRecByEmertimi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SelectAllActiveRec_Entitet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRec_Entitet_access" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRec_Entitet_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRec_Entitet_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRec_Entitet_tip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRec_Entitet_tip_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRec_Entitet_tip_info_ch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRec_nder_Entitet_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRec_nder_Entitet_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimi_Entitet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
           <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SelectAllActiveRecByEmertimi2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SelectAllActiveRecByEmertimi_Entitet_access" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
           <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SelectAllActiveRecByEmertimiAndSup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SelectAllActiveRecByEmertimi_Entitet_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimi_Entitet_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimi_Entitet_tip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimi_Entitet_tip_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimi_Entitet_tip_info_ch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimi_nder_Entitet_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimiAndSup_Entitet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
           <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
           <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SelectAllActiveRecByKodi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SelectAllActiveRecByEmertimiAndSup_Entitet_access" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimiAndSup_Entitet_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimiAndSup_Entitet_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByKodi_Entitet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
           <Parameter Name="kodi" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SelectAllActiveRecByKodiAndSup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SelectAllActiveRecByKodiAndSup_Entitet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
           <Parameter Name="kodi" Type="nvarchar" Mode="In" />
           <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SelectAllActiveRecByNrrendor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SelectAllActiveRecByNrrendor_Entitet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
           <Parameter Name="nrrendor" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SelectAllActiveRecBySup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SelectAllActiveRecByNrrendor_Entitet_access" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="nrrendor" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByNrrendor_Entitet_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="nrrendor" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByNrrendor_Entitet_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="nrrendor" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByNrrendor_Entitet_tip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="nrrendor" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByNrrendor_Entitet_tip_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="nrrendor" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByNrrendor_Entitet_tip_info_ch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="nrrendor" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByNrrendor_nder_Entitet_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="nrrendor" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="nrrendor" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecBySup_Entitet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
           <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SelectAllActiveRecByTipId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SelectAllActiveRecBySup_Entitet_access" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecBySup_Entitet_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecBySup_Entitet_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecBySup_Entitet_tip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecBySup_Entitet_tip_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecBySup_Entitet_tip_info_ch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecBySup_nder_Entitet_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecBySup_nder_Entitet_tip_kategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_sup" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAllActiveRecByTipId_Entitet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
           <Parameter Name="tip_id" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SelectAllActiveRecByTipId2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
-          <Parameter Name="tip_id" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="SelectAllActiveRecByTipInfoId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
           <Parameter Name="tip_info_id" Type="nvarchar" Mode="In" />
         </Function>
@@ -169,6 +324,11 @@
           <Parameter Name="pershkrimiang" Type="varchar(max)" Mode="In" />
           <Parameter Name="Perdorues_id" Type="int" Mode="In" />
           <Parameter Name="VA" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spI_tbl_error" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pershkrimi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="emertimi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="perdorues_id" Type="int" Mode="In" />
         </Function>
         <Function Name="spI_tbl_klient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_sup" Type="int" Mode="In" />
@@ -5752,6 +5912,211 @@
             <Parameter Name="nivel_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="spI_tbl_error">
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SelectA" ReturnType="Collection(tasketModel.SelectA_Result)">
+          <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_access_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_info_ch_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_nder_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_nder_Entitet_tip_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_access_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_info_ch_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_nder_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByKodi_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByKodi_Entitet_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByKodiAndSup_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByKodiAndSup_Entitet_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_access">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_info">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_kategori">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_tip">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_tip_info">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_tip_info_ch">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_nder_Entitet_kategori">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_access_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_tip_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_tip_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_tip_info_ch_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_nder_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_nder_Entitet_tip_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByTipId_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByTipId_Entitet_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tip_id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tip_info_id" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -5764,6 +6129,789 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="SelectA_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="kompleks" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRec_Entitet_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="kompleks" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRec_Entitet_access_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_id" Nullable="true" />
+          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="perdoruesi_id" Nullable="true" />
+          <Property Type="String" Name="perdoruesi_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="true" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRec_Entitet_info_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="element_id" Nullable="true" />
+          <Property Type="String" Name="element_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRec_Entitet_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="elcat" Nullable="true" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRec_Entitet_tip_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="elcat" Nullable="true" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="kodifillim" Nullable="true" />
+          <Property Type="Int32" Name="kodimbarim" Nullable="true" />
+          <Property Type="Int32" Name="kodiaktual" Nullable="true" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRec_Entitet_tip_info_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="detyrueshme" Nullable="false" />
+          <Property Type="Int32" Name="veti" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="false" />
+          <Property Type="Int32" Name="db" Nullable="true" />
+          <Property Type="Boolean" Name="skedar" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRec_Entitet_tip_info_ch_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="VA" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRec_nder_Entitet_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_id" Nullable="true" />
+          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Analize_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRec_nder_Entitet_tip_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_tip_id" Nullable="true" />
+          <Property Type="String" Name="Analize_tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_tip_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Analize_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimi_Entitet_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="kompleks" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimi_Entitet_access_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_id" Nullable="true" />
+          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="perdoruesi_id" Nullable="true" />
+          <Property Type="String" Name="perdoruesi_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="true" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimi_Entitet_info_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="element_id" Nullable="true" />
+          <Property Type="String" Name="element_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimi_Entitet_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="elcat" Nullable="true" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimi_Entitet_tip_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="elcat" Nullable="true" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="kodifillim" Nullable="true" />
+          <Property Type="Int32" Name="kodimbarim" Nullable="true" />
+          <Property Type="Int32" Name="kodiaktual" Nullable="true" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimi_Entitet_tip_info_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="detyrueshme" Nullable="false" />
+          <Property Type="Int32" Name="veti" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="false" />
+          <Property Type="Int32" Name="db" Nullable="true" />
+          <Property Type="Boolean" Name="skedar" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimi_Entitet_tip_info_ch_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="VA" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimi_nder_Entitet_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_id" Nullable="true" />
+          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Analize_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_tip_id" Nullable="true" />
+          <Property Type="String" Name="Analize_tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_tip_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Analize_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimiAndSup_Entitet_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="kompleks" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_id" Nullable="true" />
+          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="perdoruesi_id" Nullable="true" />
+          <Property Type="String" Name="perdoruesi_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="true" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimiAndSup_Entitet_info_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="element_id" Nullable="true" />
+          <Property Type="String" Name="element_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimiAndSup_Entitet_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="elcat" Nullable="true" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="elcat" Nullable="true" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="kodifillim" Nullable="true" />
+          <Property Type="Int32" Name="kodimbarim" Nullable="true" />
+          <Property Type="Int32" Name="kodiaktual" Nullable="true" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="detyrueshme" Nullable="false" />
+          <Property Type="Int32" Name="veti" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="false" />
+          <Property Type="Int32" Name="db" Nullable="true" />
+          <Property Type="Boolean" Name="skedar" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="VA" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_id" Nullable="true" />
+          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Analize_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_tip_id" Nullable="true" />
+          <Property Type="String" Name="Analize_tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_tip_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Analize_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByKodi_Entitet_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="kompleks" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByKodiAndSup_Entitet_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="kompleks" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecBySup_Entitet_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="kompleks" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecBySup_Entitet_access_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_id" Nullable="true" />
+          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="perdoruesi_id" Nullable="true" />
+          <Property Type="String" Name="perdoruesi_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="true" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecBySup_Entitet_info_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="element_id" Nullable="true" />
+          <Property Type="String" Name="element_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecBySup_Entitet_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="elcat" Nullable="true" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecBySup_Entitet_tip_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="elcat" Nullable="true" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="kodifillim" Nullable="true" />
+          <Property Type="Int32" Name="kodimbarim" Nullable="true" />
+          <Property Type="Int32" Name="kodiaktual" Nullable="true" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecBySup_Entitet_tip_info_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="detyrueshme" Nullable="false" />
+          <Property Type="Int32" Name="veti" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="false" />
+          <Property Type="Int32" Name="db" Nullable="true" />
+          <Property Type="Boolean" Name="skedar" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecBySup_Entitet_tip_info_ch_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="VA" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecBySup_nder_Entitet_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_id" Nullable="true" />
+          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Analize_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecBySup_nder_Entitet_tip_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_tip_id" Nullable="true" />
+          <Property Type="String" Name="Analize_tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_tip_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Analize_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByTipId_Entitet_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="kompleks" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="VA" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5771,17 +6919,6 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="tasketModelStoreContainer" CdmEntityContainer="tasketEntities1" >
           <FunctionImportMapping FunctionImportName="FSHIJALL" FunctionName="tasketModel.Store.FSHIJALL" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRec" FunctionName="tasketModel.Store.SelectAllActiveRec" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi2" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi2" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimiAndSup" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimiAndSup" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByKodi" FunctionName="tasketModel.Store.SelectAllActiveRecByKodi" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByKodiAndSup" FunctionName="tasketModel.Store.SelectAllActiveRecByKodiAndSup" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup" FunctionName="tasketModel.Store.SelectAllActiveRecBySup" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByTipId" FunctionName="tasketModel.Store.SelectAllActiveRecByTipId" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByTipId2" FunctionName="tasketModel.Store.SelectAllActiveRecByTipId2" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByTipInfoId" FunctionName="tasketModel.Store.SelectAllActiveRecByTipInfoId" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="tasketModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="tasketModel.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="tasketModel.Store.sp_dropdiagram" />
@@ -5985,6 +7122,963 @@
           <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_personel" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_personel" />
           <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_project" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_project" />
           <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_error" FunctionName="tasketModel.Store.spI_tbl_error" />
+          <FunctionImportMapping FunctionImportName="SelectA" FunctionName="tasketModel.Store.SelectA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectA_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="kompleks" ColumnName="kompleks" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRec_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRec_Entitet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRec_Entitet_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="kompleks" ColumnName="kompleks" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRec_Entitet_access" FunctionName="tasketModel.Store.SelectAllActiveRec_Entitet_access">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRec_Entitet_access_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
+                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
+                <ScalarProperty Name="perdoruesi_id" ColumnName="perdoruesi_id" />
+                <ScalarProperty Name="perdoruesi_id_gen" ColumnName="perdoruesi_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRec_Entitet_info" FunctionName="tasketModel.Store.SelectAllActiveRec_Entitet_info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRec_Entitet_info_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="element_id" ColumnName="element_id" />
+                <ScalarProperty Name="element_id_gen" ColumnName="element_id_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRec_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRec_Entitet_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRec_Entitet_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="elcat" ColumnName="elcat" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRec_Entitet_tip" FunctionName="tasketModel.Store.SelectAllActiveRec_Entitet_tip">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRec_Entitet_tip_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="elcat" ColumnName="elcat" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="kodifillim" ColumnName="kodifillim" />
+                <ScalarProperty Name="kodimbarim" ColumnName="kodimbarim" />
+                <ScalarProperty Name="kodiaktual" ColumnName="kodiaktual" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRec_Entitet_tip_info" FunctionName="tasketModel.Store.SelectAllActiveRec_Entitet_tip_info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRec_Entitet_tip_info_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="detyrueshme" ColumnName="detyrueshme" />
+                <ScalarProperty Name="veti" ColumnName="veti" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="db" ColumnName="db" />
+                <ScalarProperty Name="skedar" ColumnName="skedar" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRec_Entitet_tip_info_ch" FunctionName="tasketModel.Store.SelectAllActiveRec_Entitet_tip_info_ch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRec_Entitet_tip_info_ch_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+                <ScalarProperty Name="VA" ColumnName="VA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRec_nder_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRec_nder_Entitet_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRec_nder_Entitet_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
+                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
+                <ScalarProperty Name="Analize_kategori_id" ColumnName="Analize_kategori_id" />
+                <ScalarProperty Name="Analize_kategori_id_gen" ColumnName="Analize_kategori_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRec_nder_Entitet_tip_kategori" FunctionName="tasketModel.Store.SelectAllActiveRec_nder_Entitet_tip_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRec_nder_Entitet_tip_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_tip_id" ColumnName="Analize_tip_id" />
+                <ScalarProperty Name="Analize_tip_id_gen" ColumnName="Analize_tip_id_gen" />
+                <ScalarProperty Name="Analize_tip_kategori_id" ColumnName="Analize_tip_kategori_id" />
+                <ScalarProperty Name="Analize_tip_kategori_id_gen" ColumnName="Analize_tip_kategori_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi_Entitet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimi_Entitet_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="kompleks" ColumnName="kompleks" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi_Entitet_access" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi_Entitet_access">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimi_Entitet_access_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
+                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
+                <ScalarProperty Name="perdoruesi_id" ColumnName="perdoruesi_id" />
+                <ScalarProperty Name="perdoruesi_id_gen" ColumnName="perdoruesi_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi_Entitet_info" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi_Entitet_info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimi_Entitet_info_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="element_id" ColumnName="element_id" />
+                <ScalarProperty Name="element_id_gen" ColumnName="element_id_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi_Entitet_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimi_Entitet_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="elcat" ColumnName="elcat" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi_Entitet_tip" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi_Entitet_tip">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="elcat" ColumnName="elcat" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="kodifillim" ColumnName="kodifillim" />
+                <ScalarProperty Name="kodimbarim" ColumnName="kodimbarim" />
+                <ScalarProperty Name="kodiaktual" ColumnName="kodiaktual" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi_Entitet_tip_info" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi_Entitet_tip_info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_info_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="detyrueshme" ColumnName="detyrueshme" />
+                <ScalarProperty Name="veti" ColumnName="veti" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="db" ColumnName="db" />
+                <ScalarProperty Name="skedar" ColumnName="skedar" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi_Entitet_tip_info_ch" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi_Entitet_tip_info_ch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_info_ch_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+                <ScalarProperty Name="VA" ColumnName="VA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi_nder_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi_nder_Entitet_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimi_nder_Entitet_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
+                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
+                <ScalarProperty Name="Analize_kategori_id" ColumnName="Analize_kategori_id" />
+                <ScalarProperty Name="Analize_kategori_id_gen" ColumnName="Analize_kategori_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_tip_id" ColumnName="Analize_tip_id" />
+                <ScalarProperty Name="Analize_tip_id_gen" ColumnName="Analize_tip_id_gen" />
+                <ScalarProperty Name="Analize_tip_kategori_id" ColumnName="Analize_tip_kategori_id" />
+                <ScalarProperty Name="Analize_tip_kategori_id_gen" ColumnName="Analize_tip_kategori_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimiAndSup_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimiAndSup_Entitet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="kompleks" ColumnName="kompleks" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimiAndSup_Entitet_access" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimiAndSup_Entitet_access">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
+                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
+                <ScalarProperty Name="perdoruesi_id" ColumnName="perdoruesi_id" />
+                <ScalarProperty Name="perdoruesi_id_gen" ColumnName="perdoruesi_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimiAndSup_Entitet_info" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimiAndSup_Entitet_info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_info_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="element_id" ColumnName="element_id" />
+                <ScalarProperty Name="element_id_gen" ColumnName="element_id_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimiAndSup_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimiAndSup_Entitet_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="elcat" ColumnName="elcat" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimiAndSup_Entitet_tip" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimiAndSup_Entitet_tip">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="elcat" ColumnName="elcat" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="kodifillim" ColumnName="kodifillim" />
+                <ScalarProperty Name="kodimbarim" ColumnName="kodimbarim" />
+                <ScalarProperty Name="kodiaktual" ColumnName="kodiaktual" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="detyrueshme" ColumnName="detyrueshme" />
+                <ScalarProperty Name="veti" ColumnName="veti" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="db" ColumnName="db" />
+                <ScalarProperty Name="skedar" ColumnName="skedar" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+                <ScalarProperty Name="VA" ColumnName="VA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
+                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
+                <ScalarProperty Name="Analize_kategori_id" ColumnName="Analize_kategori_id" />
+                <ScalarProperty Name="Analize_kategori_id_gen" ColumnName="Analize_kategori_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_tip_id" ColumnName="Analize_tip_id" />
+                <ScalarProperty Name="Analize_tip_id_gen" ColumnName="Analize_tip_id_gen" />
+                <ScalarProperty Name="Analize_tip_kategori_id" ColumnName="Analize_tip_kategori_id" />
+                <ScalarProperty Name="Analize_tip_kategori_id_gen" ColumnName="Analize_tip_kategori_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByKodi_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRecByKodi_Entitet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByKodi_Entitet_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="kompleks" ColumnName="kompleks" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByKodiAndSup_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRecByKodiAndSup_Entitet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByKodiAndSup_Entitet_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="kompleks" ColumnName="kompleks" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet" />
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_access" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_access" />
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_info" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_info" />
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_kategori" />
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_tip" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_tip" />
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_tip_info" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_tip_info" />
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_tip_info_ch" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_nder_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_nder_Entitet_kategori" />
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRecBySup_Entitet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecBySup_Entitet_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="kompleks" ColumnName="kompleks" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup_Entitet_access" FunctionName="tasketModel.Store.SelectAllActiveRecBySup_Entitet_access">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecBySup_Entitet_access_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
+                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
+                <ScalarProperty Name="perdoruesi_id" ColumnName="perdoruesi_id" />
+                <ScalarProperty Name="perdoruesi_id_gen" ColumnName="perdoruesi_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup_Entitet_info" FunctionName="tasketModel.Store.SelectAllActiveRecBySup_Entitet_info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecBySup_Entitet_info_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="element_id" ColumnName="element_id" />
+                <ScalarProperty Name="element_id_gen" ColumnName="element_id_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecBySup_Entitet_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecBySup_Entitet_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="elcat" ColumnName="elcat" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup_Entitet_tip" FunctionName="tasketModel.Store.SelectAllActiveRecBySup_Entitet_tip">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecBySup_Entitet_tip_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="elcat" ColumnName="elcat" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="kodifillim" ColumnName="kodifillim" />
+                <ScalarProperty Name="kodimbarim" ColumnName="kodimbarim" />
+                <ScalarProperty Name="kodiaktual" ColumnName="kodiaktual" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup_Entitet_tip_info" FunctionName="tasketModel.Store.SelectAllActiveRecBySup_Entitet_tip_info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecBySup_Entitet_tip_info_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="detyrueshme" ColumnName="detyrueshme" />
+                <ScalarProperty Name="veti" ColumnName="veti" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="db" ColumnName="db" />
+                <ScalarProperty Name="skedar" ColumnName="skedar" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup_Entitet_tip_info_ch" FunctionName="tasketModel.Store.SelectAllActiveRecBySup_Entitet_tip_info_ch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecBySup_Entitet_tip_info_ch_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+                <ScalarProperty Name="VA" ColumnName="VA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup_nder_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecBySup_nder_Entitet_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecBySup_nder_Entitet_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
+                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
+                <ScalarProperty Name="Analize_kategori_id" ColumnName="Analize_kategori_id" />
+                <ScalarProperty Name="Analize_kategori_id_gen" ColumnName="Analize_kategori_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup_nder_Entitet_tip_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecBySup_nder_Entitet_tip_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecBySup_nder_Entitet_tip_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_tip_id" ColumnName="Analize_tip_id" />
+                <ScalarProperty Name="Analize_tip_id_gen" ColumnName="Analize_tip_id_gen" />
+                <ScalarProperty Name="Analize_tip_kategori_id" ColumnName="Analize_tip_kategori_id" />
+                <ScalarProperty Name="Analize_tip_kategori_id_gen" ColumnName="Analize_tip_kategori_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByTipId_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRecByTipId_Entitet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByTipId_Entitet_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="kompleks" ColumnName="kompleks" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch" FunctionName="tasketModel.Store.SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+                <ScalarProperty Name="VA" ColumnName="VA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
