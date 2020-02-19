@@ -193,10 +193,7 @@ namespace TasksManagementSystem.Repositores
                 return result;
             }
         }
-
-       
-
-       
+        
         ObjectResult<SelectAllActiveRecByKodiAndSup_Entitet_Result> IBaseRepository.SelectAllActiveRecByKodiAndSup_Entitet(string tabela, string kodi, string id_sup)
         {
             using (var context = new tasketEntities1())
@@ -215,8 +212,86 @@ namespace TasksManagementSystem.Repositores
             }
         }
 
+        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet(string tabela, string nrrendor)
+        {
+            using (var context = new tasketEntities1())
+            {
+                var result = context.SelectAllActiveRecByNrrendor_Entitet(tabela,nrrendor);
+                return result;
+            }
+        }
 
-       
+        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_access_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_access(string tabela, string nrrendor)
+        {
+            using (var context = new tasketEntities1())
+            {
+                var result = context.SelectAllActiveRecByNrrendor_Entitet_access(tabela,nrrendor);
+                return result;
+            }
+        }
+
+        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_info_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_info(string tabela, string nrrendor)
+        {
+            using (var context = new tasketEntities1())
+            {
+                var result = context.SelectAllActiveRecByNrrendor_Entitet_info(tabela,nrrendor);
+                return result;
+            }
+        }
+
+        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_kategori(string tabela, string nrrendor)
+        {
+            using (var context = new tasketEntities1())
+            {
+                var result = context.SelectAllActiveRecByNrrendor_Entitet_kategori(tabela,nrrendor);
+                return result;
+            }
+        }
+
+        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_tip(string tabela, string nrrendor)
+        {
+            using (var context = new tasketEntities1())
+            {
+                var result = context.SelectAllActiveRecByNrrendor_Entitet_tip(tabela,nrrendor);
+                return result;
+            }
+        }
+
+        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_info_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_tip_info(string tabela, string nrrendor)
+        {
+            using (var context = new tasketEntities1())
+            {
+                var result = context.SelectAllActiveRecByNrrendor_Entitet_tip_info(tabela,nrrendor);
+                return result;
+            }
+        }
+
+        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_info_ch_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_tip_info_ch(string tabela, string nrrendor)
+        {
+            using (var context = new tasketEntities1())
+            {
+                var result = context.SelectAllActiveRecByNrrendor_Entitet_tip_info_ch(tabela,nrrendor);
+                return result;
+            }
+        }
+
+        ObjectResult<SelectAllActiveRecByNrrendor_nder_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRecByNrrendor_nder_Entitet_kategori(string tabela, string nrrendor)
+        {
+            using (var context = new tasketEntities1())
+            {
+                var result = context.SelectAllActiveRecByNrrendor_nder_Entitet_kategori(tabela,nrrendor);
+                return result;
+            }
+        }
+
+        ObjectResult<SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori_Result> IBaseRepository.SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori(string tabela, string nrrendor)
+        {
+            using (var context = new tasketEntities1())
+            {
+                var result = context.SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori(tabela,nrrendor);
+                return result;
+            }
+        }
 
         ObjectResult<SelectAllActiveRecBySup_Entitet_Result> IBaseRepository.SelectAllActiveRecBySup_Entitet(string tabela, string id_sup)
         {

@@ -54,6 +54,25 @@ namespace TasksManagementSystem.Repositores.Contracts
         ObjectResult<SelectAllActiveRecBySup_nder_Entitet_kategori_Result> SelectAllActiveRecBySup_nder_Entitet_kategori(string tabela, string id_sup);
         ObjectResult<SelectAllActiveRecBySup_nder_Entitet_tip_kategori_Result> SelectAllActiveRecBySup_nder_Entitet_tip_kategori(string tabela, string id_sup);
         ObjectResult<SelectAllActiveRecByTipId_Entitet_Result> SelectAllActiveRecByTipId_Entitet(string tabela, string tip_id);
+         ObjectResult<SelectAllActiveRecByNrrendor_Entitet_Result> SelectAllActiveRecByNrrendor_Entitet(string tabela, string nrrendor);
+
+         ObjectResult<SelectAllActiveRecByNrrendor_Entitet_access_Result> SelectAllActiveRecByNrrendor_Entitet_access(string tabela, string nrrendor);
+
+         ObjectResult<SelectAllActiveRecByNrrendor_Entitet_info_Result> SelectAllActiveRecByNrrendor_Entitet_info(string tabela, string nrrendor);
+
+         ObjectResult<SelectAllActiveRecByNrrendor_Entitet_kategori_Result> SelectAllActiveRecByNrrendor_Entitet_kategori(string tabela, string nrrendor);
+
+         ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_Result> SelectAllActiveRecByNrrendor_Entitet_tip(string tabela, string nrrendor);
+
+         ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_info_Result> SelectAllActiveRecByNrrendor_Entitet_tip_info(string tabela, string nrrendor);
+         ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_info_ch_Result> SelectAllActiveRecByNrrendor_Entitet_tip_info_ch(string tabela, string nrrendor);
+
+
+         ObjectResult<SelectAllActiveRecByNrrendor_nder_Entitet_kategori_Result> SelectAllActiveRecByNrrendor_nder_Entitet_kategori(string tabela, string nrrendor);
+
+
+         ObjectResult<SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori_Result> SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori(string tabela, string nrrendor);
         
+
     }
 }

@@ -9,6 +9,14 @@
         <Function Name="FSHIJALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="GetTree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="nr" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetTreeExcept" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+          <Parameter Name="nr" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="SelectA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
         </Function>
@@ -3042,48 +3050,203 @@
           <FunctionImport Name="FSHIJALL">
           <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRec">
+          <FunctionImport Name="SelectA" ReturnType="Collection(tasketModel.SelectA_Result)">
           <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi">
+          <FunctionImport Name="SelectAllActiveRec_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_Result)">
+          <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_access_Result)">
+          <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_info_Result)">
+          <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_kategori_Result)">
+          <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_Result)">
+          <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_info_Result)">
+          <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_info_ch_Result)">
+          <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_nder_Entitet_kategori_Result)">
+          <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRec_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_nder_Entitet_tip_kategori_Result)">
+          <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_Result)">
             <Parameter Name="tabela" Mode="In" Type="String" />
             <Parameter Name="emertimi" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi2">
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_access_Result)">
             <Parameter Name="tabela" Mode="In" Type="String" />
             <Parameter Name="emertimi" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup">
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_info_ch_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_nder_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_Result)">
             <Parameter Name="tabela" Mode="In" Type="String" />
             <Parameter Name="id_sup" Mode="In" Type="String" />
             <Parameter Name="emertimi" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByKodi">
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByKodi_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByKodi_Entitet_Result)">
             <Parameter Name="tabela" Mode="In" Type="String" />
             <Parameter Name="kodi" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByKodiAndSup">
+          <FunctionImport Name="SelectAllActiveRecByKodiAndSup_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByKodiAndSup_Entitet_Result)">
             <Parameter Name="tabela" Mode="In" Type="String" />
             <Parameter Name="kodi" Mode="In" Type="String" />
             <Parameter Name="id_sup" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByNrrendor">
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByNrrendor_Entitet_Result)">
             <Parameter Name="tabela" Mode="In" Type="String" />
             <Parameter Name="nrrendor" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecBySup">
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRecByNrrendor_Entitet_access_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByNrrendor_Entitet_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByNrrendor_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRecByNrrendor_Entitet_tip_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByNrrendor_Entitet_tip_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecByNrrendor_Entitet_tip_info_ch_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByNrrendor_nder_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nrrendor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_Result)">
             <Parameter Name="tabela" Mode="In" Type="String" />
             <Parameter Name="id_sup" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByTipId">
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_access_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_tip_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_tip_info_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_tip_info_ch_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_nder_Entitet_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecBySup_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_nder_Entitet_tip_kategori_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAllActiveRecByTipId_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByTipId_Entitet_Result)">
             <Parameter Name="tabela" Mode="In" Type="String" />
             <Parameter Name="tip_id" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByTipId2">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="tip_id" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByTipInfoId">
+          <FunctionImport Name="SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result)">
             <Parameter Name="tabela" Mode="In" Type="String" />
             <Parameter Name="tip_info_id" Mode="In" Type="String" />
           </FunctionImport>
@@ -3203,6 +3366,11 @@
             <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="VA" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="spI_tbl_error">
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="emertimi" Mode="In" Type="String" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="spI_tbl_klient">
             <Parameter Name="id_sup" Mode="In" Type="Int32" />
             <Parameter Name="tip_id" Mode="In" Type="Int32" />
@@ -3305,6 +3473,11 @@
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_analize_task">
+            <Parameter Name="analize_id" Mode="In" Type="Int32" />
+            <Parameter Name="task_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="spI_tbl_nder_Analize_tip_kategori">
             <Parameter Name="id_sup" Mode="In" Type="Int32" />
             <Parameter Name="Analize_tip_id" Mode="In" Type="Int32" />
@@ -3327,10 +3500,20 @@
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_klient_project">
+            <Parameter Name="klient_id" Mode="In" Type="Int32" />
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="spI_tbl_nder_klient_tip_kategori">
             <Parameter Name="id_sup" Mode="In" Type="Int32" />
             <Parameter Name="klient_tip_id" Mode="In" Type="Int32" />
             <Parameter Name="klient_tip_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_nivel_teknologji">
+            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
+            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spI_tbl_nder_niveli_kategori">
@@ -3349,10 +3532,25 @@
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_niveli_personel">
+            <Parameter Name="niveli_id" Mode="In" Type="Int32" />
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_niveli_skeda">
+            <Parameter Name="niveli_id" Mode="In" Type="Int32" />
+            <Parameter Name="skeda_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="spI_tbl_nder_niveli_tip_kategori">
             <Parameter Name="id_sup" Mode="In" Type="Int32" />
             <Parameter Name="niveli_tip_id" Mode="In" Type="Int32" />
             <Parameter Name="niveli_tip_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_personel_analize">
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="analize_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spI_tbl_nder_personel_kategori">
@@ -3371,10 +3569,31 @@
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_personel_task">
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="task_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_personel_teknologji">
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_personel_teknologji_nivel">
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
+            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="spI_tbl_nder_personel_tip_kategori">
             <Parameter Name="id_sup" Mode="In" Type="Int32" />
             <Parameter Name="personel_tip_id" Mode="In" Type="Int32" />
             <Parameter Name="personel_tip_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_project_analize">
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="analize_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spI_tbl_nder_project_kategori">
@@ -3393,10 +3612,60 @@
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_project_personel">
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_project_task">
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="task_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_project_teknologji">
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="spI_tbl_nder_project_tip_kategori">
             <Parameter Name="id_sup" Mode="In" Type="Int32" />
             <Parameter Name="project_tip_id" Mode="In" Type="Int32" />
             <Parameter Name="project_tip_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_pyetje_kategori">
+            <Parameter Name="nrrendor" Mode="InOut" Type="Int32" />
+            <Parameter Name="id_gen" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
+            <Parameter Name="id_ndr" Mode="In" Type="Int32" />
+            <Parameter Name="id_ndr_gen" Mode="In" Type="String" />
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_id_gen" Mode="In" Type="String" />
+            <Parameter Name="pyetje_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_kategori_id_gen" Mode="In" Type="String" />
+            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_pyetje_nivel">
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo">
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_info_id" Mode="In" Type="Int32" />
+            <Parameter Name="testim_id" Mode="In" Type="Int32" />
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_pyetje_tip_kategori">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_tip_kategori_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spI_tbl_nder_skeda_kategori">
@@ -3414,6 +3683,16 @@
             <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
             <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_skeda_personel">
+            <Parameter Name="skeda_id" Mode="In" Type="Int32" />
+            <Parameter Name="personel_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_nder_skeda_project">
+            <Parameter Name="skeda_id" Mode="In" Type="Int32" />
+            <Parameter Name="project_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spI_tbl_nder_skeda_tip_kategori">
             <Parameter Name="id_sup" Mode="In" Type="Int32" />
@@ -3714,6 +3993,92 @@
             <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spI_tbl_project_tip_info_ch">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="VA" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="kategoria" Mode="In" Type="Int32" />
+            <Parameter Name="kompleks" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_access">
+            <Parameter Name="id_gen" Mode="In" Type="String" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
+            <Parameter Name="id_ndr" Mode="In" Type="Int32" />
+            <Parameter Name="id_ndr_gen" Mode="In" Type="String" />
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="pyetje_id_gen" Mode="In" Type="String" />
+            <Parameter Name="perdoruesi_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdoruesi_id_gen" Mode="In" Type="String" />
+            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_info">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="element_id" Mode="In" Type="Int32" />
+            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_kategori">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="elcat" Mode="In" Type="Boolean" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="rradha" Mode="In" Type="Double" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_tip">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="elcat" Mode="In" Type="Boolean" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="kodifillim" Mode="In" Type="Int32" />
+            <Parameter Name="kodimbarim" Mode="In" Type="Int32" />
+            <Parameter Name="kodiaktual" Mode="In" Type="Int32" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="rradha" Mode="In" Type="Double" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_tip_info">
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="veti" Mode="In" Type="Int32" />
+            <Parameter Name="detyrueshme" Mode="In" Type="Boolean" />
+            <Parameter Name="Rradha" Mode="In" Type="Double" />
+            <Parameter Name="db" Mode="In" Type="Int32" />
+            <Parameter Name="skedar" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spI_tbl_pyetje_tip_info_ch">
             <Parameter Name="id_sup" Mode="In" Type="Int32" />
             <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
             <Parameter Name="Emertimi" Mode="In" Type="String" />
@@ -4515,6 +4880,56 @@
             <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
             <Parameter Name="ConsiderNull_perdorues_id_gen" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="spU_tbl_nder_pyetje_kategori">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_id_sup_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_pyetje_id" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pyetje_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_pyetje_kategori_id" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_kategori_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pyetje_kategori_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
+            <Parameter Name="ConsiderNull_data_krijimit" Mode="In" Type="Boolean" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_perdorues_id" Mode="In" Type="Boolean" />
+            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_perdorues_id_gen" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_nder_pyetje_tip_kategori">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_id_sup_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_pyetje_tip_id" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_tip_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pyetje_tip_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_tip_kategori_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_pyetje_tip_kategori_id" Mode="In" Type="Boolean" />
+            <Parameter Name="pyetje_tip_kategori_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pyetje_tip_kategori_id_gen" Mode="In" Type="Boolean" />
+            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
+            <Parameter Name="ConsiderNull_data_krijimit" Mode="In" Type="Boolean" />
+            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_perdorues_id" Mode="In" Type="Boolean" />
+            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_perdorues_id_gen" Mode="In" Type="Boolean" />
+          </FunctionImport>
           <FunctionImport Name="spU_tbl_nder_skeda_kategori">
             <Parameter Name="nrrendor" Mode="In" Type="Int32" />
             <Parameter Name="id_gen" Mode="In" Type="String" />
@@ -5091,6 +5506,148 @@
             <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_tip_id" Mode="In" Type="Boolean" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_kodi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+            <Parameter Name="kompleks" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_kompleks" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_access">
+            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
+            <Parameter Name="perdoruesi_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_info">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="element_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_element_id" Mode="In" Type="Boolean" />
+            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_tip_info_id" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_kategori">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="elcat" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_elcat" Mode="In" Type="Boolean" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_kodi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_tip">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="elcat" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_elcat" Mode="In" Type="Boolean" />
+            <Parameter Name="kodi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_kodi" Mode="In" Type="Boolean" />
+            <Parameter Name="kodifillim" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_kodifillim" Mode="In" Type="Boolean" />
+            <Parameter Name="kodiaktual" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_kodiaktual" Mode="In" Type="Boolean" />
+            <Parameter Name="kodimbarim" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_kodimbarim" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_tip_info">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="tip_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_tip_id" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="veti" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_veti" Mode="In" Type="Boolean" />
+            <Parameter Name="skedar" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_skedar" Mode="In" Type="Boolean" />
+            <Parameter Name="detyrueshme" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_detyrueshme" Mode="In" Type="Boolean" />
+            <Parameter Name="Rradha" Mode="In" Type="Double" />
+            <Parameter Name="ConsiderNull_Rradha" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spU_tbl_pyetje_tip_info_ch">
+            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
+            <Parameter Name="id_sup" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
+            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_tip_info_id" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimi" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
+            <Parameter Name="Emertimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
+            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
+            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
+            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
+            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
+          </FunctionImport>
           <FunctionImport Name="spU_tbl_skeda">
             <Parameter Name="nrrendor" Mode="In" Type="Int32" />
             <Parameter Name="id_sup" Mode="In" Type="Int32" />
@@ -5517,618 +6074,15 @@
             <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_pyetje_kategori">
-            <Parameter Name="nrrendor" Mode="InOut" Type="Int32" />
-            <Parameter Name="id_gen" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
-            <Parameter Name="id_ndr" Mode="In" Type="Int32" />
-            <Parameter Name="id_ndr_gen" Mode="In" Type="String" />
-            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
-            <Parameter Name="pyetje_id_gen" Mode="In" Type="String" />
-            <Parameter Name="pyetje_kategori_id" Mode="In" Type="Int32" />
-            <Parameter Name="pyetje_kategori_id_gen" Mode="In" Type="String" />
-            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_pyetje_tip_kategori">
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="pyetje_tip_id" Mode="In" Type="Int32" />
-            <Parameter Name="pyetje_tip_kategori_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_pyetje">
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="tip_id" Mode="In" Type="Int32" />
-            <Parameter Name="kodi" Mode="In" Type="String" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="kategoria" Mode="In" Type="Int32" />
-            <Parameter Name="kompleks" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_pyetje_access">
-            <Parameter Name="id_gen" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
-            <Parameter Name="id_ndr" Mode="In" Type="Int32" />
-            <Parameter Name="id_ndr_gen" Mode="In" Type="String" />
-            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
-            <Parameter Name="pyetje_id_gen" Mode="In" Type="String" />
-            <Parameter Name="perdoruesi_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdoruesi_id_gen" Mode="In" Type="String" />
-            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_pyetje_info">
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="element_id" Mode="In" Type="Int32" />
-            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_pyetje_kategori">
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="elcat" Mode="In" Type="Boolean" />
-            <Parameter Name="kodi" Mode="In" Type="String" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="rradha" Mode="In" Type="Double" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_pyetje_tip">
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="elcat" Mode="In" Type="Boolean" />
-            <Parameter Name="kodi" Mode="In" Type="String" />
-            <Parameter Name="kodifillim" Mode="In" Type="Int32" />
-            <Parameter Name="kodimbarim" Mode="In" Type="Int32" />
-            <Parameter Name="kodiaktual" Mode="In" Type="Int32" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="rradha" Mode="In" Type="Double" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_pyetje_tip_info">
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="tip_id" Mode="In" Type="Int32" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="veti" Mode="In" Type="Int32" />
-            <Parameter Name="detyrueshme" Mode="In" Type="Boolean" />
-            <Parameter Name="Rradha" Mode="In" Type="Double" />
-            <Parameter Name="db" Mode="In" Type="Int32" />
-            <Parameter Name="skedar" Mode="In" Type="Boolean" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_pyetje_tip_info_ch">
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="VA" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="spU_tbl_nder_pyetje_kategori">
-            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
-            <Parameter Name="id_gen" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_id_gen" Mode="In" Type="Boolean" />
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
-            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_id_sup_gen" Mode="In" Type="Boolean" />
-            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_pyetje_id" Mode="In" Type="Boolean" />
-            <Parameter Name="pyetje_id_gen" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pyetje_id_gen" Mode="In" Type="Boolean" />
-            <Parameter Name="pyetje_kategori_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_pyetje_kategori_id" Mode="In" Type="Boolean" />
-            <Parameter Name="pyetje_kategori_id_gen" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pyetje_kategori_id_gen" Mode="In" Type="Boolean" />
-            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
-            <Parameter Name="ConsiderNull_data_krijimit" Mode="In" Type="Boolean" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_perdorues_id" Mode="In" Type="Boolean" />
-            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_perdorues_id_gen" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="spU_tbl_nder_pyetje_tip_kategori">
-            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
-            <Parameter Name="id_gen" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_id_gen" Mode="In" Type="Boolean" />
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
-            <Parameter Name="id_sup_gen" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_id_sup_gen" Mode="In" Type="Boolean" />
-            <Parameter Name="pyetje_tip_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_pyetje_tip_id" Mode="In" Type="Boolean" />
-            <Parameter Name="pyetje_tip_id_gen" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pyetje_tip_id_gen" Mode="In" Type="Boolean" />
-            <Parameter Name="pyetje_tip_kategori_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_pyetje_tip_kategori_id" Mode="In" Type="Boolean" />
-            <Parameter Name="pyetje_tip_kategori_id_gen" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pyetje_tip_kategori_id_gen" Mode="In" Type="Boolean" />
-            <Parameter Name="aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="data_krijimit" Mode="In" Type="DateTime" />
-            <Parameter Name="ConsiderNull_data_krijimit" Mode="In" Type="Boolean" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_perdorues_id" Mode="In" Type="Boolean" />
-            <Parameter Name="perdorues_id_gen" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_perdorues_id_gen" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="spU_tbl_pyetje">
-            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
-            <Parameter Name="tip_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_tip_id" Mode="In" Type="Boolean" />
-            <Parameter Name="kodi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_kodi" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
-            <Parameter Name="kompleks" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_kompleks" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="spU_tbl_pyetje_access">
-            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdoruesi_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spU_tbl_pyetje_info">
-            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
-            <Parameter Name="element_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_element_id" Mode="In" Type="Boolean" />
-            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_tip_info_id" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="spU_tbl_pyetje_kategori">
-            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
-            <Parameter Name="elcat" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_elcat" Mode="In" Type="Boolean" />
-            <Parameter Name="kodi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_kodi" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="spU_tbl_pyetje_tip">
-            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
-            <Parameter Name="elcat" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_elcat" Mode="In" Type="Boolean" />
-            <Parameter Name="kodi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_kodi" Mode="In" Type="Boolean" />
-            <Parameter Name="kodifillim" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_kodifillim" Mode="In" Type="Boolean" />
-            <Parameter Name="kodiaktual" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_kodiaktual" Mode="In" Type="Boolean" />
-            <Parameter Name="kodimbarim" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_kodimbarim" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="spU_tbl_pyetje_tip_info">
-            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
-            <Parameter Name="tip_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_tip_id" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="veti" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_veti" Mode="In" Type="Boolean" />
-            <Parameter Name="skedar" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_skedar" Mode="In" Type="Boolean" />
-            <Parameter Name="detyrueshme" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_detyrueshme" Mode="In" Type="Boolean" />
-            <Parameter Name="Rradha" Mode="In" Type="Double" />
-            <Parameter Name="ConsiderNull_Rradha" Mode="In" Type="Boolean" />
-            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="spU_tbl_pyetje_tip_info_ch">
-            <Parameter Name="nrrendor" Mode="In" Type="Int32" />
-            <Parameter Name="id_sup" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_id_sup" Mode="In" Type="Boolean" />
-            <Parameter Name="tip_info_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_tip_info_id" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimi" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimi" Mode="In" Type="Boolean" />
-            <Parameter Name="Emertimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_Emertimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="pershkrimiang" Mode="In" Type="String" />
-            <Parameter Name="ConsiderNull_pershkrimiang" Mode="In" Type="Boolean" />
-            <Parameter Name="Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="ConsiderNull_Aktiv" Mode="In" Type="Boolean" />
-            <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
-            <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_analize_task">
-            <Parameter Name="analize_id" Mode="In" Type="Int32" />
-            <Parameter Name="task_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_klient_project">
-            <Parameter Name="klient_id" Mode="In" Type="Int32" />
-            <Parameter Name="project_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_nivel_teknologji">
-            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
-            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_niveli_personel">
-            <Parameter Name="niveli_id" Mode="In" Type="Int32" />
-            <Parameter Name="personel_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_niveli_skeda">
-            <Parameter Name="niveli_id" Mode="In" Type="Int32" />
-            <Parameter Name="skeda_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_personel_analize">
-            <Parameter Name="personel_id" Mode="In" Type="Int32" />
-            <Parameter Name="analize_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_personel_task">
-            <Parameter Name="personel_id" Mode="In" Type="Int32" />
-            <Parameter Name="task_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_personel_teknologji">
-            <Parameter Name="personel_id" Mode="In" Type="Int32" />
-            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_personel_teknologji_nivel">
-            <Parameter Name="personel_id" Mode="In" Type="Int32" />
-            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
-            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_project_analize">
-            <Parameter Name="project_id" Mode="In" Type="Int32" />
-            <Parameter Name="analize_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_project_personel">
-            <Parameter Name="project_id" Mode="In" Type="Int32" />
-            <Parameter Name="personel_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_project_task">
-            <Parameter Name="project_id" Mode="In" Type="Int32" />
-            <Parameter Name="task_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_project_teknologji">
-            <Parameter Name="project_id" Mode="In" Type="Int32" />
-            <Parameter Name="teknologji_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_pyetje_nivel">
-            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
-            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_pyetje_personel_nivel">
-            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
-            <Parameter Name="personel_id" Mode="In" Type="Int32" />
-            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_skeda_personel">
-            <Parameter Name="skeda_id" Mode="In" Type="Int32" />
-            <Parameter Name="personel_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_skeda_project">
-            <Parameter Name="skeda_id" Mode="In" Type="Int32" />
-            <Parameter Name="project_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo">
-            <Parameter Name="pyetje_id" Mode="In" Type="Int32" />
-            <Parameter Name="pyetje_info_id" Mode="In" Type="Int32" />
-            <Parameter Name="testim_id" Mode="In" Type="Int32" />
-            <Parameter Name="personel_id" Mode="In" Type="Int32" />
-            <Parameter Name="nivel_id" Mode="In" Type="Int32" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spI_tbl_error">
-            <Parameter Name="pershkrimi" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-            <Parameter Name="perdorues_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SelectA" ReturnType="Collection(tasketModel.SelectA_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRec_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_Result)">
+          <FunctionImport Name="GetTree">
             <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="nr" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRec_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_access_Result)">
+          <FunctionImport Name="GetTreeExcept">
             <Parameter Name="tabela" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRec_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_info_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRec_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRec_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRec_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_info_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRec_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_info_ch_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRec_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_nder_Entitet_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRec_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_nder_Entitet_tip_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_access_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_info_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_info_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_tip_info_ch_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_nder_Entitet_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_info_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-            <Parameter Name="emertimi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByKodi_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByKodi_Entitet_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="kodi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByKodiAndSup_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByKodiAndSup_Entitet_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="kodi" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="nrrendor" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_access">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="nrrendor" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_info">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="nrrendor" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_kategori">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="nrrendor" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_tip">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="nrrendor" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_tip_info">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="nrrendor" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByNrrendor_Entitet_tip_info_ch">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="nrrendor" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByNrrendor_nder_Entitet_kategori">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="nrrendor" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="nrrendor" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecBySup_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_access_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_info_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_tip_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_tip_info_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecBySup_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_Entitet_tip_info_ch_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecBySup_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_nder_Entitet_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecBySup_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRecBySup_nder_Entitet_tip_kategori_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="id_sup" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByTipId_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByTipId_Entitet_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="tip_id" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result)">
-            <Parameter Name="tabela" Mode="In" Type="String" />
-            <Parameter Name="tip_info_id" Mode="In" Type="String" />
+            <Parameter Name="nr" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
         <ComplexType Name="SelectA_Result">
           <Property Type="Int32" Name="nrrendor" Nullable="false" />
           <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
@@ -6702,6 +6656,177 @@
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
           <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByNrrendor_Entitet_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="kompleks" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByNrrendor_Entitet_access_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_id" Nullable="true" />
+          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="perdoruesi_id" Nullable="true" />
+          <Property Type="String" Name="perdoruesi_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="true" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByNrrendor_Entitet_info_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="element_id" Nullable="true" />
+          <Property Type="String" Name="element_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByNrrendor_Entitet_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="elcat" Nullable="true" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByNrrendor_Entitet_tip_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="elcat" Nullable="true" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="kodifillim" Nullable="true" />
+          <Property Type="Int32" Name="kodimbarim" Nullable="true" />
+          <Property Type="Int32" Name="kodiaktual" Nullable="true" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByNrrendor_Entitet_tip_info_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="detyrueshme" Nullable="false" />
+          <Property Type="Int32" Name="veti" Nullable="true" />
+          <Property Type="Double" Name="rradha" Nullable="false" />
+          <Property Type="Int32" Name="db" Nullable="true" />
+          <Property Type="Boolean" Name="skedar" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByNrrendor_Entitet_tip_info_ch_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_info_id" Nullable="true" />
+          <Property Type="String" Name="tip_info_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="VA" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByNrrendor_nder_Entitet_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_id" Nullable="true" />
+          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Analize_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_tip_id" Nullable="true" />
+          <Property Type="String" Name="Analize_tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Analize_tip_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Analize_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
         <ComplexType Name="SelectAllActiveRecBySup_Entitet_Result">
           <Property Type="Int32" Name="nrrendor" Nullable="false" />
           <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
@@ -6912,6 +7037,17 @@
           <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="VA" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6919,210 +7055,6 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="tasketModelStoreContainer" CdmEntityContainer="tasketEntities1" >
           <FunctionImportMapping FunctionImportName="FSHIJALL" FunctionName="tasketModel.Store.FSHIJALL" />
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="tasketModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="tasketModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="tasketModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="tasketModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="tasketModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="tasketModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="tasketModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="tasketModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="tasketModel.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_Analize" FunctionName="tasketModel.Store.spI_tbl_Analize" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_access" FunctionName="tasketModel.Store.spI_tbl_Analize_access" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_info" FunctionName="tasketModel.Store.spI_tbl_Analize_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_kategori" FunctionName="tasketModel.Store.spI_tbl_Analize_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_tip" FunctionName="tasketModel.Store.spI_tbl_Analize_tip" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_tip_info" FunctionName="tasketModel.Store.spI_tbl_Analize_tip_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_Analize_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_klient" FunctionName="tasketModel.Store.spI_tbl_klient" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_klient_access" FunctionName="tasketModel.Store.spI_tbl_klient_access" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_klient_info" FunctionName="tasketModel.Store.spI_tbl_klient_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_klient_kategori" FunctionName="tasketModel.Store.spI_tbl_klient_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_klient_tip" FunctionName="tasketModel.Store.spI_tbl_klient_tip" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_klient_tip_info" FunctionName="tasketModel.Store.spI_tbl_klient_tip_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_klient_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_klient_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_Analize_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_Analize_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_Analize_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_Analize_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_klient_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_klient_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_klient_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_klient_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_niveli_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_niveli_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_niveli_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_niveli_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_personel_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_personel_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_project_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_project_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_task_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_task_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_task_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_task_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_teknologjia_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_teknologjia_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_teknologjia_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_teknologjia_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_niveli" FunctionName="tasketModel.Store.spI_tbl_niveli" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_access" FunctionName="tasketModel.Store.spI_tbl_niveli_access" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_info" FunctionName="tasketModel.Store.spI_tbl_niveli_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_kategori" FunctionName="tasketModel.Store.spI_tbl_niveli_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_tip" FunctionName="tasketModel.Store.spI_tbl_niveli_tip" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_tip_info" FunctionName="tasketModel.Store.spI_tbl_niveli_tip_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_niveli_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_personel" FunctionName="tasketModel.Store.spI_tbl_personel" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_personel_access" FunctionName="tasketModel.Store.spI_tbl_personel_access" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_personel_info" FunctionName="tasketModel.Store.spI_tbl_personel_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_personel_kategori" FunctionName="tasketModel.Store.spI_tbl_personel_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_personel_tip" FunctionName="tasketModel.Store.spI_tbl_personel_tip" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_personel_tip_info" FunctionName="tasketModel.Store.spI_tbl_personel_tip_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_personel_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_personel_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_project" FunctionName="tasketModel.Store.spI_tbl_project" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_project_access" FunctionName="tasketModel.Store.spI_tbl_project_access" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_project_info" FunctionName="tasketModel.Store.spI_tbl_project_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_project_kategori" FunctionName="tasketModel.Store.spI_tbl_project_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_project_tip" FunctionName="tasketModel.Store.spI_tbl_project_tip" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_project_tip_info" FunctionName="tasketModel.Store.spI_tbl_project_tip_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_project_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_project_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_skeda" FunctionName="tasketModel.Store.spI_tbl_skeda" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_access" FunctionName="tasketModel.Store.spI_tbl_skeda_access" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_info" FunctionName="tasketModel.Store.spI_tbl_skeda_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_kategori" FunctionName="tasketModel.Store.spI_tbl_skeda_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_tip" FunctionName="tasketModel.Store.spI_tbl_skeda_tip" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_tip_info" FunctionName="tasketModel.Store.spI_tbl_skeda_tip_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_skeda_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_task" FunctionName="tasketModel.Store.spI_tbl_task" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_task_access" FunctionName="tasketModel.Store.spI_tbl_task_access" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_task_info" FunctionName="tasketModel.Store.spI_tbl_task_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_task_kategori" FunctionName="tasketModel.Store.spI_tbl_task_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_task_tip" FunctionName="tasketModel.Store.spI_tbl_task_tip" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_task_tip_info" FunctionName="tasketModel.Store.spI_tbl_task_tip_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_task_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_task_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia" FunctionName="tasketModel.Store.spI_tbl_teknologjia" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_access" FunctionName="tasketModel.Store.spI_tbl_teknologjia_access" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_info" FunctionName="tasketModel.Store.spI_tbl_teknologjia_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_kategori" FunctionName="tasketModel.Store.spI_tbl_teknologjia_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_tip" FunctionName="tasketModel.Store.spI_tbl_teknologjia_tip" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_tip_info" FunctionName="tasketModel.Store.spI_tbl_teknologjia_tip_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_teknologjia_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_Analize" FunctionName="tasketModel.Store.spU_tbl_Analize" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_access" FunctionName="tasketModel.Store.spU_tbl_Analize_access" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_info" FunctionName="tasketModel.Store.spU_tbl_Analize_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_kategori" FunctionName="tasketModel.Store.spU_tbl_Analize_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_tip" FunctionName="tasketModel.Store.spU_tbl_Analize_tip" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_tip_info" FunctionName="tasketModel.Store.spU_tbl_Analize_tip_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_Analize_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_klient" FunctionName="tasketModel.Store.spU_tbl_klient" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_klient_access" FunctionName="tasketModel.Store.spU_tbl_klient_access" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_klient_info" FunctionName="tasketModel.Store.spU_tbl_klient_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_klient_kategori" FunctionName="tasketModel.Store.spU_tbl_klient_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_klient_tip" FunctionName="tasketModel.Store.spU_tbl_klient_tip" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_klient_tip_info" FunctionName="tasketModel.Store.spU_tbl_klient_tip_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_klient_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_klient_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_Analize_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_Analize_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_Analize_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_Analize_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_klient_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_klient_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_klient_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_klient_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_niveli_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_niveli_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_niveli_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_niveli_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_personel_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_personel_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_personel_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_personel_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_project_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_project_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_project_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_project_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_skeda_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_skeda_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_skeda_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_skeda_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_task_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_task_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_task_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_task_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_teknologjia_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_teknologjia_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_teknologjia_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_teknologjia_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_niveli" FunctionName="tasketModel.Store.spU_tbl_niveli" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_access" FunctionName="tasketModel.Store.spU_tbl_niveli_access" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_info" FunctionName="tasketModel.Store.spU_tbl_niveli_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_kategori" FunctionName="tasketModel.Store.spU_tbl_niveli_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_tip" FunctionName="tasketModel.Store.spU_tbl_niveli_tip" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_tip_info" FunctionName="tasketModel.Store.spU_tbl_niveli_tip_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_niveli_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_personel" FunctionName="tasketModel.Store.spU_tbl_personel" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_personel_access" FunctionName="tasketModel.Store.spU_tbl_personel_access" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_personel_info" FunctionName="tasketModel.Store.spU_tbl_personel_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_personel_kategori" FunctionName="tasketModel.Store.spU_tbl_personel_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_personel_tip" FunctionName="tasketModel.Store.spU_tbl_personel_tip" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_personel_tip_info" FunctionName="tasketModel.Store.spU_tbl_personel_tip_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_personel_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_personel_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_project" FunctionName="tasketModel.Store.spU_tbl_project" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_project_access" FunctionName="tasketModel.Store.spU_tbl_project_access" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_project_info" FunctionName="tasketModel.Store.spU_tbl_project_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_project_kategori" FunctionName="tasketModel.Store.spU_tbl_project_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_project_tip" FunctionName="tasketModel.Store.spU_tbl_project_tip" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_project_tip_info" FunctionName="tasketModel.Store.spU_tbl_project_tip_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_project_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_project_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_skeda" FunctionName="tasketModel.Store.spU_tbl_skeda" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_access" FunctionName="tasketModel.Store.spU_tbl_skeda_access" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_info" FunctionName="tasketModel.Store.spU_tbl_skeda_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_kategori" FunctionName="tasketModel.Store.spU_tbl_skeda_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_tip" FunctionName="tasketModel.Store.spU_tbl_skeda_tip" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_tip_info" FunctionName="tasketModel.Store.spU_tbl_skeda_tip_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_skeda_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_task" FunctionName="tasketModel.Store.spU_tbl_task" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_task_access" FunctionName="tasketModel.Store.spU_tbl_task_access" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_task_info" FunctionName="tasketModel.Store.spU_tbl_task_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_task_kategori" FunctionName="tasketModel.Store.spU_tbl_task_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_task_tip" FunctionName="tasketModel.Store.spU_tbl_task_tip" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_task_tip_info" FunctionName="tasketModel.Store.spU_tbl_task_tip_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_task_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_task_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia" FunctionName="tasketModel.Store.spU_tbl_teknologjia" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_access" FunctionName="tasketModel.Store.spU_tbl_teknologjia_access" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_info" FunctionName="tasketModel.Store.spU_tbl_teknologjia_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_kategori" FunctionName="tasketModel.Store.spU_tbl_teknologjia_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip_info" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje" FunctionName="tasketModel.Store.spI_tbl_pyetje" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_access" FunctionName="tasketModel.Store.spI_tbl_pyetje_access" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_info" FunctionName="tasketModel.Store.spI_tbl_pyetje_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_kategori" FunctionName="tasketModel.Store.spI_tbl_pyetje_kategori" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_tip" FunctionName="tasketModel.Store.spI_tbl_pyetje_tip" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_tip_info" FunctionName="tasketModel.Store.spI_tbl_pyetje_tip_info" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_pyetje_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_pyetje_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_pyetje_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_nder_pyetje_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_pyetje_tip_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje" FunctionName="tasketModel.Store.spU_tbl_pyetje" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_access" FunctionName="tasketModel.Store.spU_tbl_pyetje_access" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_info" FunctionName="tasketModel.Store.spU_tbl_pyetje_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_kategori" FunctionName="tasketModel.Store.spU_tbl_pyetje_kategori" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_tip" FunctionName="tasketModel.Store.spU_tbl_pyetje_tip" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_tip_info" FunctionName="tasketModel.Store.spU_tbl_pyetje_tip_info" />
-          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_pyetje_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_analize_task" FunctionName="tasketModel.Store.spI_tbl_nder_analize_task" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_klient_project" FunctionName="tasketModel.Store.spI_tbl_nder_klient_project" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_nivel_teknologji" FunctionName="tasketModel.Store.spI_tbl_nder_nivel_teknologji" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_niveli_personel" FunctionName="tasketModel.Store.spI_tbl_nder_niveli_personel" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_niveli_skeda" FunctionName="tasketModel.Store.spI_tbl_nder_niveli_skeda" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_analize" FunctionName="tasketModel.Store.spI_tbl_nder_personel_analize" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_task" FunctionName="tasketModel.Store.spI_tbl_nder_personel_task" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_teknologji" FunctionName="tasketModel.Store.spI_tbl_nder_personel_teknologji" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_teknologji_nivel" FunctionName="tasketModel.Store.spI_tbl_nder_personel_teknologji_nivel" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_analize" FunctionName="tasketModel.Store.spI_tbl_nder_project_analize" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_personel" FunctionName="tasketModel.Store.spI_tbl_nder_project_personel" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_task" FunctionName="tasketModel.Store.spI_tbl_nder_project_task" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_teknologji" FunctionName="tasketModel.Store.spI_tbl_nder_project_teknologji" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_nivel" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_nivel" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_personel" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_personel" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_project" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_project" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo" />
-          <FunctionImportMapping FunctionImportName="spI_tbl_error" FunctionName="tasketModel.Store.spI_tbl_error" />
           <FunctionImportMapping FunctionImportName="SelectA" FunctionName="tasketModel.Store.SelectA">
             <ResultMapping>
               <ComplexTypeMapping TypeName="tasketModel.SelectA_Result">
@@ -7816,15 +7748,213 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_access" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_access" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_info" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_info" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_kategori" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_tip" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_tip" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_tip_info" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_tip_info" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_tip_info_ch" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_tip_info_ch" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_nder_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_nder_Entitet_kategori" />
-          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByNrrendor_Entitet_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="kompleks" ColumnName="kompleks" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_access" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_access">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByNrrendor_Entitet_access_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
+                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
+                <ScalarProperty Name="perdoruesi_id" ColumnName="perdoruesi_id" />
+                <ScalarProperty Name="perdoruesi_id_gen" ColumnName="perdoruesi_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_info" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByNrrendor_Entitet_info_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="element_id" ColumnName="element_id" />
+                <ScalarProperty Name="element_id_gen" ColumnName="element_id_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByNrrendor_Entitet_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="elcat" ColumnName="elcat" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_tip" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_tip">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByNrrendor_Entitet_tip_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="elcat" ColumnName="elcat" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="kodifillim" ColumnName="kodifillim" />
+                <ScalarProperty Name="kodimbarim" ColumnName="kodimbarim" />
+                <ScalarProperty Name="kodiaktual" ColumnName="kodiaktual" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_tip_info" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_tip_info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByNrrendor_Entitet_tip_info_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="detyrueshme" ColumnName="detyrueshme" />
+                <ScalarProperty Name="veti" ColumnName="veti" />
+                <ScalarProperty Name="rradha" ColumnName="rradha" />
+                <ScalarProperty Name="db" ColumnName="db" />
+                <ScalarProperty Name="skedar" ColumnName="skedar" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_Entitet_tip_info_ch" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_Entitet_tip_info_ch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByNrrendor_Entitet_tip_info_ch_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_info_id" ColumnName="tip_info_id" />
+                <ScalarProperty Name="tip_info_id_gen" ColumnName="tip_info_id_gen" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+                <ScalarProperty Name="VA" ColumnName="VA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_nder_Entitet_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_nder_Entitet_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByNrrendor_nder_Entitet_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
+                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
+                <ScalarProperty Name="Analize_kategori_id" ColumnName="Analize_kategori_id" />
+                <ScalarProperty Name="Analize_kategori_id_gen" ColumnName="Analize_kategori_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori" FunctionName="tasketModel.Store.SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="Analize_tip_id" ColumnName="Analize_tip_id" />
+                <ScalarProperty Name="Analize_tip_id_gen" ColumnName="Analize_tip_id_gen" />
+                <ScalarProperty Name="Analize_tip_kategori_id" ColumnName="Analize_tip_kategori_id" />
+                <ScalarProperty Name="Analize_tip_kategori_id_gen" ColumnName="Analize_tip_kategori_id_gen" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SelectAllActiveRecBySup_Entitet" FunctionName="tasketModel.Store.SelectAllActiveRecBySup_Entitet">
             <ResultMapping>
               <ComplexTypeMapping TypeName="tasketModel.SelectAllActiveRecBySup_Entitet_Result">
@@ -8079,6 +8209,212 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="tasketModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="tasketModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="tasketModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="tasketModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="tasketModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="tasketModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="tasketModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_Analize" FunctionName="tasketModel.Store.spI_tbl_Analize" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_access" FunctionName="tasketModel.Store.spI_tbl_Analize_access" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_info" FunctionName="tasketModel.Store.spI_tbl_Analize_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_kategori" FunctionName="tasketModel.Store.spI_tbl_Analize_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_tip" FunctionName="tasketModel.Store.spI_tbl_Analize_tip" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_tip_info" FunctionName="tasketModel.Store.spI_tbl_Analize_tip_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_Analize_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_Analize_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_error" FunctionName="tasketModel.Store.spI_tbl_error" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_klient" FunctionName="tasketModel.Store.spI_tbl_klient" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_klient_access" FunctionName="tasketModel.Store.spI_tbl_klient_access" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_klient_info" FunctionName="tasketModel.Store.spI_tbl_klient_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_klient_kategori" FunctionName="tasketModel.Store.spI_tbl_klient_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_klient_tip" FunctionName="tasketModel.Store.spI_tbl_klient_tip" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_klient_tip_info" FunctionName="tasketModel.Store.spI_tbl_klient_tip_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_klient_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_klient_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_Analize_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_Analize_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_analize_task" FunctionName="tasketModel.Store.spI_tbl_nder_analize_task" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_Analize_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_Analize_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_klient_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_klient_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_klient_project" FunctionName="tasketModel.Store.spI_tbl_nder_klient_project" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_klient_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_klient_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_nivel_teknologji" FunctionName="tasketModel.Store.spI_tbl_nder_nivel_teknologji" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_niveli_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_niveli_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_niveli_personel" FunctionName="tasketModel.Store.spI_tbl_nder_niveli_personel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_niveli_skeda" FunctionName="tasketModel.Store.spI_tbl_nder_niveli_skeda" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_niveli_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_niveli_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_analize" FunctionName="tasketModel.Store.spI_tbl_nder_personel_analize" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_personel_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_task" FunctionName="tasketModel.Store.spI_tbl_nder_personel_task" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_teknologji" FunctionName="tasketModel.Store.spI_tbl_nder_personel_teknologji" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_teknologji_nivel" FunctionName="tasketModel.Store.spI_tbl_nder_personel_teknologji_nivel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_personel_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_personel_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_analize" FunctionName="tasketModel.Store.spI_tbl_nder_project_analize" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_project_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_personel" FunctionName="tasketModel.Store.spI_tbl_nder_project_personel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_task" FunctionName="tasketModel.Store.spI_tbl_nder_project_task" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_teknologji" FunctionName="tasketModel.Store.spI_tbl_nder_project_teknologji" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_project_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_project_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_nivel" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_nivel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_personel_nivel_testim_pyetjeinfo" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_pyetje_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_pyetje_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_personel" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_personel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_project" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_project" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_skeda_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_skeda_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_task_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_task_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_task_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_task_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_teknologjia_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_teknologjia_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_nder_teknologjia_tip_kategori" FunctionName="tasketModel.Store.spI_tbl_nder_teknologjia_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_niveli" FunctionName="tasketModel.Store.spI_tbl_niveli" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_access" FunctionName="tasketModel.Store.spI_tbl_niveli_access" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_info" FunctionName="tasketModel.Store.spI_tbl_niveli_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_kategori" FunctionName="tasketModel.Store.spI_tbl_niveli_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_tip" FunctionName="tasketModel.Store.spI_tbl_niveli_tip" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_tip_info" FunctionName="tasketModel.Store.spI_tbl_niveli_tip_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_niveli_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_niveli_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_personel" FunctionName="tasketModel.Store.spI_tbl_personel" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_personel_access" FunctionName="tasketModel.Store.spI_tbl_personel_access" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_personel_info" FunctionName="tasketModel.Store.spI_tbl_personel_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_personel_kategori" FunctionName="tasketModel.Store.spI_tbl_personel_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_personel_tip" FunctionName="tasketModel.Store.spI_tbl_personel_tip" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_personel_tip_info" FunctionName="tasketModel.Store.spI_tbl_personel_tip_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_personel_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_personel_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_project" FunctionName="tasketModel.Store.spI_tbl_project" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_project_access" FunctionName="tasketModel.Store.spI_tbl_project_access" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_project_info" FunctionName="tasketModel.Store.spI_tbl_project_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_project_kategori" FunctionName="tasketModel.Store.spI_tbl_project_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_project_tip" FunctionName="tasketModel.Store.spI_tbl_project_tip" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_project_tip_info" FunctionName="tasketModel.Store.spI_tbl_project_tip_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_project_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_project_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje" FunctionName="tasketModel.Store.spI_tbl_pyetje" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_access" FunctionName="tasketModel.Store.spI_tbl_pyetje_access" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_info" FunctionName="tasketModel.Store.spI_tbl_pyetje_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_kategori" FunctionName="tasketModel.Store.spI_tbl_pyetje_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_tip" FunctionName="tasketModel.Store.spI_tbl_pyetje_tip" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_tip_info" FunctionName="tasketModel.Store.spI_tbl_pyetje_tip_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_pyetje_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_pyetje_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_skeda" FunctionName="tasketModel.Store.spI_tbl_skeda" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_access" FunctionName="tasketModel.Store.spI_tbl_skeda_access" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_info" FunctionName="tasketModel.Store.spI_tbl_skeda_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_kategori" FunctionName="tasketModel.Store.spI_tbl_skeda_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_tip" FunctionName="tasketModel.Store.spI_tbl_skeda_tip" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_tip_info" FunctionName="tasketModel.Store.spI_tbl_skeda_tip_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_skeda_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_skeda_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_task" FunctionName="tasketModel.Store.spI_tbl_task" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_task_access" FunctionName="tasketModel.Store.spI_tbl_task_access" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_task_info" FunctionName="tasketModel.Store.spI_tbl_task_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_task_kategori" FunctionName="tasketModel.Store.spI_tbl_task_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_task_tip" FunctionName="tasketModel.Store.spI_tbl_task_tip" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_task_tip_info" FunctionName="tasketModel.Store.spI_tbl_task_tip_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_task_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_task_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia" FunctionName="tasketModel.Store.spI_tbl_teknologjia" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_access" FunctionName="tasketModel.Store.spI_tbl_teknologjia_access" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_info" FunctionName="tasketModel.Store.spI_tbl_teknologjia_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_kategori" FunctionName="tasketModel.Store.spI_tbl_teknologjia_kategori" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_tip" FunctionName="tasketModel.Store.spI_tbl_teknologjia_tip" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_tip_info" FunctionName="tasketModel.Store.spI_tbl_teknologjia_tip_info" />
+          <FunctionImportMapping FunctionImportName="spI_tbl_teknologjia_tip_info_ch" FunctionName="tasketModel.Store.spI_tbl_teknologjia_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_Analize" FunctionName="tasketModel.Store.spU_tbl_Analize" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_access" FunctionName="tasketModel.Store.spU_tbl_Analize_access" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_info" FunctionName="tasketModel.Store.spU_tbl_Analize_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_kategori" FunctionName="tasketModel.Store.spU_tbl_Analize_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_tip" FunctionName="tasketModel.Store.spU_tbl_Analize_tip" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_tip_info" FunctionName="tasketModel.Store.spU_tbl_Analize_tip_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_Analize_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_Analize_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_klient" FunctionName="tasketModel.Store.spU_tbl_klient" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_klient_access" FunctionName="tasketModel.Store.spU_tbl_klient_access" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_klient_info" FunctionName="tasketModel.Store.spU_tbl_klient_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_klient_kategori" FunctionName="tasketModel.Store.spU_tbl_klient_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_klient_tip" FunctionName="tasketModel.Store.spU_tbl_klient_tip" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_klient_tip_info" FunctionName="tasketModel.Store.spU_tbl_klient_tip_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_klient_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_klient_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_Analize_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_Analize_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_Analize_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_Analize_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_klient_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_klient_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_klient_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_klient_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_niveli_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_niveli_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_niveli_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_niveli_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_personel_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_personel_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_personel_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_personel_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_project_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_project_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_project_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_project_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_pyetje_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_pyetje_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_pyetje_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_pyetje_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_skeda_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_skeda_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_skeda_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_skeda_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_task_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_task_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_task_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_task_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_teknologjia_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_teknologjia_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_nder_teknologjia_tip_kategori" FunctionName="tasketModel.Store.spU_tbl_nder_teknologjia_tip_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_niveli" FunctionName="tasketModel.Store.spU_tbl_niveli" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_access" FunctionName="tasketModel.Store.spU_tbl_niveli_access" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_info" FunctionName="tasketModel.Store.spU_tbl_niveli_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_kategori" FunctionName="tasketModel.Store.spU_tbl_niveli_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_tip" FunctionName="tasketModel.Store.spU_tbl_niveli_tip" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_tip_info" FunctionName="tasketModel.Store.spU_tbl_niveli_tip_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_niveli_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_niveli_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_personel" FunctionName="tasketModel.Store.spU_tbl_personel" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_personel_access" FunctionName="tasketModel.Store.spU_tbl_personel_access" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_personel_info" FunctionName="tasketModel.Store.spU_tbl_personel_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_personel_kategori" FunctionName="tasketModel.Store.spU_tbl_personel_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_personel_tip" FunctionName="tasketModel.Store.spU_tbl_personel_tip" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_personel_tip_info" FunctionName="tasketModel.Store.spU_tbl_personel_tip_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_personel_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_personel_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_project" FunctionName="tasketModel.Store.spU_tbl_project" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_project_access" FunctionName="tasketModel.Store.spU_tbl_project_access" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_project_info" FunctionName="tasketModel.Store.spU_tbl_project_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_project_kategori" FunctionName="tasketModel.Store.spU_tbl_project_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_project_tip" FunctionName="tasketModel.Store.spU_tbl_project_tip" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_project_tip_info" FunctionName="tasketModel.Store.spU_tbl_project_tip_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_project_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_project_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje" FunctionName="tasketModel.Store.spU_tbl_pyetje" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_access" FunctionName="tasketModel.Store.spU_tbl_pyetje_access" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_info" FunctionName="tasketModel.Store.spU_tbl_pyetje_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_kategori" FunctionName="tasketModel.Store.spU_tbl_pyetje_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_tip" FunctionName="tasketModel.Store.spU_tbl_pyetje_tip" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_tip_info" FunctionName="tasketModel.Store.spU_tbl_pyetje_tip_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_pyetje_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_pyetje_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_skeda" FunctionName="tasketModel.Store.spU_tbl_skeda" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_access" FunctionName="tasketModel.Store.spU_tbl_skeda_access" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_info" FunctionName="tasketModel.Store.spU_tbl_skeda_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_kategori" FunctionName="tasketModel.Store.spU_tbl_skeda_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_tip" FunctionName="tasketModel.Store.spU_tbl_skeda_tip" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_tip_info" FunctionName="tasketModel.Store.spU_tbl_skeda_tip_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_skeda_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_skeda_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_task" FunctionName="tasketModel.Store.spU_tbl_task" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_task_access" FunctionName="tasketModel.Store.spU_tbl_task_access" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_task_info" FunctionName="tasketModel.Store.spU_tbl_task_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_task_kategori" FunctionName="tasketModel.Store.spU_tbl_task_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_task_tip" FunctionName="tasketModel.Store.spU_tbl_task_tip" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_task_tip_info" FunctionName="tasketModel.Store.spU_tbl_task_tip_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_task_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_task_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia" FunctionName="tasketModel.Store.spU_tbl_teknologjia" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_access" FunctionName="tasketModel.Store.spU_tbl_teknologjia_access" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_info" FunctionName="tasketModel.Store.spU_tbl_teknologjia_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_kategori" FunctionName="tasketModel.Store.spU_tbl_teknologjia_kategori" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip_info" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip_info" />
+          <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip_info_ch" />
+          <FunctionImportMapping FunctionImportName="GetTree" FunctionName="tasketModel.Store.GetTree" />
+          <FunctionImportMapping FunctionImportName="GetTreeExcept" FunctionName="tasketModel.Store.GetTreeExcept" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -8093,7 +8429,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
