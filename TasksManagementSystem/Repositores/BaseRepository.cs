@@ -28,10 +28,6 @@ namespace TasksManagementSystem.Repositores
             }
         }
 
-        
-
-       
-
         ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_Result> IBaseRepository.SelectAllActiveRecByEmertimiAndSup_Entitet(string tabela, string id_sup, string emertimi)
         {
             using (var context = new tasketEntities1())
