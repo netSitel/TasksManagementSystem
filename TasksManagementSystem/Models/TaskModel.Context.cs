@@ -15,10 +15,10 @@ namespace TasksManagementSystem.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class tasketEntities1 : DbContext
+    public partial class tasketDb : DbContext
     {
-        public tasketEntities1()
-            : base("name=tasketEntities1")
+        public tasketDb()
+            : base("name=tasketDb")
         {
         }
     
@@ -27,12 +27,11 @@ namespace TasksManagementSystem.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
-        public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
+        public virtual DbSet<entitetet> entitetet { get; set; }
     
         public virtual int FSHIJALL(string tabela)
         {
@@ -41,6 +40,32 @@ namespace TasksManagementSystem.Models
                 new ObjectParameter("tabela", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("FSHIJALL", tabelaParameter);
+        }
+    
+        public virtual int GetTree(string tabela, string nr)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrParameter = nr != null ?
+                new ObjectParameter("nr", nr) :
+                new ObjectParameter("nr", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GetTree", tabelaParameter, nrParameter);
+        }
+    
+        public virtual int GetTreeExcept(string tabela, string nr)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            var nrParameter = nr != null ?
+                new ObjectParameter("nr", nr) :
+                new ObjectParameter("nr", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GetTreeExcept", tabelaParameter, nrParameter);
         }
     
         public virtual ObjectResult<SelectA_Result> SelectA(string tabela)
@@ -11394,32 +11419,6 @@ namespace TasksManagementSystem.Models
                 new ObjectParameter("ConsiderNull_Perdorues_id", typeof(bool));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spU_tbl_teknologjia_tip_info_ch", nrrendorParameter, id_supParameter, considerNull_id_supParameter, tip_info_idParameter, considerNull_tip_info_idParameter, emertimiParameter, considerNull_EmertimiParameter, pershkrimiParameter, considerNull_pershkrimiParameter, emertimiangParameter, considerNull_EmertimiangParameter, pershkrimiangParameter, considerNull_pershkrimiangParameter, aktivParameter, considerNull_AktivParameter, perdorues_idParameter, considerNull_Perdorues_idParameter);
-        }
-    
-        public virtual int GetTree(string tabela, string nr)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var nrParameter = nr != null ?
-                new ObjectParameter("nr", nr) :
-                new ObjectParameter("nr", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GetTree", tabelaParameter, nrParameter);
-        }
-    
-        public virtual int GetTreeExcept(string tabela, string nr)
-        {
-            var tabelaParameter = tabela != null ?
-                new ObjectParameter("tabela", tabela) :
-                new ObjectParameter("tabela", typeof(string));
-    
-            var nrParameter = nr != null ?
-                new ObjectParameter("nr", nr) :
-                new ObjectParameter("nr", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GetTreeExcept", tabelaParameter, nrParameter);
         }
     }
 }
