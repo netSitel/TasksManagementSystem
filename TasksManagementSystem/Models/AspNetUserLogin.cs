@@ -12,13 +12,12 @@ namespace TasksManagementSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AspNetRoleClaims
+    public partial class AspNetUserLogin
     {
-        public int Id { get; set; }
-        public string ClaimType { get; set; }
-        public string ClaimValue { get; set; }
-        public string RoleId { get; set; }
+        public string LoginProvider { get; set; }
+        public string ProviderKey { get; set; }
+        public string UserId { get; set; }
     
-        public virtual AspNetRoles AspNetRoles { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

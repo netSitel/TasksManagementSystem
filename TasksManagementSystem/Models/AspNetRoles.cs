@@ -17,17 +17,12 @@ namespace TasksManagementSystem.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AspNetRoles()
         {
-            this.AspNetRoleClaims = new HashSet<AspNetRoleClaims>();
             this.AspNetUsers = new HashSet<AspNetUsers>();
         }
     
         public string Id { get; set; }
-        public string ConcurrencyStamp { get; set; }
         public string Name { get; set; }
-        public string NormalizedName { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetRoleClaims> AspNetRoleClaims { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUsers> AspNetUsers { get; set; }
     }
