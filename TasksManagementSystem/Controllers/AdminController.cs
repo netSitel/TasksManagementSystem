@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TasksManagementSystem.KlasatNdihmese;
+using TasksManagementSystem.Models;
 
 namespace TasksManagementSystem.Controllers
 {
@@ -13,9 +15,14 @@ namespace TasksManagementSystem.Controllers
         {
             return View();
         }
-        public ActionResult Modifiko()
+
+        public PartialViewResult Modifiko(string Id)
         {
-            return View();
+            Helper hp = new Helper();
+            AdminViewModel model = new AdminViewModel();
+            model.SelectListEntity = hp.GetEntities();
+            return PartialView("Index", model);
+
         }
     }
 }
