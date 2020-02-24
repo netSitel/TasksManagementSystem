@@ -412,6 +412,9 @@
       <DependentUpon>TaskModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\konfigurime.cs">
+      <DependentUpon>TaskModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result.cs">
       <DependentUpon>TaskModel.tt</DependentUpon>
@@ -754,6 +757,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Modifiko.cshtml" />
+    <Content Include="Views\Admin\ModifikoKategori.cshtml" />
+    <Content Include="Views\Admin\ModifikoTipi.cshtml" />
+    <Content Include="Views\Admin\ModifikoVeti.cshtml" />
+    <Content Include="Views\Admin\ModifikoPerdoues.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

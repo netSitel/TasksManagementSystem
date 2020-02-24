@@ -8,9 +8,9 @@ using TasksManagementSystem.Models;
 
 namespace TasksManagementSystem.KlasatNdihmese
 {
-    public   class Helper
+    public class Helper
     {
-       
+
 
 
         public List<SelectListItem> GetEntities()
@@ -18,11 +18,11 @@ namespace TasksManagementSystem.KlasatNdihmese
             using (var context = new tasketDb())
             {
                 List<SelectListItem> Entietet = new List<SelectListItem>();
-               Entietet = context.entitetet.Select(n =>   new SelectListItem
-                        {
-                            Value = n.nrrendor.ToString(),
-                            Text = n.entitet
-                        }).ToList();
+                Entietet = context.entitetet.Select(n => new SelectListItem
+                {
+                    Value = n.nrrendor.ToString(),
+                    Text = n.entitet
+                }).ToList();
                 var entitetTip = new SelectListItem()
                 {
                     Value = null,
@@ -36,7 +36,8 @@ namespace TasksManagementSystem.KlasatNdihmese
             }
 
         }
+    }
 
-        }
+       
 
     }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model  TasksManagementSystem.Models.AdminViewModel
+@{
     Layout = null;
 }
 
@@ -30,6 +31,7 @@
                 </div>
             </div>
         </form>
+       
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
@@ -52,6 +54,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
+                         
                         <a class="nav-link" href="@Url.Action("Modifiko", "Admin")">
                             <div class="sb-nav-link-icon"><i class="fas fa-fw"></i></div>
                             Modifiko
@@ -76,9 +79,12 @@
                         </a>
                         <div class="collapse" id="collapseConfig" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">Tipe</a><a class="nav-link" href="@Url.Action("Modifiko", "Admin")">Kategori</a>
+                                @foreach (var item in Model.konfigurimet)
+                                {
+                                <a class="nav-link" href="@Url.Action("Modifiko", "Admin",new { id = item.vlera })">@item.emertimi</a>}
+                                @*<a class="nav-link" href="@Url.Action("Modifiko", "Admin")">Kategori</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">Veti</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Perdorues</a>
+                                <a class="nav-link" href="layout-sidenav-light.html">Perdorues</a>}*@
                             </nav>
                         </div>
 
@@ -126,54 +132,15 @@
         </div>
         <di id="layoutSidenav_content">
             <main>
-                @if (Model != null)
+                @*@if (Model != null)
                 { 
     @Html.Partial("Modifiko")
 
-                }
+                }*@
 
                 <div class="container-fluid">
                     <h1 class="mt-4">Dashboard</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">Primary Card</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">Warning Card</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-success text-white mb-4">
-                                <div class="card-body">Success Card</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">Danger Card</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
+                   
                     </div>
                     <div class="row">
                         <div class="col-xl-6">

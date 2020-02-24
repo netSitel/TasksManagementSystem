@@ -12,10 +12,10 @@ namespace TasksManagementSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class entitetet
+    public partial class konfigurime
     {
         public int nrrendor { get; set; }
-        public string entitet { get; set; }
-        public string emertim_tabele { get; set; }
+        public string emertimi { get; set; }
+        public Nullable<int> vlera { get; set; }
     }
 }

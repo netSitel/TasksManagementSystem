@@ -10,5 +10,8 @@ namespace TasksManagementSystem.Models
     {
         public int SelectedEntity { get; set; }
         public List<SelectListItem> SelectListEntity { get; set; }
+        public List<konfigurime> konfigurimet { get; set; }
+
     }
+   
 }

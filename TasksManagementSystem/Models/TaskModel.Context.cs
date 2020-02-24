@@ -32,6 +32,7 @@ namespace TasksManagementSystem.Models
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<entitetet> entitetet { get; set; }
+        public virtual DbSet<konfigurime> konfigurime { get; set; }
     
         public virtual int FSHIJALL(string tabela)
         {
