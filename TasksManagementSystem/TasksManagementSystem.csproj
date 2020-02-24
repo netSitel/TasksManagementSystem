@@ -416,6 +416,7 @@
       <DependentUpon>TaskModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PerdoruesViewModel.cs" />
     <Compile Include="Models\SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result.cs">
       <DependentUpon>TaskModel.tt</DependentUpon>
     </Compile>
@@ -587,6 +588,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TaskModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\KategoriViewModel.cs" />
+    <Compile Include="Models\TipiViewModel.cs" />
+    <Compile Include="Models\VetiViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositores\AnalizaEntity.cs" />
     <Compile Include="Repositores\BaseRepository.cs" />
