@@ -608,6 +608,7 @@
     <Compile Include="Repositores\TeknologjiEntity.cs" />
     <Compile Include="Services\EmailSender.cs" />
     <Compile Include="Services\IEmailSender.cs" />
+    <Compile Include="Service\AdminService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
