@@ -1,8 +1,12 @@
-﻿@model TasksManagementSystem.Models.AdminViewModel
-
-@using (Html.BeginForm("Modifiko", "Admin", FormMethod.Post, new { id = "form-referenti-vgi" }))
-{<div class="col-md-3">
-    <label>Zgjidhni nje entitet:</label>
-    @Html.DropDownListFor(x => Model.SelectedEntity, new SelectList(Model.SelectListEntity, "Value", "Text"), htmlAttributes: new { @class = "form-control", required = "required" })
-    </div>
-    }
+﻿@*@(Html.EJ().TreeGrid("TreeGridContainer")
+        .ChildMapping("Children")
+        .Columns(co =>
+        {
+            co.Field("TaskId").HeaderText("Task Id").EditType(TreeGridEditingType.Numeric).Add();
+            co.Field("TaskName").HeaderText("Task Name").EditType(TreeGridEditingType.String).Add();
+            co.Field("StartDate").HeaderText("Start Date").EditType(TreeGridEditingType.Datepicker).Add();
+            co.Field("Duration").HeaderText("Duration").EditType(TreeGridEditingType.Numeric).Add();
+        })
+        .Datasource(ViewBag.datasource)
+)
+@(Html.EJ().ScriptManager())*@
