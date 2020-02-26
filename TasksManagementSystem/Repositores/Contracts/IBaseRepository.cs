@@ -12,8 +12,8 @@ namespace TasksManagementSystem.Repositores.Contracts
 {
     public interface IBaseRepository
     {
-        int FSHIJALL(string tabela);
-        ObjectResult<SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result> SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch(string tabela, string tip_info_id);
+         int FSHIJALL(string tabela);
+         ObjectResult<SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result> SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch(string tabela, string tip_info_id);
         ObjectResult<SelectA_Result> SelectA(string tabela);
         ObjectResult<SelectAllActiveRec_Entitet_Result> SelectAllActiveRec_Entitet(string tabela);
         ObjectResult<SelectAllActiveRec_Entitet_access_Result> SelectAllActiveRec_Entitet_access(string tabela);

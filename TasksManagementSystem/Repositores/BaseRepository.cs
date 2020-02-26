@@ -19,461 +19,268 @@ namespace TasksManagementSystem.Repositores
             }
         }
 
-        ObjectResult<SelectA_Result> IBaseRepository.SelectA(string tabela)
+        public ObjectResult<SelectA_Result> SelectA(string tabela)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectA(tabela);
-                return result;
-            }
+            return new tasketDb().SelectA(tabela);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_Result> IBaseRepository.SelectAllActiveRecByEmertimiAndSup_Entitet(string tabela, string id_sup, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_Result> SelectAllActiveRecByEmertimiAndSup_Entitet(string tabela, string id_sup, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimiAndSup_Entitet(tabela,id_sup,emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimiAndSup_Entitet(tabela, id_sup,emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result> IBaseRepository.SelectAllActiveRecByEmertimiAndSup_Entitet_access(string tabela, string id_sup, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_access_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_access(string tabela, string id_sup, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimiAndSup_Entitet_access(tabela, id_sup, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimiAndSup_Entitet_access(tabela, id_sup,emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_info_Result> IBaseRepository.SelectAllActiveRecByEmertimiAndSup_Entitet_info(string tabela, string id_sup, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_info_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_info(string tabela, string id_sup, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimiAndSup_Entitet_info(tabela, id_sup, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimiAndSup_Entitet_info(tabela, id_sup,emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRecByEmertimiAndSup_Entitet_kategori(string tabela, string id_sup, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_kategori_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_kategori(string tabela, string id_sup, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimiAndSup_Entitet_kategori(tabela, id_sup, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimiAndSup_Entitet_kategori(tabela, id_sup,emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_Result> IBaseRepository.SelectAllActiveRecByEmertimiAndSup_Entitet_tip(string tabela, string id_sup, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_tip(string tabela, string id_sup, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimiAndSup_Entitet_tip(tabela, id_sup, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimiAndSup_Entitet_tip(tabela, id_sup,emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_Result> IBaseRepository.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info(string tabela, string id_sup, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info(string tabela, string id_sup, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info(tabela, id_sup, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info(tabela, id_sup,emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch_Result> IBaseRepository.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch(string tabela, string id_sup, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch_Result> SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch(string tabela, string id_sup, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch(tabela, id_sup, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimiAndSup_Entitet_tip_info_ch(tabela, id_sup,emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori(string tabela, string id_sup, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori_Result> SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori(string tabela, string id_sup, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori(tabela, id_sup, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimiAndSup_nder_Entitet_kategori(tabela, id_sup,emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori_Result> IBaseRepository.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori(string tabela, string id_sup, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori_Result> SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori(string tabela, string id_sup, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori(tabela, id_sup, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimiAndSup_nder_Entitet_tip_kategori(tabela, id_sup,emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimi_Entitet_Result> IBaseRepository.SelectAllActiveRecByEmertimi_Entitet(string tabela, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimi_Entitet_Result> SelectAllActiveRecByEmertimi_Entitet(string tabela, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimi_Entitet(tabela,emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimi_Entitet(tabela, emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimi_Entitet_access_Result> IBaseRepository.SelectAllActiveRecByEmertimi_Entitet_access(string tabela, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimi_Entitet_access_Result> SelectAllActiveRecByEmertimi_Entitet_access(string tabela, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimi_Entitet_access(tabela, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimi_Entitet_access(tabela, emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimi_Entitet_info_Result> IBaseRepository.SelectAllActiveRecByEmertimi_Entitet_info(string tabela, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimi_Entitet_info_Result> SelectAllActiveRecByEmertimi_Entitet_info(string tabela, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimi_Entitet_info(tabela, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimi_Entitet_info(tabela, emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimi_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRecByEmertimi_Entitet_kategori(string tabela, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimi_Entitet_kategori_Result> SelectAllActiveRecByEmertimi_Entitet_kategori(string tabela, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimi_Entitet_kategori(tabela, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimi_Entitet_kategori(tabela, emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimi_Entitet_tip_Result> IBaseRepository.SelectAllActiveRecByEmertimi_Entitet_tip(string tabela, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimi_Entitet_tip_Result> SelectAllActiveRecByEmertimi_Entitet_tip(string tabela, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimi_Entitet_tip(tabela, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimi_Entitet_tip(tabela, emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimi_Entitet_tip_info_Result> IBaseRepository.SelectAllActiveRecByEmertimi_Entitet_tip_info(string tabela, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimi_Entitet_tip_info_Result> SelectAllActiveRecByEmertimi_Entitet_tip_info(string tabela, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimi_Entitet_tip_info(tabela, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimi_Entitet_tip_info(tabela, emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimi_Entitet_tip_info_ch_Result> IBaseRepository.SelectAllActiveRecByEmertimi_Entitet_tip_info_ch(string tabela, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimi_Entitet_tip_info_ch_Result> SelectAllActiveRecByEmertimi_Entitet_tip_info_ch(string tabela, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimi_Entitet_tip_info_ch(tabela, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimi_Entitet_tip_info_ch(tabela, emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimi_nder_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRecByEmertimi_nder_Entitet_kategori(string tabela, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimi_nder_Entitet_kategori_Result> SelectAllActiveRecByEmertimi_nder_Entitet_kategori(string tabela, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimi_nder_Entitet_kategori(tabela, emertimi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimi_nder_Entitet_kategori(tabela, emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori_Result> IBaseRepository.SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori(string tabela, string emertimi)
+        public ObjectResult<SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori_Result> SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori(string tabela, string emertimi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori(tabela, emertimi);
-                return result;
-            }
-        }
-        
-        ObjectResult<SelectAllActiveRecByKodiAndSup_Entitet_Result> IBaseRepository.SelectAllActiveRecByKodiAndSup_Entitet(string tabela, string kodi, string id_sup)
-        {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByKodiAndSup_Entitet(tabela,kodi,id_sup);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByEmertimi_nder_Entitet_tip_kategori(tabela, emertimi);
         }
 
-        ObjectResult<SelectAllActiveRecByKodi_Entitet_Result> IBaseRepository.SelectAllActiveRecByKodi_Entitet(string tabela, string kodi)
+        public ObjectResult<SelectAllActiveRecByKodiAndSup_Entitet_Result> SelectAllActiveRecByKodiAndSup_Entitet(string tabela, string kodi, string id_sup)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByKodi_Entitet(tabela,kodi);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByKodiAndSup_Entitet(tabela, kodi,id_sup);
         }
 
-        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet(string tabela, string nrrendor)
+        public ObjectResult<SelectAllActiveRecByKodi_Entitet_Result> SelectAllActiveRecByKodi_Entitet(string tabela, string kodi)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByNrrendor_Entitet(tabela,nrrendor);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByKodi_Entitet(tabela, kodi);
         }
 
-        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_access_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_access(string tabela, string nrrendor)
+        public ObjectResult<SelectAllActiveRecByNrrendor_Entitet_Result> SelectAllActiveRecByNrrendor_Entitet(string tabela, string nrrendor)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByNrrendor_Entitet_access(tabela,nrrendor);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByNrrendor_Entitet(tabela, nrrendor);
         }
 
-        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_info_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_info(string tabela, string nrrendor)
+        public ObjectResult<SelectAllActiveRecByNrrendor_Entitet_access_Result> SelectAllActiveRecByNrrendor_Entitet_access(string tabela, string nrrendor)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByNrrendor_Entitet_info(tabela,nrrendor);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByNrrendor_Entitet_access(tabela, nrrendor);
         }
 
-        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_kategori(string tabela, string nrrendor)
+        public ObjectResult<SelectAllActiveRecByNrrendor_Entitet_info_Result> SelectAllActiveRecByNrrendor_Entitet_info(string tabela, string nrrendor)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByNrrendor_Entitet_kategori(tabela,nrrendor);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByNrrendor_Entitet_info(tabela, nrrendor);
         }
 
-        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_tip(string tabela, string nrrendor)
+        public ObjectResult<SelectAllActiveRecByNrrendor_Entitet_kategori_Result> SelectAllActiveRecByNrrendor_Entitet_kategori(string tabela, string nrrendor)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByNrrendor_Entitet_tip(tabela,nrrendor);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByNrrendor_Entitet_kategori(tabela, nrrendor);
         }
 
-        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_info_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_tip_info(string tabela, string nrrendor)
+        public ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_Result> SelectAllActiveRecByNrrendor_Entitet_tip(string tabela, string nrrendor)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByNrrendor_Entitet_tip_info(tabela,nrrendor);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByNrrendor_Entitet_tip(tabela, nrrendor);
         }
 
-        ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_info_ch_Result> IBaseRepository.SelectAllActiveRecByNrrendor_Entitet_tip_info_ch(string tabela, string nrrendor)
+        public ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_info_Result> SelectAllActiveRecByNrrendor_Entitet_tip_info(string tabela, string nrrendor)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByNrrendor_Entitet_tip_info_ch(tabela,nrrendor);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByNrrendor_Entitet_tip_info(tabela, nrrendor);
         }
 
-        ObjectResult<SelectAllActiveRecByNrrendor_nder_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRecByNrrendor_nder_Entitet_kategori(string tabela, string nrrendor)
+        public ObjectResult<SelectAllActiveRecByNrrendor_Entitet_tip_info_ch_Result> SelectAllActiveRecByNrrendor_Entitet_tip_info_ch(string tabela, string nrrendor)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByNrrendor_nder_Entitet_kategori(tabela,nrrendor);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByNrrendor_Entitet_tip_info_ch(tabela, nrrendor);
         }
 
-        ObjectResult<SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori_Result> IBaseRepository.SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori(string tabela, string nrrendor)
+        public ObjectResult<SelectAllActiveRecByNrrendor_nder_Entitet_kategori_Result> SelectAllActiveRecByNrrendor_nder_Entitet_kategori(string tabela, string nrrendor)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori(tabela,nrrendor);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByNrrendor_nder_Entitet_kategori(tabela, nrrendor);
         }
 
-        ObjectResult<SelectAllActiveRecBySup_Entitet_Result> IBaseRepository.SelectAllActiveRecBySup_Entitet(string tabela, string id_sup)
+        public ObjectResult<SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori_Result> SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori(string tabela, string nrrendor)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecBySup_Entitet(tabela,id_sup);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByNrrendor_nder_Entitet_tip_kategori(tabela, nrrendor);
         }
 
-        ObjectResult<SelectAllActiveRecBySup_Entitet_access_Result> IBaseRepository.SelectAllActiveRecBySup_Entitet_access(string tabela, string id_sup)
+        public ObjectResult<SelectAllActiveRecBySup_Entitet_Result> SelectAllActiveRecBySup_Entitet(string tabela, string id_sup)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecBySup_Entitet_access(tabela, id_sup);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecBySup_Entitet(tabela, id_sup);
         }
 
-        ObjectResult<SelectAllActiveRecBySup_Entitet_info_Result> IBaseRepository.SelectAllActiveRecBySup_Entitet_info(string tabela, string id_sup)
+        public ObjectResult<SelectAllActiveRecBySup_Entitet_access_Result> SelectAllActiveRecBySup_Entitet_access(string tabela, string id_sup)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecBySup_Entitet_info(tabela, id_sup);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecBySup_Entitet_access(tabela, id_sup);
         }
 
-        ObjectResult<SelectAllActiveRecBySup_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRecBySup_Entitet_kategori(string tabela, string id_sup)
+        public ObjectResult<SelectAllActiveRecBySup_Entitet_info_Result> SelectAllActiveRecBySup_Entitet_info(string tabela, string id_sup)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecBySup_Entitet_kategori(tabela, id_sup);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecBySup_Entitet_info(tabela, id_sup);
         }
 
-        ObjectResult<SelectAllActiveRecBySup_Entitet_tip_Result> IBaseRepository.SelectAllActiveRecBySup_Entitet_tip(string tabela, string id_sup)
+        public ObjectResult<SelectAllActiveRecBySup_Entitet_kategori_Result> SelectAllActiveRecBySup_Entitet_kategori(string tabela, string id_sup)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecBySup_Entitet_tip(tabela, id_sup);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecBySup_Entitet_kategori(tabela, id_sup);
         }
 
-        ObjectResult<SelectAllActiveRecBySup_Entitet_tip_info_Result> IBaseRepository.SelectAllActiveRecBySup_Entitet_tip_info(string tabela, string id_sup)
+        public ObjectResult<SelectAllActiveRecBySup_Entitet_tip_Result> SelectAllActiveRecBySup_Entitet_tip(string tabela, string id_sup)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecBySup_Entitet_tip_info(tabela, id_sup);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecBySup_Entitet_tip(tabela, id_sup);
         }
 
-        ObjectResult<SelectAllActiveRecBySup_Entitet_tip_info_ch_Result> IBaseRepository.SelectAllActiveRecBySup_Entitet_tip_info_ch(string tabela, string id_sup)
+        public ObjectResult<SelectAllActiveRecBySup_Entitet_tip_info_Result> SelectAllActiveRecBySup_Entitet_tip_info(string tabela, string id_sup)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecBySup_Entitet_tip_info_ch(tabela, id_sup);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecBySup_Entitet_tip_info(tabela, id_sup);
         }
 
-        ObjectResult<SelectAllActiveRecBySup_nder_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRecBySup_nder_Entitet_kategori(string tabela, string id_sup)
+        public ObjectResult<SelectAllActiveRecBySup_Entitet_tip_info_ch_Result> SelectAllActiveRecBySup_Entitet_tip_info_ch(string tabela, string id_sup)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecBySup_nder_Entitet_kategori(tabela, id_sup);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecBySup_Entitet_tip_info_ch(tabela, id_sup);
         }
 
-        ObjectResult<SelectAllActiveRecBySup_nder_Entitet_tip_kategori_Result> IBaseRepository.SelectAllActiveRecBySup_nder_Entitet_tip_kategori(string tabela, string id_sup)
+        public ObjectResult<SelectAllActiveRecBySup_nder_Entitet_kategori_Result> SelectAllActiveRecBySup_nder_Entitet_kategori(string tabela, string id_sup)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecBySup_nder_Entitet_tip_kategori(tabela, id_sup);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecBySup_nder_Entitet_kategori(tabela, id_sup);
         }
 
-       
-
-       
-
-        ObjectResult<SelectAllActiveRecByTipId_Entitet_Result> IBaseRepository.SelectAllActiveRecByTipId_Entitet(string tabela, string tip_id)
+        public ObjectResult<SelectAllActiveRecBySup_nder_Entitet_tip_kategori_Result> SelectAllActiveRecBySup_nder_Entitet_tip_kategori(string tabela, string id_sup)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByTipId_Entitet(tabela,tip_id);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecBySup_nder_Entitet_tip_kategori(tabela, id_sup);
         }
 
 
 
-        ObjectResult<SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result> IBaseRepository.SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch(string tabela, string tip_info_id)
+
+
+        public ObjectResult<SelectAllActiveRecByTipId_Entitet_Result> SelectAllActiveRecByTipId_Entitet(string tabela, string tip_id)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch(tabela,tip_info_id);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByTipId_Entitet(tabela, tip_id);
         }
 
-        ObjectResult<SelectAllActiveRec_Entitet_Result> IBaseRepository.SelectAllActiveRec_Entitet(string tabela)
+
+
+        public ObjectResult<SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch_Result> SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch(string tabela, string tip_info_id)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRec_Entitet(tabela);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRecByTipInfoId_Entitet_tip_info_ch(tabela,tip_info_id);
         }
 
-        ObjectResult<SelectAllActiveRec_Entitet_access_Result> IBaseRepository.SelectAllActiveRec_Entitet_access(string tabela)
+        public ObjectResult<SelectAllActiveRec_Entitet_Result> SelectAllActiveRec_Entitet(string tabela)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRec_Entitet_access(tabela);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRec_Entitet(tabela);
         }
 
-        ObjectResult<SelectAllActiveRec_Entitet_info_Result> IBaseRepository.SelectAllActiveRec_Entitet_info(string tabela)
+        public ObjectResult<SelectAllActiveRec_Entitet_access_Result> SelectAllActiveRec_Entitet_access(string tabela)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRec_Entitet_info(tabela);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRec_Entitet_access(tabela);
         }
 
-        ObjectResult<SelectAllActiveRec_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRec_Entitet_kategori(string tabela)
+        public ObjectResult<SelectAllActiveRec_Entitet_info_Result> SelectAllActiveRec_Entitet_info(string tabela)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRec_Entitet_kategori(tabela);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRec_Entitet_info(tabela);
+
         }
 
-        ObjectResult<SelectAllActiveRec_Entitet_tip_Result> IBaseRepository.SelectAllActiveRec_Entitet_tip(string tabela)
+        public ObjectResult<SelectAllActiveRec_Entitet_kategori_Result> SelectAllActiveRec_Entitet_kategori(string tabela)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRec_Entitet_tip(tabela);
-                return result;
-            }
+            //var context = new tasketDb();
+
+            //    var result = context.SelectAllActiveRec_Entitet_kategori(tabela);
+            //    return result;
+            return new tasketDb().SelectAllActiveRec_Entitet_kategori(tabela);
+
+
         }
 
-        ObjectResult<SelectAllActiveRec_Entitet_tip_info_Result> IBaseRepository.SelectAllActiveRec_Entitet_tip_info(string tabela)
+        public ObjectResult<SelectAllActiveRec_Entitet_tip_Result> SelectAllActiveRec_Entitet_tip(string tabela)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRec_Entitet_tip_info(tabela);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRec_Entitet_tip(tabela);
         }
 
-        ObjectResult<SelectAllActiveRec_Entitet_tip_info_ch_Result> IBaseRepository.SelectAllActiveRec_Entitet_tip_info_ch(string tabela)
+        public ObjectResult<SelectAllActiveRec_Entitet_tip_info_Result> SelectAllActiveRec_Entitet_tip_info(string tabela)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRec_Entitet_tip_info_ch(tabela);
-                return result;
-            }
-            throw new NotImplementedException();
+            return new tasketDb().SelectAllActiveRec_Entitet_tip_info(tabela);
         }
 
-        ObjectResult<SelectAllActiveRec_nder_Entitet_kategori_Result> IBaseRepository.SelectAllActiveRec_nder_Entitet_kategori(string tabela)
+        public ObjectResult<SelectAllActiveRec_Entitet_tip_info_ch_Result> SelectAllActiveRec_Entitet_tip_info_ch(string tabela)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRec_nder_Entitet_kategori(tabela);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRec_Entitet_tip_info_ch(tabela);
+
         }
 
-        ObjectResult<SelectAllActiveRec_nder_Entitet_tip_kategori_Result> IBaseRepository.SelectAllActiveRec_nder_Entitet_tip_kategori(string tabela)
+        public ObjectResult<SelectAllActiveRec_nder_Entitet_kategori_Result> SelectAllActiveRec_nder_Entitet_kategori(string tabela)
         {
-            using (var context = new tasketDb())
-            {
-                var result = context.SelectAllActiveRec_nder_Entitet_tip_kategori(tabela);
-                return result;
-            }
+            return new tasketDb().SelectAllActiveRec_nder_Entitet_kategori(tabela);
+        }
+
+        public ObjectResult<SelectAllActiveRec_nder_Entitet_tip_kategori_Result> SelectAllActiveRec_nder_Entitet_tip_kategori(string tabela)
+        {
+            return new tasketDb().SelectAllActiveRec_nder_Entitet_tip_kategori(tabela);
         }
     }
 }
