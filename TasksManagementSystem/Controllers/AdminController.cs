@@ -55,9 +55,12 @@ namespace TasksManagementSystem.Controllers
         public PartialViewResult ModifikoTipi()
         {
             BaseRepository repository = new BaseRepository();
-           List<SelectAllActiveRec_Entitet_kategori_Result> gh = new List<SelectAllActiveRec_Entitet_kategori_Result>();
-               gh = repository.SelectAllActiveRec_Entitet_kategori("tbl_Analize").ToList();
-            
+           List<SelectAllActiveRec_Entitet_kategori_Result> AllCategories = new List<SelectAllActiveRec_Entitet_kategori_Result>();
+            AllCategories = repository.SelectAllActiveRec_Entitet_kategori("tbl_Analize").ToList();
+            List<SelectAllActiveRecBySup_Entitet_kategori_Result> KategoriBir = new List<SelectAllActiveRecBySup_Entitet_kategori_Result>();
+            KategoriBir = repository.SelectAllActiveRecBySup_Entitet_kategori("tbl_Analize", "5").ToList();
+
+
             Helper hp = new Helper();
             AdminViewModel model = new AdminViewModel();
             model.SelectListEntity = hp.GetEntities();
