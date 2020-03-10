@@ -36,8 +36,32 @@ namespace TasksManagementSystem.KlasatNdihmese
             }
 
         }
+        public List<SelectListItem> GetKategori(string table)
+        {
+            using (var context = new tasketDb())
+            {
+                List<SelectListItem> Kategori = new List<SelectListItem>();
+                Kategori = context.SelectAllActiveRec_Entitet_kategori(table).Where(a => a.aktiv==true).Select(n => new SelectListItem
+                {
+                    Value = n.nrrendor.ToString(),
+                    Text = n.emertimi
+                }).ToList();
+                var entitetTip = new SelectListItem()
+                {
+                    Value = "-1",
+                    Text = "--Zgjidh--"
+                };
+                Kategori.Insert(0, entitetTip);
+
+
+
+                return Kategori;
+            }
+
+        }
     }
+}
 
        
 
-    }
+    

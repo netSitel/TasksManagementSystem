@@ -245,7 +245,6 @@ namespace TasksManagementSystem.Repositores
             return new tasketDb().SelectAllActiveRec_Entitet_info(tabela);
 
         }
-
         public ObjectResult<SelectAllActiveRec_Entitet_kategori_Result> SelectAllActiveRec_Entitet_kategori(string tabela)
         {
             //var context = new tasketDb();

@@ -1,0 +1,22 @@
+﻿
+
+
+
+    <div class="row">
+        @Html.ActionLink("show modal", "modal", null, new { @class = "modal" })
+    </div>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.11.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.modal').click(function () {
+            $('<div />').appendTo('body').dialog({
+                close: function (event, ui) {
+                    dialog.remove();
+                },
+                modal: true
+            }).load(this.href, {});
+
+            return false;
+        });
+    });
+</script>

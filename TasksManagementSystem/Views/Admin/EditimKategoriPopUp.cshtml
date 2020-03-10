@@ -1,0 +1,63 @@
+﻿@model TasksManagementSystem.Models.KategoriViewModel
+@{
+    Layout = null;
+
+}
+
+@using (Html.BeginForm("EditimKategoriPopUp", "Admin", FormMethod.Post))
+{
+    <!-- Modal content-->
+    <div>
+
+
+        <table>
+            <tr>
+                <td>
+                    <input type="hidden" name="nrrendor" id="nrrendor" value="@Model.Entitet.nrrendor" />
+                </td>
+                <td>
+                    <input type="hidden" name="id_sup" id="id_sup" value="@Model.Entitet.id_sup" />
+                </td>
+            </tr>
+
+            <tr>
+                <td><p>Emertimi:</p></td>
+                <td>@Html.EditorFor(model => Model.Entitet.emertimi)</td>
+            </tr>
+            <tr>
+                <td><p>Pershkrimi:</p></td>
+                <td>@Html.EditorFor(model => Model.Entitet.pershkrimi)</td>
+            </tr>
+            <tr>
+                <td><p>Data e krijimit:</p></td>
+                <td>@Html.EditorFor(model => Model.Entitet.data_krijimit)</td>
+            </tr>
+            <tr>
+                <td><p>Emertimi anglisht</p></td>
+                <td>@Html.EditorFor(model => Model.Entitet.emertimiang)</td>
+            </tr>
+            <tr>
+                <td><p>Data e krijimit:</p></td>
+                <td>@Html.EditorFor(model => Model.Entitet.data_krijimit)</td>
+            </tr>
+            <tr>
+                <td><p>Kodi:</p></td>
+                <td>@Html.EditorFor(model => Model.Entitet.kodi)</td>
+            </tr>
+            <tr>
+                <td><p>Rradha:</p></td>
+                <td>@Html.EditorFor(model => Model.Entitet.rradha)</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Ruaj" />
+                    <a href="@Url.Action("DeleteKategori", "Admin", new { id =Model.Entitet.nrrendor,table=Model.table})">
+                        Fshi
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+}

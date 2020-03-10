@@ -1,0 +1,67 @@
+﻿@model TasksManagementSystem.Models.KategoriViewModel
+@{
+    Layout = null;
+
+}
+
+@using (Html.BeginForm("SaveNewKategori", "Admin", FormMethod.Post))
+{
+    <!-- Modal content-->
+    <div>
+
+
+        <table>
+            <tr>
+                <td>
+                <td>
+                    <input type="hidden" name="table" id="table" value="@Model.table" />
+                </td>
+            </tr>
+            <tr>
+                <td>Emertimi</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.Entitet.emertimi)
+                </td>
+            </tr>
+            <tr>
+                <td>Emertimi Anglisht</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.Entitet.emertimiang)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Prindi:
+                </td>
+                <td>
+                    @Html.DropDownListFor(x => Model.Entitet.id_sup, new SelectList(Model.SelectListKategori, "Value", "Text"), htmlAttributes: new { id = "EntitetID", @class = "form-control", required = "required" })
+                </td>
+            </tr>
+            <tr>
+                <td><p>Kodi:</p></td>
+                <td>@Html.TextBoxFor(model => Model.Entitet.kodi)</td>
+            </tr>
+            <tr>
+                <td><p>Pershkrimi:</p></td>
+                <td>@Html.TextBoxFor(model => Model.Entitet.pershkrimi)</td>
+            </tr>
+            <tr>
+                <td><p>Data e krijimit:</p></td>
+                <td>@Html.TextBoxFor(model => Model.Entitet.data_krijimit)</td>
+            </tr>
+            <tr>
+                <td><p>Rradha</p></td>
+                <td>@Html.TextBoxFor(model => Model.Entitet.rradha)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="Ruaj" />
+
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+
+

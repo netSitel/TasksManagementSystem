@@ -1,0 +1,158 @@
+﻿@model List<TasksManagementSystem.KlasatNdihmese.Kategori>
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+    var tableName = ViewBag.Table;
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+@* CSS *@
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+@* Jquery for Collapse/Expend *@
+
+
+
+<div class="container">
+    @NestedTreeView.GetHtml(Model, -1)
+    <button value="@tableName" onclick="NewEntityKategori(this.value)">New</button>
+    <input id="hf" type="hidden" value="@tableName" />
+        
+
+
+</div>
+<div id="dialog" style="display: none">
+</div>
+@*Chaange the name if error is not resolve*@
+
+
+
+
+<style>
+
+    .popup:hover {
+        cursor: pointer;
+        color: black;
+        font-weight: bold;
+    }
+
+
+    .container {
+        min-width: 500px;
+        overflow: hidden;
+    }
+
+    .innerTable table {
+        margin: 0px auto;
+        border-left-width: 4px;
+    }
+
+    td.innerTable {
+        padding-left: 40px;
+    }
+
+    .icon {
+        background-image: url('/Images/ui-icons_222222_256x240.png');
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        float: left;
+    }
+
+    .icon-e {
+        background-position: -32px -16px;
+    }
+
+    .icon-s {
+        background-position: -64px -16px;
+    }
+</style>
+@* Jquery for Collapse/Expend *@
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+
+<script src="~/Scripts/bootstrap.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script type="text/javascript">
+
+    function NewEntityKategori(button) {
+      
+        alert(button);
+        $('#dialog').dialog({
+            autoOpen: false,
+            modal: true,
+            title: "Perpuno Analize"
+
+        });
+         
+        
+
+        $.ajax({
+
+            type: "POST",
+            
+            url: '@Url.Action("NewKategoriPopUp","Admin")',
+            data: '{Id: "' + button + '" }',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+             success: function (response) {
+                $('#dialog').html(response);
+                $('#dialog').dialog('open');
+            }
+
+   
+        });
+
+        }
+
+
+    //Afishimi i rreshtave bir
+ 
+        $('.icon').live('click', function () {
+            var $pRow = $(this).parents('tr');
+            var $nextRow = $pRow.next('tr');
+            $nextRow.toggle();
+
+            //$(this).toggleClass('icon icon-e');
+        });
+
+    //Ridrejtimi ne popmodul
+    $('.popup').live('click', function () {
+        var $row = $(this).closest("tr");    // Find the row
+        var $text = $row.find(".id").text();
+        alert($text);
+        
+
+
+        $('#dialog').dialog({
+            autoOpen: false,
+            modal: true,
+            title: "Perpuno Analize"
+
+        });
+         
+        
+        $.ajax({
+
+            type: "POST",
+            url: '@Url.Action("EditimKategoriPopUp","Admin")?id=' + $text + '&name=' + $('#hf').val(),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+             success: function (response) {
+                $('#dialog').html(response);
+                $('#dialog').dialog('open');
+            }
+
+   
+});
+     });
+</script>
+
