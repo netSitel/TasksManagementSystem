@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="tasketModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="tasketModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AspNetRoles">
           <Key>
             <PropertyRef Name="Id" />
@@ -20,16 +20,6 @@
           <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="ClaimType" Type="nvarchar(max)" />
           <Property Name="ClaimValue" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="AspNetUserLogins">
-          <Key>
-            <PropertyRef Name="LoginProvider" />
-            <PropertyRef Name="ProviderKey" />
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
         </EntityType>
         <EntityType Name="AspNetUserRoles">
           <Key>
@@ -86,20 +76,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserLogins">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
           <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -141,6 +117,9 @@
           <Parameter Name="nr" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="SelectA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabela" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectA1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tabela" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="SelectAllActiveRec_Entitet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -3167,7 +3146,6 @@
         <EntityContainer Name="tasketModelStoreContainer">
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="entitetet" EntityType="Self.entitetet" Schema="dbo" store:Type="Tables" />
@@ -3175,10 +3153,6 @@
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
           </AssociationSet>
           <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
@@ -3189,7 +3163,8 @@
             <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="tasketModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3211,17 +3186,6 @@
           <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
         </EntityType>
-        <EntityType Name="AspNetUserLogins">
-          <Key>
-            <PropertyRef Name="LoginProvider" />
-            <PropertyRef Name="ProviderKey" />
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
-        </EntityType>
         <EntityType Name="AspNetUsers">
           <Key>
             <PropertyRef Name="Id" />
@@ -3239,8 +3203,23 @@
           <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
           <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
-          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
           <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="entitetet">
+          <Key>
+            <PropertyRef Name="nrrendor" />
+          </Key>
+          <Property Name="nrrendor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="entitet" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="emertim_tabele" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="konfigurime">
+          <Key>
+            <PropertyRef Name="nrrendor" />
+          </Key>
+          <Property Name="nrrendor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emertimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vlera" Type="Int32" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
@@ -3256,43 +3235,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserLogins">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="AspNetUserRoles">
           <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="tasketDb" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="taskDb" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
-          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+          <EntitySet Name="entitetet" EntityType="Self.entitetet" />
+          <EntitySet Name="konfigurime" EntityType="Self.konfigurime" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
           </AssociationSet>
           <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
           <FunctionImport Name="FSHIJALL">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetTree">
             <Parameter Name="tabela" Mode="In" Type="String" />
@@ -3303,34 +3265,37 @@
             <Parameter Name="nr" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectA" ReturnType="Collection(tasketModel.SelectA_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectA1" ReturnType="Collection(tasketModel.SelectA1_Result)">
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRec_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRec_Entitet_access" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_access_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRec_Entitet_info" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_info_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRec_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_kategori_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRec_Entitet_tip" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRec_Entitet_tip_info" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_info_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRec_Entitet_tip_info_ch" ReturnType="Collection(tasketModel.SelectAllActiveRec_Entitet_tip_info_ch_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRec_nder_Entitet_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_nder_Entitet_kategori_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRec_nder_Entitet_tip_kategori" ReturnType="Collection(tasketModel.SelectAllActiveRec_nder_Entitet_tip_kategori_Result)">
-          <Parameter Name="tabela" Mode="In" Type="String" />
+            <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SelectAllActiveRecByEmertimi_Entitet" ReturnType="Collection(tasketModel.SelectAllActiveRecByEmertimi_Entitet_Result)">
             <Parameter Name="tabela" Mode="In" Type="String" />
@@ -3518,11 +3483,11 @@
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(tasketModel.sp_helpdiagramdefinition_Result)">
+          <FunctionImport Name="sp_helpdiagramdefinition">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(tasketModel.sp_helpdiagrams_Result)">
+          <FunctionImport Name="sp_helpdiagrams">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -6326,10 +6291,28 @@
             <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <EntitySet Name="entitetet" EntityType="tasketModel.entitetet" />
-          <EntitySet Name="konfigurime" EntityType="tasketModel.konfigurime" />
         </EntityContainer>
         <ComplexType Name="SelectA_Result">
+          <Property Type="Int32" Name="nrrendor" Nullable="false" />
+          <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_sup" Nullable="true" />
+          <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_ndr" Nullable="true" />
+          <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="tip_id" Nullable="true" />
+          <Property Type="String" Name="tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="kodi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="emertimi" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimi" Nullable="true" />
+          <Property Type="String" Name="emertimiang" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pershkrimiang" Nullable="true" />
+          <Property Type="Boolean" Name="kompleks" Nullable="true" />
+          <Property Type="Boolean" Name="aktiv" Nullable="false" />
+          <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="perdorues_id" Nullable="true" />
+          <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectA1_Result">
           <Property Type="Int32" Name="nrrendor" Nullable="false" />
           <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="id_sup" Nullable="true" />
@@ -6495,10 +6478,10 @@
           <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="id_ndr" Nullable="true" />
           <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_id" Nullable="true" />
-          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_kategori_id" Nullable="true" />
-          <Property Type="String" Name="Analize_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_kategori_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="aktiv" Nullable="false" />
           <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
@@ -6511,10 +6494,10 @@
           <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="id_ndr" Nullable="true" />
           <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_tip_id" Nullable="true" />
-          <Property Type="String" Name="Analize_tip_id_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_tip_kategori_id" Nullable="true" />
-          <Property Type="String" Name="Analize_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_tip_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_tip_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="aktiv" Nullable="false" />
           <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
@@ -6666,10 +6649,10 @@
           <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="id_ndr" Nullable="true" />
           <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_id" Nullable="true" />
-          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_kategori_id" Nullable="true" />
-          <Property Type="String" Name="Analize_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_kategori_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="aktiv" Nullable="false" />
           <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
@@ -6682,10 +6665,10 @@
           <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="id_ndr" Nullable="true" />
           <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_tip_id" Nullable="true" />
-          <Property Type="String" Name="Analize_tip_id_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_tip_kategori_id" Nullable="true" />
-          <Property Type="String" Name="Analize_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_tip_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_tip_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="aktiv" Nullable="false" />
           <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
@@ -6837,10 +6820,10 @@
           <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="id_ndr" Nullable="true" />
           <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_id" Nullable="true" />
-          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_kategori_id" Nullable="true" />
-          <Property Type="String" Name="Analize_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_kategori_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="aktiv" Nullable="false" />
           <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
@@ -6853,10 +6836,10 @@
           <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="id_ndr" Nullable="true" />
           <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_tip_id" Nullable="true" />
-          <Property Type="String" Name="Analize_tip_id_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_tip_kategori_id" Nullable="true" />
-          <Property Type="String" Name="Analize_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_tip_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_tip_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="aktiv" Nullable="false" />
           <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
@@ -7048,10 +7031,10 @@
           <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="id_ndr" Nullable="true" />
           <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_id" Nullable="true" />
-          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_kategori_id" Nullable="true" />
-          <Property Type="String" Name="Analize_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_kategori_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="aktiv" Nullable="false" />
           <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
@@ -7064,10 +7047,10 @@
           <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="id_ndr" Nullable="true" />
           <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_tip_id" Nullable="true" />
-          <Property Type="String" Name="Analize_tip_id_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_tip_kategori_id" Nullable="true" />
-          <Property Type="String" Name="Analize_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_tip_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_tip_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="aktiv" Nullable="false" />
           <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
@@ -7219,10 +7202,10 @@
           <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="id_ndr" Nullable="true" />
           <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_id" Nullable="true" />
-          <Property Type="String" Name="Analize_id_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_kategori_id" Nullable="true" />
-          <Property Type="String" Name="Analize_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_kategori_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="aktiv" Nullable="false" />
           <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
@@ -7235,10 +7218,10 @@
           <Property Type="String" Name="id_sup_gen" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="id_ndr" Nullable="true" />
           <Property Type="String" Name="id_ndr_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_tip_id" Nullable="true" />
-          <Property Type="String" Name="Analize_tip_id_gen" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Analize_tip_kategori_id" Nullable="true" />
-          <Property Type="String" Name="Analize_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_tip_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_tip_id_gen" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Entitet_tip_kategori_id" Nullable="true" />
+          <Property Type="String" Name="Entitet_tip_kategori_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="aktiv" Nullable="false" />
           <Property Type="DateTime" Name="data_krijimit" Nullable="false" Precision="23" />
           <Property Type="Int32" Name="perdorues_id" Nullable="true" />
@@ -7283,39 +7266,12 @@
           <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="VA" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
-        <EntityType Name="entitetet">
-          <Key>
-            <PropertyRef Name="nrrendor" />
-          </Key>
-          <Property Name="nrrendor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="entitet" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="emertim_tabele" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="konfigurime">
-          <Key>
-            <PropertyRef Name="nrrendor" />
-          </Key>
-          <Property Name="nrrendor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="emertimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="vlera" Type="Int32" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="tasketModelStoreContainer" CdmEntityContainer="tasketDb">
+        <EntityContainerMapping StorageEntityContainer="tasketModelStoreContainer" CdmEntityContainer="taskDb">
           <EntitySetMapping Name="AspNetRoles">
             <EntityTypeMapping TypeName="tasketModel.AspNetRoles">
               <MappingFragment StoreEntitySet="AspNetRoles">
@@ -7331,15 +7287,6 @@
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
                 <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AspNetUserLogins">
-            <EntityTypeMapping TypeName="tasketModel.AspNetUserLogins">
-              <MappingFragment StoreEntitySet="AspNetUserLogins">
-                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
-                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -7361,6 +7308,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="entitetet">
+            <EntityTypeMapping TypeName="tasketModel.entitetet">
+              <MappingFragment StoreEntitySet="entitetet">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="entitet" ColumnName="entitet" />
+                <ScalarProperty Name="emertim_tabele" ColumnName="emertim_tabele" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="konfigurime">
+            <EntityTypeMapping TypeName="tasketModel.konfigurime">
+              <MappingFragment StoreEntitySet="konfigurime">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="vlera" ColumnName="vlera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <AssociationSetMapping Name="AspNetUserRoles" TypeName="tasketModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
             <EndProperty Name="AspNetRoles">
               <ScalarProperty Name="Id" ColumnName="RoleId" />
@@ -7375,6 +7340,30 @@
           <FunctionImportMapping FunctionImportName="SelectA" FunctionName="tasketModel.Store.SelectA">
             <ResultMapping>
               <ComplexTypeMapping TypeName="tasketModel.SelectA_Result">
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+                <ScalarProperty Name="id_gen" ColumnName="id_gen" />
+                <ScalarProperty Name="id_sup" ColumnName="id_sup" />
+                <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
+                <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
+                <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
+                <ScalarProperty Name="tip_id" ColumnName="tip_id" />
+                <ScalarProperty Name="tip_id_gen" ColumnName="tip_id_gen" />
+                <ScalarProperty Name="kodi" ColumnName="kodi" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="pershkrimi" ColumnName="pershkrimi" />
+                <ScalarProperty Name="emertimiang" ColumnName="emertimiang" />
+                <ScalarProperty Name="pershkrimiang" ColumnName="pershkrimiang" />
+                <ScalarProperty Name="kompleks" ColumnName="kompleks" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
+                <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
+                <ScalarProperty Name="perdorues_id_gen" ColumnName="perdorues_id_gen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectA1" FunctionName="tasketModel.Store.SelectA1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tasketModel.SelectA1_Result">
                 <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
                 <ScalarProperty Name="id_gen" ColumnName="id_gen" />
                 <ScalarProperty Name="id_sup" ColumnName="id_sup" />
@@ -7572,10 +7561,10 @@
                 <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
                 <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
                 <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
-                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
-                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
-                <ScalarProperty Name="Analize_kategori_id" ColumnName="Analize_kategori_id" />
-                <ScalarProperty Name="Analize_kategori_id_gen" ColumnName="Analize_kategori_id_gen" />
+                <ScalarProperty Name="Entitet_id" ColumnName="Entitet_id" />
+                <ScalarProperty Name="Entitet_id_gen" ColumnName="Entitet_id_gen" />
+                <ScalarProperty Name="Entitet_kategori_id" ColumnName="Entitet_kategori_id" />
+                <ScalarProperty Name="Entitet_kategori_id_gen" ColumnName="Entitet_kategori_id_gen" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
                 <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
@@ -7592,10 +7581,10 @@
                 <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
                 <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
                 <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
-                <ScalarProperty Name="Analize_tip_id" ColumnName="Analize_tip_id" />
-                <ScalarProperty Name="Analize_tip_id_gen" ColumnName="Analize_tip_id_gen" />
-                <ScalarProperty Name="Analize_tip_kategori_id" ColumnName="Analize_tip_kategori_id" />
-                <ScalarProperty Name="Analize_tip_kategori_id_gen" ColumnName="Analize_tip_kategori_id_gen" />
+                <ScalarProperty Name="Entitet_tip_id" ColumnName="Entitet_tip_id" />
+                <ScalarProperty Name="Entitet_tip_id_gen" ColumnName="Entitet_tip_id_gen" />
+                <ScalarProperty Name="Entitet_tip_kategori_id" ColumnName="Entitet_tip_kategori_id" />
+                <ScalarProperty Name="Entitet_tip_kategori_id_gen" ColumnName="Entitet_tip_kategori_id_gen" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
                 <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
@@ -7779,10 +7768,10 @@
                 <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
                 <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
                 <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
-                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
-                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
-                <ScalarProperty Name="Analize_kategori_id" ColumnName="Analize_kategori_id" />
-                <ScalarProperty Name="Analize_kategori_id_gen" ColumnName="Analize_kategori_id_gen" />
+                <ScalarProperty Name="Entitet_id" ColumnName="Entitet_id" />
+                <ScalarProperty Name="Entitet_id_gen" ColumnName="Entitet_id_gen" />
+                <ScalarProperty Name="Entitet_kategori_id" ColumnName="Entitet_kategori_id" />
+                <ScalarProperty Name="Entitet_kategori_id_gen" ColumnName="Entitet_kategori_id_gen" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
                 <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
@@ -7799,10 +7788,10 @@
                 <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
                 <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
                 <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
-                <ScalarProperty Name="Analize_tip_id" ColumnName="Analize_tip_id" />
-                <ScalarProperty Name="Analize_tip_id_gen" ColumnName="Analize_tip_id_gen" />
-                <ScalarProperty Name="Analize_tip_kategori_id" ColumnName="Analize_tip_kategori_id" />
-                <ScalarProperty Name="Analize_tip_kategori_id_gen" ColumnName="Analize_tip_kategori_id_gen" />
+                <ScalarProperty Name="Entitet_tip_id" ColumnName="Entitet_tip_id" />
+                <ScalarProperty Name="Entitet_tip_id_gen" ColumnName="Entitet_tip_id_gen" />
+                <ScalarProperty Name="Entitet_tip_kategori_id" ColumnName="Entitet_tip_kategori_id" />
+                <ScalarProperty Name="Entitet_tip_kategori_id_gen" ColumnName="Entitet_tip_kategori_id_gen" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
                 <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
@@ -7986,10 +7975,10 @@
                 <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
                 <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
                 <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
-                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
-                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
-                <ScalarProperty Name="Analize_kategori_id" ColumnName="Analize_kategori_id" />
-                <ScalarProperty Name="Analize_kategori_id_gen" ColumnName="Analize_kategori_id_gen" />
+                <ScalarProperty Name="Entitet_id" ColumnName="Entitet_id" />
+                <ScalarProperty Name="Entitet_id_gen" ColumnName="Entitet_id_gen" />
+                <ScalarProperty Name="Entitet_kategori_id" ColumnName="Entitet_kategori_id" />
+                <ScalarProperty Name="Entitet_kategori_id_gen" ColumnName="Entitet_kategori_id_gen" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
                 <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
@@ -8006,10 +7995,10 @@
                 <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
                 <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
                 <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
-                <ScalarProperty Name="Analize_tip_id" ColumnName="Analize_tip_id" />
-                <ScalarProperty Name="Analize_tip_id_gen" ColumnName="Analize_tip_id_gen" />
-                <ScalarProperty Name="Analize_tip_kategori_id" ColumnName="Analize_tip_kategori_id" />
-                <ScalarProperty Name="Analize_tip_kategori_id_gen" ColumnName="Analize_tip_kategori_id_gen" />
+                <ScalarProperty Name="Entitet_tip_id" ColumnName="Entitet_tip_id" />
+                <ScalarProperty Name="Entitet_tip_id_gen" ColumnName="Entitet_tip_id_gen" />
+                <ScalarProperty Name="Entitet_tip_kategori_id" ColumnName="Entitet_tip_kategori_id" />
+                <ScalarProperty Name="Entitet_tip_kategori_id_gen" ColumnName="Entitet_tip_kategori_id_gen" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
                 <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
@@ -8241,10 +8230,10 @@
                 <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
                 <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
                 <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
-                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
-                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
-                <ScalarProperty Name="Analize_kategori_id" ColumnName="Analize_kategori_id" />
-                <ScalarProperty Name="Analize_kategori_id_gen" ColumnName="Analize_kategori_id_gen" />
+                <ScalarProperty Name="Entitet_id" ColumnName="Entitet_id" />
+                <ScalarProperty Name="Entitet_id_gen" ColumnName="Entitet_id_gen" />
+                <ScalarProperty Name="Entitet_kategori_id" ColumnName="Entitet_kategori_id" />
+                <ScalarProperty Name="Entitet_kategori_id_gen" ColumnName="Entitet_kategori_id_gen" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
                 <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
@@ -8261,10 +8250,10 @@
                 <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
                 <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
                 <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
-                <ScalarProperty Name="Analize_tip_id" ColumnName="Analize_tip_id" />
-                <ScalarProperty Name="Analize_tip_id_gen" ColumnName="Analize_tip_id_gen" />
-                <ScalarProperty Name="Analize_tip_kategori_id" ColumnName="Analize_tip_kategori_id" />
-                <ScalarProperty Name="Analize_tip_kategori_id_gen" ColumnName="Analize_tip_kategori_id_gen" />
+                <ScalarProperty Name="Entitet_tip_id" ColumnName="Entitet_tip_id" />
+                <ScalarProperty Name="Entitet_tip_id_gen" ColumnName="Entitet_tip_id_gen" />
+                <ScalarProperty Name="Entitet_tip_kategori_id" ColumnName="Entitet_tip_kategori_id" />
+                <ScalarProperty Name="Entitet_tip_kategori_id_gen" ColumnName="Entitet_tip_kategori_id_gen" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
                 <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
@@ -8448,10 +8437,10 @@
                 <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
                 <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
                 <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
-                <ScalarProperty Name="Analize_id" ColumnName="Analize_id" />
-                <ScalarProperty Name="Analize_id_gen" ColumnName="Analize_id_gen" />
-                <ScalarProperty Name="Analize_kategori_id" ColumnName="Analize_kategori_id" />
-                <ScalarProperty Name="Analize_kategori_id_gen" ColumnName="Analize_kategori_id_gen" />
+                <ScalarProperty Name="Entitet_id" ColumnName="Entitet_id" />
+                <ScalarProperty Name="Entitet_id_gen" ColumnName="Entitet_id_gen" />
+                <ScalarProperty Name="Entitet_kategori_id" ColumnName="Entitet_kategori_id" />
+                <ScalarProperty Name="Entitet_kategori_id_gen" ColumnName="Entitet_kategori_id_gen" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
                 <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
@@ -8468,10 +8457,10 @@
                 <ScalarProperty Name="id_sup_gen" ColumnName="id_sup_gen" />
                 <ScalarProperty Name="id_ndr" ColumnName="id_ndr" />
                 <ScalarProperty Name="id_ndr_gen" ColumnName="id_ndr_gen" />
-                <ScalarProperty Name="Analize_tip_id" ColumnName="Analize_tip_id" />
-                <ScalarProperty Name="Analize_tip_id_gen" ColumnName="Analize_tip_id_gen" />
-                <ScalarProperty Name="Analize_tip_kategori_id" ColumnName="Analize_tip_kategori_id" />
-                <ScalarProperty Name="Analize_tip_kategori_id_gen" ColumnName="Analize_tip_kategori_id_gen" />
+                <ScalarProperty Name="Entitet_tip_id" ColumnName="Entitet_tip_id" />
+                <ScalarProperty Name="Entitet_tip_id_gen" ColumnName="Entitet_tip_id_gen" />
+                <ScalarProperty Name="Entitet_tip_kategori_id" ColumnName="Entitet_tip_kategori_id" />
+                <ScalarProperty Name="Entitet_tip_kategori_id_gen" ColumnName="Entitet_tip_kategori_id_gen" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="data_krijimit" ColumnName="data_krijimit" />
                 <ScalarProperty Name="perdorues_id" ColumnName="perdorues_id" />
@@ -8529,25 +8518,8 @@
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="tasketModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="tasketModel.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="tasketModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="tasketModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="tasketModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="tasketModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="tasketModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="tasketModel.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="tasketModel.Store.sp_helpdiagrams" />
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="tasketModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="tasketModel.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="spI_tbl_Analize" FunctionName="tasketModel.Store.spI_tbl_Analize" />
@@ -8730,24 +8702,6 @@
           <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip" />
           <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip_info" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip_info" />
           <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip_info_ch" />
-          <EntitySetMapping Name="entitetet">
-            <EntityTypeMapping TypeName="tasketModel.entitetet">
-              <MappingFragment StoreEntitySet="entitetet">
-                <ScalarProperty Name="emertim_tabele" ColumnName="emertim_tabele" />
-                <ScalarProperty Name="entitet" ColumnName="entitet" />
-                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="konfigurime">
-            <EntityTypeMapping TypeName="tasketModel.konfigurime">
-              <MappingFragment StoreEntitySet="konfigurime">
-                <ScalarProperty Name="vlera" ColumnName="vlera" />
-                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
-                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

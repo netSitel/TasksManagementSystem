@@ -23,7 +23,7 @@ namespace TasksManagementSystem.Controllers
         public ActionResult Index()
         {
             AdminViewModel model = new AdminViewModel();
-            using (var context = new tasketDb())
+            using (var context = new taskDb())
             {
                 model.konfigurimet = context.konfigurime.ToList();
             }
@@ -50,7 +50,7 @@ namespace TasksManagementSystem.Controllers
             AdminViewModel model = new AdminViewModel();
             model.SelectListEntity = hp.GetEntities();
             kategoriViewModel.SelectListKategori = hp.GetEntities();
-            using (var context = new tasketDb())
+            using (var context = new taskDb())
             {
                 model.konfigurimet = context.konfigurime.ToList();
                 
@@ -72,7 +72,7 @@ namespace TasksManagementSystem.Controllers
             AdminViewModel model = new AdminViewModel();
             model.SelectListEntity = hp.GetEntities();
             TipiViewModel.SelectListEntity = hp.GetEntities();
-            using (var context = new tasketDb())
+            using (var context = new taskDb())
             {
                 model.konfigurimet = context.konfigurime.ToList();
 
@@ -89,13 +89,37 @@ namespace TasksManagementSystem.Controllers
             TipiViewModel model = new TipiViewModel();
             model.SelectedKategoriId = Convert.ToInt32(idKategori);
             model.table = name;
-            using(var db=new tasketDb())
+            using(var db=new taskDb())
             {
-                model.SelectTipKategori = db.SelectAllActiveRec_nder_Entitet_tip_kategori("tbl_" + name).ToList();
+                
+                model.SelectTipKategori = db.SelectAllActiveRec_nder_Entitet_tip_kategori("tbl_nder_" + name).ToList();
             }
 
-                return View();
+                return PartialView("_AfishoTipe",model);
         }
+
+        public ActionResult NewTipPopUp(string idKategori,string name)
+        {
+            TipiViewModel model = new TipiViewModel();
+            model.table = name;
+            model.SelectedKategoriId = Convert.ToInt32(idKategori);
+            return PartialView("_NewTip",model);
+        }
+
+        public ActionResult SaveNewTip(TipiViewModel model)
+        {
+            bool True = true;
+            using (var db = new taskDb())
+            {
+                db.spI_tbl_Analize_tip(model.EntitetTip.id_sup, True, model.EntitetTip.kodi, model.EntitetTip.kodifillim, model.EntitetTip.kodimbarim, model.EntitetTip.kodiaktual, model.EntitetTip.emertimi, model.EntitetTip.pershkrimi, model.EntitetTip.emertimiang, model.EntitetTip.pershkrimiang, model.EntitetTip.rradha, model.EntitetTip.perdorues_id);
+            }
+
+                return RedirectToAction("Index");
+        }
+
+
+
+
             public PartialViewResult ModifikoPerdoues(string table)
         {
             Helper hp = new Helper();
@@ -109,7 +133,7 @@ namespace TasksManagementSystem.Controllers
 
             List<Kategori> list = new List<Kategori>();
 
-            using (var db = new tasketDb())
+            using (var db = new taskDb())
             {
                 List<SelectAllActiveRec_Entitet_kategori_Result> AllCategories = new List<SelectAllActiveRec_Entitet_kategori_Result>();
                 AllCategories = db.SelectAllActiveRec_Entitet_kategori("tbl_" + table).Where(a => a.aktiv = true).OrderBy(a => a.nrrendor).ToList();
@@ -132,7 +156,7 @@ namespace TasksManagementSystem.Controllers
 
                 List<Kategori> list = new List<Kategori>();
 
-                using (var db = new tasketDb())
+                using (var db = new taskDb())
                 {
                     List<SelectAllActiveRec_Entitet_kategori_Result> AllCategories = new List<SelectAllActiveRec_Entitet_kategori_Result>();
                     AllCategories = db.SelectAllActiveRec_Entitet_kategori("tbl_" + table).Where(a => a.aktiv = true).OrderBy(a => a.nrrendor).ToList();
@@ -157,7 +181,7 @@ namespace TasksManagementSystem.Controllers
             int ID = Convert.ToInt32(id);
             KategoriViewModel model = new KategoriViewModel();
             model.table = name;
-            using (var db = new tasketDb())
+            using (var db = new taskDb())
             {
                 model.Entitet = db.SelectAllActiveRec_Entitet_kategori("tbl_" + name).Where(i => i.nrrendor == ID && i.aktiv == true).ToList().FirstOrDefault();
 
@@ -174,7 +198,7 @@ namespace TasksManagementSystem.Controllers
 
         public ActionResult SaveEditedKategori(KategoriViewModel model)
         {
-            using (var db = new tasketDb())
+            using (var db = new taskDb())
             {
                 var True = true;
                 if (model.table == "Analize")
@@ -239,7 +263,7 @@ namespace TasksManagementSystem.Controllers
         {
             bool True = true;
 
-            using (var db = new tasketDb())
+            using (var db = new taskDb())
             {
 
                 if (model.table == "tbl_Analize")
@@ -293,7 +317,7 @@ namespace TasksManagementSystem.Controllers
 
         public ActionResult DeleteKategori(int id, string table)
         {
-            using (var db = new tasketDb())
+            using (var db = new taskDb())
             {
                 var DeleteAnalize = db.SelectAllActiveRec_Entitet_kategori("tbl_Analize").Where(i => i.nrrendor == id).FirstOrDefault();
                 DeleteAnalize.aktiv = false;

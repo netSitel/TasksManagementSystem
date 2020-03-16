@@ -15,10 +15,10 @@ namespace TasksManagementSystem.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class tasketDb : DbContext
+    public partial class taskDb : DbContext
     {
-        public tasketDb()
-            : base("name=tasketDb")
+        public taskDb()
+            : base("name=taskDb")
         {
         }
     
@@ -29,7 +29,6 @@ namespace TasksManagementSystem.Models
     
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<entitetet> entitetet { get; set; }
         public virtual DbSet<konfigurime> konfigurime { get; set; }
@@ -76,6 +75,15 @@ namespace TasksManagementSystem.Models
                 new ObjectParameter("tabela", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectA_Result>("SelectA", tabelaParameter);
+        }
+    
+        public virtual ObjectResult<SelectA1_Result> SelectA1(string tabela)
+        {
+            var tabelaParameter = tabela != null ?
+                new ObjectParameter("tabela", tabela) :
+                new ObjectParameter("tabela", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectA1_Result>("SelectA1", tabelaParameter);
         }
     
         public virtual ObjectResult<SelectAllActiveRec_Entitet_Result> SelectAllActiveRec_Entitet(string tabela)
@@ -774,7 +782,7 @@ namespace TasksManagementSystem.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -784,10 +792,10 @@ namespace TasksManagementSystem.Models
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -797,7 +805,7 @@ namespace TasksManagementSystem.Models
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
         public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)

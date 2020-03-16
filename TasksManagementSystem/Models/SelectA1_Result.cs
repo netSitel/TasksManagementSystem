@@ -11,7 +11,7 @@ namespace TasksManagementSystem.Models
 {
     using System;
     
-    public partial class SelectAllActiveRec_nder_Entitet_tip_kategori_Result
+    public partial class SelectA1_Result
     {
         public int nrrendor { get; set; }
         public string id_gen { get; set; }
@@ -19,10 +19,14 @@ namespace TasksManagementSystem.Models
         public string id_sup_gen { get; set; }
         public Nullable<int> id_ndr { get; set; }
         public string id_ndr_gen { get; set; }
-        public Nullable<int> Entitet_tip_id { get; set; }
-        public string Entitet_tip_id_gen { get; set; }
-        public Nullable<int> Entitet_tip_kategori_id { get; set; }
-        public string Entitet_tip_kategori_id_gen { get; set; }
+        public Nullable<int> tip_id { get; set; }
+        public string tip_id_gen { get; set; }
+        public string kodi { get; set; }
+        public string emertimi { get; set; }
+        public string pershkrimi { get; set; }
+        public string emertimiang { get; set; }
+        public string pershkrimiang { get; set; }
+        public Nullable<bool> kompleks { get; set; }
         public bool aktiv { get; set; }
         public System.DateTime data_krijimit { get; set; }
         public Nullable<int> perdorues_id { get; set; }

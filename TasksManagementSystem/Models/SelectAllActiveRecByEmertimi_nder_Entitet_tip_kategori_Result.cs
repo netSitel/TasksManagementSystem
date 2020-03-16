@@ -19,10 +19,10 @@ namespace TasksManagementSystem.Models
         public string id_sup_gen { get; set; }
         public Nullable<int> id_ndr { get; set; }
         public string id_ndr_gen { get; set; }
-        public Nullable<int> Analize_tip_id { get; set; }
-        public string Analize_tip_id_gen { get; set; }
-        public Nullable<int> Analize_tip_kategori_id { get; set; }
-        public string Analize_tip_kategori_id_gen { get; set; }
+        public Nullable<int> Entitet_tip_id { get; set; }
+        public string Entitet_tip_id_gen { get; set; }
+        public Nullable<int> Entitet_tip_kategori_id { get; set; }
+        public string Entitet_tip_kategori_id_gen { get; set; }
         public bool aktiv { get; set; }
         public System.DateTime data_krijimit { get; set; }
         public Nullable<int> perdorues_id { get; set; }

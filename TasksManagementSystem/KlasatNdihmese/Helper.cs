@@ -15,7 +15,7 @@ namespace TasksManagementSystem.KlasatNdihmese
 
         public List<SelectListItem> GetEntities()
         {
-            using (var context = new tasketDb())
+            using (var context = new taskDb())
             {
                 List<SelectListItem> Entietet = new List<SelectListItem>();
                 Entietet = context.entitetet.Select(n => new SelectListItem
@@ -38,7 +38,7 @@ namespace TasksManagementSystem.KlasatNdihmese
         }
         public List<SelectListItem> GetKategori(string table)
         {
-            using (var context = new tasketDb())
+            using (var context = new taskDb())
             {
                 List<SelectListItem> Kategori = new List<SelectListItem>();
                 Kategori = context.SelectAllActiveRec_Entitet_kategori(table).Where(a => a.aktiv==true).Select(n => new SelectListItem

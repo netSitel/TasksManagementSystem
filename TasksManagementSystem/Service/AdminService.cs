@@ -11,7 +11,7 @@ namespace TasksManagementSystem.Service
     {
         public List<SelectListItem> GetEntitetet()
         {
-            using (var context = new tasketDb())
+            using (var context = new taskDb())
             {
                 List<SelectListItem> Entietet = new List<SelectListItem>();
                 Entietet = context.entitetet.Select(n => new SelectListItem
@@ -31,7 +31,7 @@ namespace TasksManagementSystem.Service
 
         public List<konfigurime> GetKonfigurime()
         {
-            using (var context = new tasketDb())
+            using (var context = new taskDb())
             {
                 return context.konfigurime.ToList();
 
