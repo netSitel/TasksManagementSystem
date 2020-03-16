@@ -781,6 +781,7 @@
     <Content Include="App_Code\NestedTreeView.cshtml" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="App_Code\NestedTreeViewTipi.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -836,6 +837,10 @@
     <Content Include="Views\Test\_Lyubomir.cshtml" />
     <Content Include="Views\Admin\EditimKategoriPopUp.cshtml" />
     <Content Include="Views\Admin\_NewKategoriPopUp.cshtml" />
+    <Content Include="Views\Admin\NestedTreeForTipe.cshtml" />
+    <Content Include="Views\Admin\_NewTip.cshtml" />
+    <Content Include="Views\Admin\_ModifikoTipe.cshtml" />
+    <Content Include="Views\Admin\_AfishoTipe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

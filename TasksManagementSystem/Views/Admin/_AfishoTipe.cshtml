@@ -1,0 +1,82 @@
+﻿@model TasksManagementSystem.Models.TipiViewModel
+@{
+    Layout = null;
+
+}
+
+
+@using (Html.BeginForm("AfishoTipe", "Admin", FormMethod.Post))
+{
+
+    <div>
+        <input type="hidden" id="tableSel" value="@Model.table" />
+        <input type="hidden" id="kategoriId" value="@Model.SelectedKategoriId" />
+        @if (Model.SelectTipKategori.Count() == 0)
+        {
+            <p>@Convert.ToString(ViewBag.Message)</p>
+        }
+        else
+        {
+            <table>
+              
+                <tr>
+                    <td>Name</td>
+                </tr>
+
+                @foreach (var item in Model.SelectTipKategori)
+                {
+                    <tr>
+                        <td>
+                            @item.data_krijimit
+                        </td>
+                    </tr>
+
+                }
+            </table>
+
+        }
+
+
+    </div>
+
+}
+<button onclick="NewEntityTip()">New</button>
+
+<div id="dialogtip" style="display: none">
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+    function NewEntityTip() {
+        
+        
+        $('#dialogtip').dialog({
+            autoOpen: false,
+            modal: true,
+            title: "Perpuno Analize"
+
+        });
+
+
+
+        $.ajax({
+
+            type: "POST",
+            url: '@Url.Action("NewTipPopUp","Admin")?idKategori=' + $('#kategoriId').val() + '&name=' + $('#tableSel').val() ,
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+             success: function (response) {
+                $('#dialogtip').html(response);
+                $('#dialogtip').dialog('open');
+            }
+
+
+        });
+
+        }
+
+</script>

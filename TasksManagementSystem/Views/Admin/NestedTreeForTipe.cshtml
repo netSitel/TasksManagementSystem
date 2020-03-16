@@ -14,18 +14,17 @@
 
 @* Jquery for Collapse/Expend *@
 
+@using (Html.BeginForm("NestedTreeForTipe", "Admin", FormMethod.Post))
+{
+    
+
+        @NestedTreeViewTipi.GetHtml(Model, -1)
+        <input id="hf" type="hidden" value="@tableName" />
 
 
-<div class="container">
-    @NestedTreeView.GetHtml(Model, -1)
-    <button value="@tableName" onclick="NewEntityKategori(this.value)">New</button>
-    <input id="hf" type="hidden" value="@tableName" />
-        
 
+}
 
-</div>
-<div id="dialog" style="display: none">
-</div>
 @*Chaange the name if error is not resolve*@
 
 
@@ -73,47 +72,17 @@
 </style>
 @* Jquery for Collapse/Expend *@
 <script src="~/Scripts/jquery-1.7.1.js"></script>
+
 <script src="~/Scripts/bootstrap.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
 <script type="text/javascript">
-
-    function NewEntityKategori(button) {
-      
-        alert(button);
-        $('#dialog').dialog({
-            autoOpen: false,
-            modal: true,
-            title: "Perpuno Analize"
-
-        });
-         
-        
-
-        $.ajax({
-
-            type: "POST",
-            
-            url: '@Url.Action("NewKategoriPopUp","Admin")',
-            data: '{Id: "' + button + '" }',
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-             success: function (response) {
-                $('#dialog').html(response);
-                $('#dialog').dialog('open');
-            }
-
-   
-        });
-
-        }
+    
 
 
     //Afishimi i rreshtave bir
- 
+
         $('.icon').live('click', function () {
             var $pRow = $(this).parents('tr');
             var $nextRow = $pRow.next('tr');
@@ -123,34 +92,18 @@
         });
 
     //Ridrejtimi ne popmodul
-    $('.popup').live('click', function () {
+    $('.Up').live('click', function () {
         var $row = $(this).closest("tr");    // Find the row
         var $text = $row.find(".id").text();
-        alert($text);
-        
 
 
-        $('#dialog').dialog({
-            autoOpen: false,
-            modal: true,
-            title: "Perpuno Analize"
 
-        });
-         
-        
-        $.ajax({
+      
 
-            type: "POST",
-            url: '@Url.Action("EditimKategoriPopUp","Admin")?id=' + $text + '&name=' + $('#hf').val(),
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-             success: function (response) {
-                $('#dialog').html(response);
-                $('#dialog').dialog('open');
-            }
-
-   
-});
+       
+        $('#partialTip').load('@Url.Action("AfishoTipe","Admin")?idKategori=' + $text + '&name=' + $('#hf').val());
+            
      });
 </script>
+
 

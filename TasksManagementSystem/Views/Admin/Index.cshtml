@@ -85,7 +85,7 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 @foreach (var item in Model.konfigurimet)
                                 {
-                                    <a id="test" value="@item.emertimi"  class="nav-link">@item.emertimi</a>}
+                                    <a id="test" value="@item.emertimi"  class="popUpTipe nav-link">@item.emertimi</a>}
                                 @*<a class="nav-link" href="@Url.Action("Modifiko", "Admin")">Kategori</a>
                                     <a class="nav-link" href="layout-sidenav-light.html">Veti</a>
                                     <a class="nav-link" href="layout-sidenav-light.html">Perdorues</a>}*@
@@ -155,7 +155,7 @@
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="~/Content/Admin/dist/assets/demo/datatables-demo.js"></script>
     <script type="text/javascript">
-            $('#test').on('click', function (e) {
+            $('.popUpTipe').on('click', function (e) {
                 var table = $(e.target).text();
                 $('#partialView').load('@Url.Action("Modifiko", "Admin")?lloji=' + table);
                 

@@ -1,0 +1,67 @@
+﻿@model TasksManagementSystem.Models.TipiViewModel
+@{
+    Layout = null;
+
+}
+
+@using (Html.BeginForm("NewTip", "Admin", FormMethod.Post))
+{
+    <!-- Modal content-->
+    <div>
+
+
+        <table>
+            <tr>
+                <td> <input type="hidden" name="table" id="table" value="@Model.table" /> </td>
+
+                <td>
+                    <input type="hidden" name="SelectedKategoriId" id="kategoriId" value="@Model.SelectedKategoriId" />
+                </td>
+            </tr>
+            <tr>
+                <td>Emertimi</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.EntitetTip.emertimi)
+                </td>
+            </tr>
+            <tr>
+                <td>Emertimi Anglisht</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.EntitetTip.emertimiang)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Prindi:
+                </td>
+                @*<td>
+                    @Html.DropDownListFor(x => Model.EntitetTip.id_sup, new SelectList(Model.SelectListTipi, "Value", "Text"), htmlAttributes: new { id = "EntitetID", @class = "form-control", required = "required" })
+                </td>*@
+            </tr>
+            <tr>
+                <td><p>Kodi:</p></td>
+                <td>@Html.TextBoxFor(model => Model.EntitetTip.kodi)</td>
+            </tr>
+            <tr>
+                <td><p>Pershkrimi:</p></td>
+                <td>@Html.TextBoxFor(model => Model.EntitetTip.pershkrimi)</td>
+            </tr>
+            <tr>
+                <td><p>Data e krijimit:</p></td>
+                <td>@Html.TextBoxFor(model => Model.EntitetTip.data_krijimit)</td>
+            </tr>
+            <tr>
+                <td><p>Rradha</p></td>
+                <td>@Html.TextBoxFor(model => Model.EntitetTip.rradha)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="Ruaj" />
+
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+

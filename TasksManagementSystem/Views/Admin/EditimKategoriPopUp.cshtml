@@ -4,7 +4,7 @@
 
 }
 
-@using (Html.BeginForm("EditimKategoriPopUp", "Admin", FormMethod.Post))
+@using (Html.BeginForm("SaveEditedKategori", "Admin", FormMethod.Post))
 {
     <!-- Modal content-->
     <div>
@@ -14,9 +14,12 @@
             <tr>
                 <td>
                     <input type="hidden" name="nrrendor" id="nrrendor" value="@Model.Entitet.nrrendor" />
+                    @Html.HiddenFor(model=>Model.Entitet.nrrendor)
                 </td>
                 <td>
                     <input type="hidden" name="id_sup" id="id_sup" value="@Model.Entitet.id_sup" />
+                    @Html.HiddenFor(model=>Model.Entitet.id_sup)
+                    @Html.HiddenFor(model=>Model.table)
                 </td>
             </tr>
 

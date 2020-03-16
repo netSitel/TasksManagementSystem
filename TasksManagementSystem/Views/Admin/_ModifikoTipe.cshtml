@@ -1,0 +1,16 @@
+﻿@model TasksManagementSystem.Models.TipiViewModel
+@using (Html.BeginForm("ModifikoTipe", "Admin", FormMethod.Post, new { id = "form-referenti-vgi" }))
+{
+    <label>Zgjidhni nje entitet:</label>
+    @Html.DropDownListFor(x => Model.SelectedEntity, new SelectList(Model.SelectListEntity, "Value", "Text"), htmlAttributes: new { id = "EntitetIDTipe", @class = "form-control", required = "required" })
+
+}
+<script type="text/javascript">
+    $("#EntitetIDTipe").on('change', function () {
+        var value=$( "#EntitetIDTipe option:selected" ).text();
+        //var getValue = $(this).text();
+        $('#partialNestedTreeKategori').load('@Url.Action("NestedTreeForTipe","Admin")?table=' + value);
+    });
+
+
+</script>
