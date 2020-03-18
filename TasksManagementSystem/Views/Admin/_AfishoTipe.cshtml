@@ -4,35 +4,47 @@
 
 }
 
-
+<style>
+     .edit:hover {
+        cursor: pointer;
+        color: black;
+        font-weight: bold;
+    }
+</style>
 @using (Html.BeginForm("AfishoTipe", "Admin", FormMethod.Post))
 {
 
     <div>
         <input type="hidden" id="tableSel" value="@Model.table" />
         <input type="hidden" id="kategoriId" value="@Model.SelectedKategoriId" />
-        @if (Model.SelectTipKategori.Count() == 0)
+        @if (Model.EntitetTipList.Count() == 0)
         {
-            <p>Momentalisht nuk ka rekorde.</p>
+        <p>Momentalisht nuk ka rekorde.</p>
         }
         else
         {
-            <table>
-              
-                <tr>
-                    <td>Name</td>
-                </tr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="display:none;"> ID</th>
+                <th>Emri</th>
+                <th style="display:none;">ParentId</th>
+            </tr>
+        </thead>
 
-                @foreach (var item in Model.SelectTipKategori)
-                {
-                    <tr>
-                        <td>
-                            @item.data_krijimit
-                        </td>
-                    </tr>
 
-                }
-            </table>
+
+        @foreach (var item in Model.EntitetTipList)
+        {
+            <tr class="edit"><td class="id" style="display:none">@item.nrrendor</td>
+                <td>
+                    @item.emertimi
+                </td>
+        <td style="display:none">@item.id_sup</td>
+            </tr>
+
+        }
+    </table>
 
         }
 
@@ -77,6 +89,37 @@
 
         });
 
-        }
+    }
+
+    $(".edit").click(function() {
+        var $row = $(this).closest("tr");    // Find the row
+        var $text = $row.find(".id").text();
+        
+
+
+        $('#dialogtip').dialog({
+            autoOpen: false,
+            modal: true,
+            title: "Perpuno Analize"
+
+        });
+         
+        
+        $.ajax({
+
+            type: "POST",
+            url: '@Url.Action("EditimTipPopUp","Admin")?idKategori=' + $('#kategoriId').val()  + '&name=' + $('#hf').val() + '&id=' + $text,
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+             success: function (response) {
+                $('#dialogtip').html(response);
+                $('#dialogtip').dialog('open');
+            }
+
+   
+});
+    });
+             
+
 
 </script>

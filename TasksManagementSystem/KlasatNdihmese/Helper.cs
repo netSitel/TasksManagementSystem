@@ -59,6 +59,30 @@ namespace TasksManagementSystem.KlasatNdihmese
             }
 
         }
+        public List<SelectListItem> GetTip(string table)
+        {
+            using (var context = new taskDb())
+            {
+                List<SelectListItem> tipe = new List<SelectListItem>();
+                tipe = context.SelectAllActiveRec_Entitet_tip(table).Where(a => a.aktiv == true).Select(n => new SelectListItem
+                {
+                    Value = n.nrrendor.ToString(),
+                    Text = n.emertimi
+                }).ToList();
+                var entitetTip = new SelectListItem()
+                {
+                    Value = "-1",
+                    Text = "--Zgjidh--"
+                };
+                tipe.Insert(0, entitetTip);
+
+
+
+                return tipe;
+            }
+
+        }
+
     }
 }
 

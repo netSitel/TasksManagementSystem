@@ -1,0 +1,70 @@
+﻿@model TasksManagementSystem.Models.TipiViewModel
+@{
+    Layout = null;
+
+}
+
+@using (Html.BeginForm("SaveEditedTip", "Admin", FormMethod.Post))
+{
+<!-- Modal content-->
+<div>
+
+
+    <table>
+        <tr>
+            <td>
+                @Html.HiddenFor(model => Model.EntitetTip.nrrendor)
+            </td>
+            <td>
+                @Html.HiddenFor(model => Model.table)
+                @Html.HiddenFor(model => Model.SelectedKategoriId)
+
+            </td>
+        </tr>
+
+        <tr>
+            <td><p>Emertimi:</p></td>
+            <td>@Html.EditorFor(model => Model.EntitetTip.emertimi)</td>
+        </tr>
+        <tr>
+            <td><p>Pershkrimi:</p></td>
+            <td>@Html.EditorFor(model => Model.EntitetTip.pershkrimi)</td>
+        </tr>
+        <tr>
+            <td><p>Kodi i fillimit:</p></td>
+            <td>@Html.EditorFor(model => Model.EntitetTip.kodifillim)</td>
+        </tr>
+        <tr>
+            <td><p>Kodi i Mbarimit:</p></td>
+            <td>@Html.EditorFor(model => Model.EntitetTip.kodimbarim)</td>
+        </tr>
+        <tr>
+            <td><p>Kodi aktual :</p></td>
+            <td>@Html.EditorFor(model => Model.EntitetTip.kodiaktual)</td>
+        </tr>
+        <tr>
+            <td><p>Emertimi anglisht</p></td>
+            <td>@Html.EditorFor(model => Model.EntitetTip.emertimiang)</td>
+        </tr>
+
+        <tr>
+            <td><p>Kodi:</p></td>
+            <td>@Html.EditorFor(model => Model.EntitetTip.kodi)</td>
+        </tr>
+        <tr>
+            <td><p>Rradha:</p></td>
+            <td>@Html.EditorFor(model => Model.EntitetTip.rradha)</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Ruaj" />
+                <a href="@Url.Action("DeleteTip", "Admin" , new { id=Model.EntitetTip.nrrendor,table =Model.table})">
+                    Fshi
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+}

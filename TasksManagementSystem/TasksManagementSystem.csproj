@@ -835,6 +835,7 @@
     <Content Include="Views\Admin\_NewTip.cshtml" />
     <Content Include="Views\Admin\_ModifikoTipe.cshtml" />
     <Content Include="Views\Admin\_AfishoTipe.cshtml" />
+    <Content Include="Views\Admin\EditimTipPopUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

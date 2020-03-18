@@ -18,5 +18,17 @@
         }
 
         }
+    public class Tipe
+    {
+        public int id { get; set; }
+        public int parentId { get; set; }
+        public string text { get; set; }
+        public IList<Tipe> Tipet { get; set; }
+        public Tipe()
+        {
+            Tipet = new List<Tipe>();
+        }
 
     }
+
+}

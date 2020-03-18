@@ -13,17 +13,11 @@
 <script src="~/Scripts/modernizr-2.6.2.js"></script>
 
 @* Jquery for Collapse/Expend *@
-
-
-
-<div class="container">
-    @NestedTreeView.GetHtml(Model, -1)
+    @NestedTreeView.GetHtml(Model,-1)
     <button value="@tableName" onclick="NewEntityKategori(this.value)">New</button>
     <input id="hf" type="hidden" value="@tableName" />
-        
 
 
-</div>
 <div id="dialog" style="display: none">
 </div>
 @*Chaange the name if error is not resolve*@

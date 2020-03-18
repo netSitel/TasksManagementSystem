@@ -85,16 +85,15 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 @foreach (var item in Model.konfigurimet)
                                 {
-                                    <a id="test" value="@item.emertimi"  class="popUpTipe nav-link">@item.emertimi</a>}
+                                    <a id="test" value="@item.emertimi" style="cursor:pointer;" class="popUpTipe nav-link">@item.emertimi</a>}
                                 @*<a class="nav-link" href="@Url.Action("Modifiko", "Admin")">Kategori</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Veti</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Perdorues</a>}*@
+                <a class="nav-link" href="layout-sidenav-light.html">Veti</a>
+                <a class="nav-link" href="layout-sidenav-light.html">Perdorues</a>}*@
                             </nav>
                         </div>
 
-
-
-
+                        
+                        
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Pages
@@ -169,6 +168,7 @@
                 //window.parent.location = '<%= Url.RouteUrl(new { controller = "Refunds", action = "Refunds/Refund"}) %>/' + text;
 
             });
+
 
     </script>
 

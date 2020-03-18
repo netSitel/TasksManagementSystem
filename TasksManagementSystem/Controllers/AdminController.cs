@@ -89,13 +89,29 @@ namespace TasksManagementSystem.Controllers
             TipiViewModel model = new TipiViewModel();
             model.SelectedKategoriId = Convert.ToInt32(idKategori);
             model.table = name;
-            using(var db=new taskDb())
+            List<Tipe> list = new List<Tipe>();
+            using (var db=new taskDb())
             {
                 
-                model.SelectTipKategori = db.SelectAllActiveRec_nder_Entitet_tip_kategori("tbl_nder_" + name).ToList();
+                var lista = db.SelectAllActiveRec_nder_Entitet_tip_kategori("tbl_nder_" + name).ToList();
+                List<SelectAllActiveRec_Entitet_tip_Result> listaReale = db.SelectAllActiveRec_Entitet_tip("tbl_" + name).Where(a=>a.aktiv==true).ToList();
+                List<SelectAllActiveRec_Entitet_tip_Result> listaReale1 = new List<SelectAllActiveRec_Entitet_tip_Result>();
+                foreach (var item in listaReale)
+                { foreach(var item1 in lista)
+                    {
+                        if (item.nrrendor == item1.Entitet_tip_id)
+                        {
+                            listaReale1.Add(item);
+
+                        }
+                    }
+
+                }
+                model.EntitetTipList = listaReale1;
+
             }
 
-                return PartialView("_AfishoTipe",model);
+            return PartialView("_AfishoTipe",model);
         }
 
         public ActionResult NewTipPopUp(string idKategori,string name)
@@ -112,15 +128,147 @@ namespace TasksManagementSystem.Controllers
             using (var db = new taskDb())
             {
                 db.spI_tbl_Analize_tip(model.EntitetTip.id_sup, True, model.EntitetTip.kodi, model.EntitetTip.kodifillim, model.EntitetTip.kodimbarim, model.EntitetTip.kodiaktual, model.EntitetTip.emertimi, model.EntitetTip.pershkrimi, model.EntitetTip.emertimiang, model.EntitetTip.pershkrimiang, model.EntitetTip.rradha, model.EntitetTip.perdorues_id);
+                db.SaveChanges();
+               int a= db.SelectAllActiveRec_Entitet_tip("tbl_Analize").OrderByDescending(i=>i.nrrendor).FirstOrDefault().nrrendor;
+                db.spI_tbl_nder_Analize_tip_kategori(-1, a, model.SelectedKategoriId, model.EntitetTip.perdorues_id);
             }
 
-                return RedirectToAction("Index");
+            return RedirectToAction("Index");
         }
 
+       public ActionResult EditimTipPopUp(string idKategori,string name,string id)
+        {
+            Helper hp = new Helper();
+            int ID = Convert.ToInt32(id);
+            TipiViewModel model = new TipiViewModel();
+            model.table = name;
+            model.SelectTipParent = hp.GetKategori("tbl_" + name);
+            using (var db = new taskDb())
+            {
+                model.EntitetTip = db.SelectAllActiveRec_Entitet_tip("tbl_" + name).Where(i => i.nrrendor == ID && i.aktiv == true).ToList().FirstOrDefault();
 
+                if (model.EntitetTip.id_sup == ID)
+                {
+                    ViewBag.Delete = 1;
 
+                }
 
-            public PartialViewResult ModifikoPerdoues(string table)
+            }
+            return PartialView("EditimTipPopUp",model);
+        }
+
+        public ActionResult SaveEditedTip(TipiViewModel model)
+        {
+            using (var db = new taskDb())
+            {
+                var True = true;
+                if (model.table == "Analize")
+                {
+                    db.spU_tbl_Analize_tip(model.EntitetTip.nrrendor, model.EntitetTip.id_sup,True, 1, True, model.EntitetTip.kodi, True,model.EntitetTip.kodifillim,True,model.EntitetTip.kodiaktual, True,model.EntitetTip.kodimbarim, True, model.EntitetTip.emertimi, True, model.EntitetTip.pershkrimi, True, model.EntitetTip.emertimiang, True, model.EntitetTip.pershkrimiang, True, True, True, model.EntitetTip.perdorues_id, True);
+        
+                    }
+                else if (model.table == "Niveli")
+                {
+                    db.spU_tbl_niveli_tip(model.EntitetTip.nrrendor, model.EntitetTip.id_sup, True, 1, True, model.EntitetTip.kodi, True, model.EntitetTip.kodifillim, True, model.EntitetTip.kodiaktual, True, model.EntitetTip.kodimbarim, True, model.EntitetTip.emertimi, True, model.EntitetTip.pershkrimi, True, model.EntitetTip.emertimiang, True, model.EntitetTip.pershkrimiang, True, True, True, model.EntitetTip.perdorues_id, True);
+                }
+
+                else if (model.table == "Klient")
+                {
+                    db.spU_tbl_klient_tip(model.EntitetTip.nrrendor, model.EntitetTip.id_sup, True, 1, True, model.EntitetTip.kodi, True, model.EntitetTip.kodifillim, True, model.EntitetTip.kodiaktual, True, model.EntitetTip.kodimbarim, True, model.EntitetTip.emertimi, True, model.EntitetTip.pershkrimi, True, model.EntitetTip.emertimiang, True, model.EntitetTip.pershkrimiang, True, True, True, model.EntitetTip.perdorues_id, True);
+
+                }
+                else if (model.table == "Personel")
+                {
+                    db.spU_tbl_personel_tip(model.EntitetTip.nrrendor, model.EntitetTip.id_sup, True, 1, True, model.EntitetTip.kodi, True, model.EntitetTip.kodifillim, True, model.EntitetTip.kodiaktual, True, model.EntitetTip.kodimbarim, True, model.EntitetTip.emertimi, True, model.EntitetTip.pershkrimi, True, model.EntitetTip.emertimiang, True, model.EntitetTip.pershkrimiang, True, True, True, model.EntitetTip.perdorues_id, True);
+                }
+                else if (model.table == "Pyetje")
+                {
+                    db.spU_tbl_pyetje_tip(model.EntitetTip.nrrendor, model.EntitetTip.id_sup, True, 1, True, model.EntitetTip.kodi, True, model.EntitetTip.kodifillim, True, model.EntitetTip.kodiaktual, True, model.EntitetTip.kodimbarim, True, model.EntitetTip.emertimi, True, model.EntitetTip.pershkrimi, True, model.EntitetTip.emertimiang, True, model.EntitetTip.pershkrimiang, True, True, True, model.EntitetTip.perdorues_id, True);
+
+                }
+                else if (model.table == "Project")
+                {
+                    db.spU_tbl_project_tip(model.EntitetTip.nrrendor, model.EntitetTip.id_sup, True, 1, True, model.EntitetTip.kodi, True, model.EntitetTip.kodifillim, True, model.EntitetTip.kodiaktual, True, model.EntitetTip.kodimbarim, True, model.EntitetTip.emertimi, True, model.EntitetTip.pershkrimi, True, model.EntitetTip.emertimiang, True, model.EntitetTip.pershkrimiang, True, True, True, model.EntitetTip.perdorues_id, True);
+
+                }
+                else if (model.table == "Skeda")
+                {
+                    db.spU_tbl_skeda_tip(model.EntitetTip.nrrendor, model.EntitetTip.id_sup, True, 1, True, model.EntitetTip.kodi, True, model.EntitetTip.kodifillim, True, model.EntitetTip.kodiaktual, True, model.EntitetTip.kodimbarim, True, model.EntitetTip.emertimi, True, model.EntitetTip.pershkrimi, True, model.EntitetTip.emertimiang, True, model.EntitetTip.pershkrimiang, True, True, True, model.EntitetTip.perdorues_id, True);
+
+                }
+                else if (model.table == "Task")
+                {
+                    db.spU_tbl_task_tip(model.EntitetTip.nrrendor, model.EntitetTip.id_sup, True, 1, True, model.EntitetTip.kodi, True, model.EntitetTip.kodifillim, True, model.EntitetTip.kodiaktual, True, model.EntitetTip.kodimbarim, True, model.EntitetTip.emertimi, True, model.EntitetTip.pershkrimi, True, model.EntitetTip.emertimiang, True, model.EntitetTip.pershkrimiang, True, True, True, model.EntitetTip.perdorues_id, True);
+
+                }
+                else if (model.table == "Teknologji")
+                {
+                    db.spU_tbl_teknologjia_tip(model.EntitetTip.nrrendor, model.EntitetTip.id_sup, True, 1, True, model.EntitetTip.kodi, True, model.EntitetTip.kodifillim, True, model.EntitetTip.kodiaktual, True, model.EntitetTip.kodimbarim, True, model.EntitetTip.emertimi, True, model.EntitetTip.pershkrimi, True, model.EntitetTip.emertimiang, True, model.EntitetTip.pershkrimiang, True, True, True, model.EntitetTip.perdorues_id, True);
+
+                }
+            }
+        
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteTip(string id,string table)
+        {
+            using (var db = new taskDb())
+            {
+                var model = db.SelectAllActiveRec_Entitet_tip("tbl_"+table).Where(i => i.nrrendor == Convert.ToInt32(id)).FirstOrDefault();
+                model.aktiv = false;
+                var True = true;
+                if (table == "Analize")
+                {
+                    db.spU_tbl_Analize_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True,model.aktiv, True, model.perdorues_id, True);
+
+                }
+                else if (table == "Niveli")
+                {
+                    db.spU_tbl_niveli_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True, model.aktiv, True, model.perdorues_id, True);
+                }
+
+                else if (table == "Klient")
+                {
+                    db.spU_tbl_klient_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True, model.aktiv, True, model.perdorues_id, True);
+
+                }
+                else if (table == "Personel")
+                {
+                    db.spU_tbl_personel_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True, model.aktiv, True, model.perdorues_id, True);
+                }
+                else if (table == "Pyetje")
+                {
+                    db.spU_tbl_pyetje_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True, model.aktiv, True, model.perdorues_id, True);
+
+                }
+                else if (table == "Project")
+                {
+                    db.spU_tbl_project_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True, model.aktiv, True, model.perdorues_id, True);
+
+                }
+                else if (table == "Skeda")
+                {
+                    db.spU_tbl_skeda_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True, model.aktiv, True, model.perdorues_id, True);
+
+                }
+                else if (table == "Task")
+                {
+                    db.spU_tbl_task_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True, model.aktiv, True, model.perdorues_id, True);
+
+                }
+                else if (table == "Teknologji")
+                {
+                    db.spU_tbl_teknologjia_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True, model.aktiv, True, model.perdorues_id, True);
+
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+        
+        public PartialViewResult ModifikoPerdoues(string table)
         {
             Helper hp = new Helper();
             AdminViewModel model = new AdminViewModel();

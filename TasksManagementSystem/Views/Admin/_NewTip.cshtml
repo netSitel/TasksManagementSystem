@@ -35,8 +35,8 @@
                     Prindi:
                 </td>
                 @*<td>
-                    @Html.DropDownListFor(x => Model.EntitetTip.id_sup, new SelectList(Model.SelectListTipi, "Value", "Text"), htmlAttributes: new { id = "EntitetID", @class = "form-control", required = "required" })
-                </td>*@
+                @Html.DropDownListFor(x => Model.EntitetTip.id_sup, new SelectList(Model.SelectListTipi, "Value", "Text"), htmlAttributes: new { id = "EntitetID", @class = "form-control", required = "required" })
+            </td>*@
             </tr>
             <tr>
                 <td><p>Kodi:</p></td>
@@ -47,12 +47,20 @@
                 <td>@Html.TextBoxFor(model => Model.EntitetTip.pershkrimi)</td>
             </tr>
             <tr>
-                <td><p>Data e krijimit:</p></td>
-                <td>@Html.TextBoxFor(model => Model.EntitetTip.data_krijimit)</td>
+                <td><p>Kodi i Fillimit:</p></td>
+                <td>@Html.TextBoxFor(model => Model.EntitetTip.kodifillim)</td>
+            </tr>
+            <tr>
+                <td><p>Kodi i Mbarimit:</p></td>
+                <td>@Html.TextBoxFor(model => Model.EntitetTip.kodimbarim)</td>
+            </tr>
+            <tr>
+                <td><p>Kodi i Aktual:</p></td>
+                <td>@Html.TextBoxFor(model => Model.EntitetTip.kodiaktual)</td>
             </tr>
             <tr>
                 <td><p>Rradha</p></td>
-                <td>@Html.TextBoxFor(model => Model.EntitetTip.rradha)</td>
+                <td>@Html.TextBoxFor(model => Model.EntitetTip.kodiaktual)</td>
             </tr>
 
             <tr>
