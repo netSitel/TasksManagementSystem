@@ -1,0 +1,27 @@
+﻿@helper GetTreeView(List<TasksManagementSystem.KlasatNdihmese.Kategori> siteMenu, int parentID)
+{
+    foreach (var i in siteMenu.Where(a => a.parentId.Equals(parentID)))
+    {
+    <li>
+        @{var submenu = siteMenu.Where(a => a.parentId.Equals(i.id)).Count();}
+        @if (submenu > 0)
+        {
+            <span class="icon icon-e" style="float:left; cursor:pointer;"></span>
+        }
+        else
+        {
+            <span style="width:15px; display:inline-block">&nbsp;</span>
+        }
+        <span>
+            <a class="goto">@i.text</a>
+        </span>
+        @if (submenu > 0)
+        {
+            <ul>
+                @Treeview.GetTreeView(siteMenu, i.id)
+                @* Recursive  Call for Populate Sub items here*@
+            </ul>
+        }
+    </li>
+    }
+}

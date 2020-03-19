@@ -5,13 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="311445ca7cf8489298a665f451d6cd18" Name="Diagram1" ZoomLevel="67">
-        <EntityTypeShape EntityType="tasketModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="tasketModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="tasketModel.AspNetUsers" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="tasketModel.entitetet" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="tasketModel.konfigurime" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="tasketModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="tasketModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="tasketModel.AspNetRoles" Width="1.5" PointX="5.375" PointY="2.5" />
+        <EntityTypeShape EntityType="tasketModel.AspNetUserClaims" Width="1.5" PointX="9.875" PointY="1" />
+        <EntityTypeShape EntityType="tasketModel.AspNetUserLogins" Width="1.5" PointX="9.875" PointY="3.75" />
+        <EntityTypeShape EntityType="tasketModel.AspNetUsers" Width="1.5" PointX="7.625" PointY="1.375" />
+        <AssociationConnector Association="tasketModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="tasketModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="tasketModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

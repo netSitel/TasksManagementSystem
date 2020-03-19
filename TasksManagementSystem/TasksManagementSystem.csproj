@@ -416,6 +416,9 @@
     <Compile Include="Models\AspNetUserClaims.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AspNetUserLogins.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AspNetUsers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -700,14 +703,12 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="DatabaseFolder\tasketScript.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\AdminPhoto.jpg" />
     <Content Include="Images\profile.png" />
     <Content Include="Images\ui-icons_222222_256x240.png" />
-    <Content Include="DatabaseFolder\tasket.bak" />
     <Content Include="Content\Admin\.browserslistrc" />
     <Content Include="Content\Admin\.gitignore" />
     <Content Include="Content\Admin\.travis.yml" />
@@ -756,6 +757,7 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="App_Code\NestedTreeView.cshtml" />
+    <Content Include="Images\ui-icons_454545_256x240.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -776,6 +778,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="App_Code\Treeview.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -836,9 +839,11 @@
     <Content Include="Views\Admin\_ModifikoTipe.cshtml" />
     <Content Include="Views\Admin\_AfishoTipe.cshtml" />
     <Content Include="Views\Admin\EditimTipPopUp.cshtml" />
+    <Content Include="Views\Test\Simple.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DatabaseFolder\" />
     <Folder Include="Repositores\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
