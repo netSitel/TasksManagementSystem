@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -268,14 +269,56 @@ namespace TasksManagementSystem.Controllers
             return RedirectToAction("Index");
         }
         
-        public PartialViewResult ModifikoPerdoues(string table)
+        public PartialViewResult ModifikoPerdorues()
         {
             Helper hp = new Helper();
-            AdminViewModel model = new AdminViewModel();
-            model.SelectListEntity = hp.GetEntities();
-            return PartialView("Index", model);
+            PerdoruesViewModel model = new PerdoruesViewModel();
+            using (var db=new taskDb())
+            {
+                model.UsersList = db.AspNetUsers.ToList();
+            }
+                return PartialView("_ModifikoPerdoues", model);
 
         }
+        public ActionResult EditoPerdorues(string id)
+        {
+            PerdoruesViewModel model = new PerdoruesViewModel();
+            using (var db=new taskDb())
+            {
+                model.Users = db.AspNetUsers.Where(i => i.Id.Equals(id)).FirstOrDefault();
+            }
+                return PartialView("_EditoPerdorues",model);
+        }
+        public ActionResult SaveEditedPerdorues(PerdoruesViewModel model)
+        {
+            using (var db=new taskDb())
+            {
+                db.AspNetUsers.Add(model.Users);
+                db.Entry(model.Users).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeletePerdorues(string id)
+        {
+            using (var db = new taskDb())
+            {
+                PerdoruesViewModel model = new PerdoruesViewModel();
+                model.Users.Id = id;
+               
+                db.Entry(model.Users).State = EntityState.Deleted;
+                db.SaveChanges();
+            }
+                return RedirectToAction("Index");
+        }
+
+
+
+
+
+
         public ActionResult NestedTree(string table)
         {
 

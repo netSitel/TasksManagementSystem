@@ -14,6 +14,7 @@
         <AssociationConnector Association="tasketModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="tasketModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="tasketModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="tasketModel.KategoriView" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,9 +1,9 @@
-﻿@helper GetTreeView(List<TasksManagementSystem.KlasatNdihmese.Kategori> siteMenu, int parentID)
+﻿@helper GetTreeView(List<TasksManagementSystem.Models.KategoriView> siteMenu, int parentID)
 {
-    foreach (var i in siteMenu.Where(a => a.parentId.Equals(parentID)))
+    foreach (var i in siteMenu.Where(a => a.ParentId.Equals(parentID)))
     {
     <li>
-        @{var submenu = siteMenu.Where(a => a.parentId.Equals(i.id)).Count();}
+        @{var submenu = siteMenu.Where(a => a.ParentId.Equals(i.Id)).Count();}
         @if (submenu > 0)
         {
             <span class="icon icon-e" style="float:left; cursor:pointer;"></span>
@@ -13,12 +13,12 @@
             <span style="width:15px; display:inline-block">&nbsp;</span>
         }
         <span>
-            <a class="goto">@i.text</a>
+            <a class="goto">@i.Text</a>
         </span>
         @if (submenu > 0)
         {
             <ul>
-                @Treeview.GetTreeView(siteMenu, i.id)
+                @Treeview.GetTreeView(siteMenu, i.Id)
                 @* Recursive  Call for Populate Sub items here*@
             </ul>
         }

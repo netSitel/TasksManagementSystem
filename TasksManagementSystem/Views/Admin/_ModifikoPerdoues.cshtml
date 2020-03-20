@@ -1,1 +1,73 @@
-﻿
+﻿@model TasksManagementSystem.Models.PerdoruesViewModel
+
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />*@
+@* CSS *@
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+@*<link href="~/Content/Site.css" rel="stylesheet" />*@
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/modernizr-2.6.2.js"></script>
+<style>
+    .perdorues:hover {
+        cursor: pointer;
+        color: black;
+        font-weight: bold;
+    }
+</style>
+<table id="table" class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="display:none;"> ID</th>
+            <th>Emer Perdorues</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model.UsersList)
+    {
+        <tr class="perdorues">
+            <td class="IdPerdorues" style="display:none">@item.Id</td>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+        </tr>
+    }
+</table>
+<div id="dialogPerdorues" style="display: none">
+</div>
+
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+      $('.perdorues').click(function() {
+        var $row = $(this).closest("tr");    // Find the row
+        var $text = $row.find(".IdPerdorues").text();
+        alert($text);
+
+
+
+        $('#dialogPerdorues').dialog({
+            autoOpen: false,
+            modal: true,
+            title: "Perpuno Analize"
+
+        });
+
+
+        $.ajax({
+
+            type: "POST",
+            url: '@Url.Action("EditoPerdorues","Admin")?id=' + $text ,
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+             success: function (response) {
+                 $('#dialogPerdorues').html(response);
+                 $('#dialogPerdorues').dialog( "option", "width", 600 );
+                $('#dialogPerdorues').dialog('open');
+            }
+
+
+});
+     });
+</script>

@@ -1,4 +1,4 @@
-﻿@model List<TasksManagementSystem.KlasatNdihmese.Kategori>
+﻿@model List<TasksManagementSystem.Models.KategoriView>
 
 @{
     ViewBag.Title = "Simple";
@@ -66,8 +66,9 @@
         @if (Model != null && Model.Count() >0)
         {
             <ul>
-                @Treeview.GetTreeView(Model, Model.FirstOrDefault().parentId)
+                @Treeview.GetTreeView(Model, Model.FirstOrDefault().ParentId)
             </ul>
+            
         }
     </div>
 </div>

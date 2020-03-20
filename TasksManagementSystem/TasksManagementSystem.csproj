@@ -426,6 +426,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\KategoriView.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\konfigurime.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -840,6 +843,7 @@
     <Content Include="Views\Admin\_AfishoTipe.cshtml" />
     <Content Include="Views\Admin\EditimTipPopUp.cshtml" />
     <Content Include="Views\Test\Simple.cshtml" />
+    <Content Include="Views\Admin\_EditoPerdorues.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

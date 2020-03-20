@@ -7,5 +7,7 @@ namespace TasksManagementSystem.Models
 {
     public class PerdoruesViewModel
     {
+        public AspNetUsers Users { get; set; }
+        public List<AspNetUsers> UsersList { get; set; }
     }
 }

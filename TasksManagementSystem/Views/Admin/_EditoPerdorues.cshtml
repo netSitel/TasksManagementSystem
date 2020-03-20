@@ -1,0 +1,53 @@
+﻿@model TasksManagementSystem.Models.PerdoruesViewModel
+@{
+    Layout = null;
+
+}
+
+@using (Html.BeginForm("SaveEditedPerdorues", "Admin", FormMethod.Post))
+{
+    <!-- Modal content-->
+    <div>
+
+        @Html.HiddenFor(m => Model.Users.Id)
+        @Html.HiddenFor(m => Model.Users.LockoutEnabled)
+        @Html.HiddenFor(m => Model.Users.LockoutEndDateUtc)
+        @Html.HiddenFor(m => Model.Users.PasswordHash)
+        @Html.HiddenFor(m => Model.Users.SecurityStamp)
+        @Html.HiddenFor(m => Model.Users.TwoFactorEnabled)
+
+        <table class="table">
+
+            <tr>
+                <td><p>Numer Telefoni:</p></td>
+                <td>@Html.EditorFor(model => Model.Users.PhoneNumber)</td>
+            </tr>
+            <tr>
+                <td>Konfirmim Numri</td>
+                <td>@Html.CheckBoxFor(model => Model.Users.PhoneNumberConfirmed)</td>
+            </tr>
+            <tr>
+                <td><p>Emer Perdoruesi:</p></td>
+                <td>@Html.EditorFor(model => Model.Users.UserName)</td>
+            </tr>
+            <tr>
+                <td><p>Email:</p></td>
+                <td>@Html.EditorFor(model => Model.Users.Email)</td>
+            </tr>
+            <tr>
+                <td><p>Konfirmim Email:</p></td>
+                <td>@Html.CheckBoxFor(model => Model.Users.EmailConfirmed)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="Ruaj" />
+                    <a href="@Url.Action("DeletePerdorues", "Admin" , new { id = Model.Users.Id })">
+                        Fshi
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+

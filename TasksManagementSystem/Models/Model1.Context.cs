@@ -33,6 +33,7 @@ namespace TasksManagementSystem.Models
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<KategoriView> KategoriView { get; set; }
     
         public virtual int FSHIJALL(string tabela)
         {

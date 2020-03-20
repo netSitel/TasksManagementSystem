@@ -64,6 +64,14 @@
           <Property Name="entitet" Type="nvarchar" MaxLength="200" />
           <Property Name="emertim_tabele" Type="nvarchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="KategoriView">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="konfigurime">
           <Key>
             <PropertyRef Name="nrrendor" />
@@ -3174,6 +3182,7 @@
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="entitetet" EntityType="Self.entitetet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KategoriView" EntityType="Self.KategoriView" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="konfigurime" EntityType="Self.konfigurime" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
@@ -6269,6 +6278,7 @@
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
+          <EntitySet Name="KategoriView" EntityType="tasketModel.KategoriView" />
         </EntityContainer>
         <ComplexType Name="SelectA_Result">
           <Property Type="Int32" Name="nrrendor" Nullable="false" />
@@ -7325,6 +7335,14 @@
           <End Type="tasketModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
           <End Type="tasketModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
         </Association>
+        <EntityType Name="KategoriView">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <Property Name="Text" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -8770,6 +8788,15 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="KategoriView">
+            <EntityTypeMapping TypeName="tasketModel.KategoriView">
+              <MappingFragment StoreEntitySet="KategoriView">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
