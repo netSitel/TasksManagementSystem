@@ -71,6 +71,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ParentId" Type="int" Nullable="false" />
           <Property Name="Text" Type="nvarchar" MaxLength="100" />
+          <Property Name="href" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="konfigurime">
           <Key>
@@ -3213,17 +3214,8 @@
           <Property Name="entitet" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="emertim_tabele" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="konfigurime">
-          <Key>
-            <PropertyRef Name="nrrendor" />
-          </Key>
-          <Property Name="nrrendor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="emertimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="vlera" Type="Int32" />
-        </EntityType>
         <EntityContainer Name="taskDb" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="entitetet" EntityType="Self.entitetet" />
-          <EntitySet Name="konfigurime" EntityType="Self.konfigurime" />
           <FunctionImport Name="FSHIJALL">
           <Parameter Name="tabela" Mode="In" Type="String" />
           </FunctionImport>
@@ -6262,6 +6254,8 @@
             <Parameter Name="Perdorues_id" Mode="In" Type="Int32" />
             <Parameter Name="ConsiderNull_Perdorues_id" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <EntitySet Name="KategoriView" EntityType="tasketModel.KategoriView" />
+          <EntitySet Name="konfigurime" EntityType="tasketModel.konfigurime" />
           <EntitySet Name="AspNetRoles" EntityType="tasketModel.AspNetRoles" />
           <EntitySet Name="AspNetUserClaims" EntityType="tasketModel.AspNetUserClaims" />
           <EntitySet Name="AspNetUserLogins" EntityType="tasketModel.AspNetUserLogins" />
@@ -6278,8 +6272,7 @@
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
-          <EntitySet Name="KategoriView" EntityType="tasketModel.KategoriView" />
-        </EntityContainer>
+          </EntityContainer>
         <ComplexType Name="SelectA_Result">
           <Property Type="Int32" Name="nrrendor" Nullable="false" />
           <Property Type="String" Name="id_gen" Nullable="false" MaxLength="50" />
@@ -7254,6 +7247,23 @@
           <Property Type="String" Name="perdorues_id_gen" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="VA" Nullable="true" />
         </ComplexType>
+        <EntityType Name="KategoriView">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <Property Name="Text" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="href" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="konfigurime">
+          <Key>
+            <PropertyRef Name="nrrendor" />
+          </Key>
+          <Property Name="nrrendor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emertimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vlera" Type="Int32" />
+        </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
             <PropertyRef Name="Id" />
@@ -7267,7 +7277,6 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AspNetUsers" Relationship="tasketModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
@@ -7308,14 +7317,6 @@
             <OnDelete Action="Cascade" />
           </End>
           <End Type="tasketModel.AspNetUserClaims" Role="AspNetUserClaims" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserClaims">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
         <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
           <End Type="tasketModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
@@ -7335,15 +7336,7 @@
           <End Type="tasketModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
           <End Type="tasketModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
         </Association>
-        <EntityType Name="KategoriView">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ParentId" Type="Int32" Nullable="false" />
-          <Property Name="Text" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -7355,15 +7348,6 @@
                 <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
                 <ScalarProperty Name="entitet" ColumnName="entitet" />
                 <ScalarProperty Name="emertim_tabele" ColumnName="emertim_tabele" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="konfigurime">
-            <EntityTypeMapping TypeName="tasketModel.konfigurime">
-              <MappingFragment StoreEntitySet="konfigurime">
-                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
-                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
-                <ScalarProperty Name="vlera" ColumnName="vlera" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -8735,6 +8719,25 @@
           <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip" />
           <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip_info" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip_info" />
           <FunctionImportMapping FunctionImportName="spU_tbl_teknologjia_tip_info_ch" FunctionName="tasketModel.Store.spU_tbl_teknologjia_tip_info_ch" />
+          <EntitySetMapping Name="KategoriView">
+            <EntityTypeMapping TypeName="tasketModel.KategoriView">
+              <MappingFragment StoreEntitySet="KategoriView">
+                <ScalarProperty Name="href" ColumnName="href" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="konfigurime">
+            <EntityTypeMapping TypeName="tasketModel.konfigurime">
+              <MappingFragment StoreEntitySet="konfigurime">
+                <ScalarProperty Name="vlera" ColumnName="vlera" />
+                <ScalarProperty Name="emertimi" ColumnName="emertimi" />
+                <ScalarProperty Name="nrrendor" ColumnName="nrrendor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="AspNetRoles">
             <EntityTypeMapping TypeName="tasketModel.AspNetRoles">
               <MappingFragment StoreEntitySet="AspNetRoles">
@@ -8748,7 +8751,6 @@
               <MappingFragment StoreEntitySet="AspNetUserClaims">
                 <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
                 <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -8780,6 +8782,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <AssociationSetMapping Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" TypeName="tasketModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" StoreEntitySet="AspNetUserClaims">
+            <EndProperty Name="AspNetUserClaims">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
           <AssociationSetMapping Name="AspNetUserRoles" TypeName="tasketModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
             <EndProperty Name="AspNetUsers">
               <ScalarProperty Name="Id" ColumnName="UserId" />
@@ -8788,16 +8798,7 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="KategoriView">
-            <EntityTypeMapping TypeName="tasketModel.KategoriView">
-              <MappingFragment StoreEntitySet="KategoriView">
-                <ScalarProperty Name="Text" ColumnName="Text" />
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -8812,7 +8813,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

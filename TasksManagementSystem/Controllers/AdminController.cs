@@ -271,7 +271,7 @@ namespace TasksManagementSystem.Controllers
         
         public PartialViewResult ModifikoPerdorues()
         {
-            Helper hp = new Helper();
+            
             PerdoruesViewModel model = new PerdoruesViewModel();
             using (var db=new taskDb())
             {
@@ -282,19 +282,33 @@ namespace TasksManagementSystem.Controllers
         }
         public ActionResult EditoPerdorues(string id)
         {
+            Helper hp = new Helper();
             PerdoruesViewModel model = new PerdoruesViewModel();
+            model.UsersRoles = hp.GetRole();
             using (var db=new taskDb())
             {
                 model.Users = db.AspNetUsers.Where(i => i.Id.Equals(id)).FirstOrDefault();
+                if (db.AspNetUsers.Where(i => i.Id.Equals(id)).FirstOrDefault().AspNetRoles.Count() > 0)
+                {
+                    model.SelectedRole = db.AspNetUsers.Where(i => i.Id.Equals(id)).FirstOrDefault().AspNetRoles.FirstOrDefault().Id;
+
+                }
+                
+
             }
-                return PartialView("_EditoPerdorues",model);
+            return PartialView("_EditoPerdorues",model);
         }
         public ActionResult SaveEditedPerdorues(PerdoruesViewModel model)
         {
+            AspNetRoles roles = new AspNetRoles();
+     
+           
             using (var db=new taskDb())
             {
                 db.AspNetUsers.Add(model.Users);
                 db.Entry(model.Users).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                db.AspNetRoles.Where(a => a.Id == model.SelectedRole).FirstOrDefault().AspNetUsers.Add(model.Users);
                 db.SaveChanges();
             }
 
@@ -305,10 +319,10 @@ namespace TasksManagementSystem.Controllers
         {
             using (var db = new taskDb())
             {
-                PerdoruesViewModel model = new PerdoruesViewModel();
-                model.Users.Id = id;
+                AspNetUsers model = new AspNetUsers();
+                model.Id = id;
                
-                db.Entry(model.Users).State = EntityState.Deleted;
+                db.Entry(model).State = EntityState.Deleted;
                 db.SaveChanges();
             }
                 return RedirectToAction("Index");

@@ -11,6 +11,8 @@ namespace TasksManagementSystem.Models
         public int SelectedEntity { get; set; }
         string table { get; set; }
         public List<SelectListItem> SelectListEntity { get; set; }
+
+
         public List<konfigurime> konfigurimet { get; set; }
         public List<SelectListItem> SelectAnalizeParent { get; set; }
         public SelectAllActiveRec_Entitet_kategori_Result Entitet { get; set; }

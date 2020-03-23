@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="311445ca7cf8489298a665f451d6cd18" Name="Diagram1" ZoomLevel="67">
+      <Diagram DiagramId="311445ca7cf8489298a665f451d6cd18" Name="Diagram1" ZoomLevel="81">
         <EntityTypeShape EntityType="tasketModel.entitetet" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="tasketModel.konfigurime" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="tasketModel.AspNetRoles" Width="1.5" PointX="5.375" PointY="2.5" />
-        <EntityTypeShape EntityType="tasketModel.AspNetUserClaims" Width="1.5" PointX="9.875" PointY="1" />
-        <EntityTypeShape EntityType="tasketModel.AspNetUserLogins" Width="1.5" PointX="9.875" PointY="3.75" />
-        <EntityTypeShape EntityType="tasketModel.AspNetUsers" Width="1.5" PointX="7.625" PointY="1.375" />
+        <EntityTypeShape EntityType="tasketModel.KategoriView" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="tasketModel.konfigurime" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="tasketModel.AspNetRoles" Width="1.5" PointX="3.375" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tasketModel.AspNetUserClaims" Width="1.5" PointX="7.875" PointY="0.875" />
+        <EntityTypeShape EntityType="tasketModel.AspNetUserLogins" Width="1.5" PointX="8.5" PointY="3.625" />
+        <EntityTypeShape EntityType="tasketModel.AspNetUsers" Width="1.5" PointX="5.625" PointY="1.25" />
         <AssociationConnector Association="tasketModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="tasketModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="tasketModel.AspNetUserRoles" />
-        <EntityTypeShape EntityType="tasketModel.KategoriView" Width="1.5" PointX="0.75" PointY="0.75" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

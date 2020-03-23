@@ -80,8 +80,31 @@ namespace TasksManagementSystem.KlasatNdihmese
 
                 return tipe;
             }
-
         }
+            public List<SelectListItem> GetRole()
+            {
+                using (var context = new taskDb())
+                {
+                    List<SelectListItem> Role = new List<SelectListItem>();
+                    Role = context.AspNetRoles.Select(n => new SelectListItem
+                    {
+                        Value = n.Id.ToString(),
+                        Text = n.Name
+                    }).ToList();
+                    var entitetTip = new SelectListItem()
+                    {
+                        Value = "-1",
+                        Text = "--Zgjidh--"
+                    };
+                    Role.Insert(0, entitetTip);
+                    
+
+
+
+                    return Role;
+                }
+
+            }
 
     }
 }
