@@ -709,7 +709,20 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\AdminPhoto.jpg" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\generated-image.gif" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
     <Content Include="Images\profile.png" />
     <Content Include="Images\ui-icons_222222_256x240.png" />
     <Content Include="Content\Admin\.browserslistrc" />
@@ -799,6 +812,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\MyTreeview.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -842,8 +856,8 @@
     <Content Include="Views\Admin\_ModifikoTipe.cshtml" />
     <Content Include="Views\Admin\_AfishoTipe.cshtml" />
     <Content Include="Views\Admin\EditimTipPopUp.cshtml" />
-    <Content Include="Views\Test\Simple.cshtml" />
     <Content Include="Views\Admin\_EditoPerdorues.cshtml" />
+    <Content Include="Views\Test\OnDemand.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

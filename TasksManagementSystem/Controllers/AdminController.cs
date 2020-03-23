@@ -19,17 +19,19 @@ namespace TasksManagementSystem.Controllers
 
         // GET: Admin
         BaseRepository repository = new BaseRepository();
-       
+
 
         public ActionResult Index()
         {
-            AdminViewModel model = new AdminViewModel();
-            using (var context = new taskDb())
-            {
-                model.konfigurimet = context.konfigurime.ToList();
-            }
+            
+                AdminViewModel model = new AdminViewModel();
+                using (var context = new taskDb())
+                {
+                    model.konfigurimet = context.konfigurime.ToList();
+                }
 
-            return View(model);
+                return View(model);
+            
            
         }
 
