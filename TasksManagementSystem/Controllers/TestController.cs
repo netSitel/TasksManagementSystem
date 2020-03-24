@@ -30,7 +30,7 @@ namespace TasksManagementSystem.Controllers
             return View(all);
         }
 
-        public JsonResult GetSubMenu(string pid)
+        public JsonResult GetSubMenu(string pid,string table)
         {
             // this action for Get Sub Menus from database and return as json data
             System.Threading.Thread.Sleep(5000);

@@ -858,6 +858,7 @@
     <Content Include="Views\Admin\EditimTipPopUp.cshtml" />
     <Content Include="Views\Admin\_EditoPerdorues.cshtml" />
     <Content Include="Views\Test\OnDemand.cshtml" />
+    <Content Include="Views\Admin\NestedTreeForKategori.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

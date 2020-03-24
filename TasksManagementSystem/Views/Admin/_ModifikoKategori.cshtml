@@ -8,7 +8,7 @@
     $("#EntitetID").on('change', function () {
         var value=$( "#EntitetID option:selected" ).text();
         //var getValue = $(this).text();
-        $('#partialNestedTreeKategori').load('@Url.Action("NestedTree","Admin")?table=' + value);
+        $('#partialNestedTreeKategori').load('@Url.Action("OnDemand","Admin")?table=' + value);
     });
                
 

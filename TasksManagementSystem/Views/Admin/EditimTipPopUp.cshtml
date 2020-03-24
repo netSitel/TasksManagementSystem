@@ -31,6 +31,14 @@
             <td>@Html.EditorFor(model => Model.EntitetTip.pershkrimi)</td>
         </tr>
         <tr>
+            <td>
+                Prindi:
+            </td>
+            <td>
+                @Html.DropDownListFor(x => Model.SelectedParent, new SelectList(Model.SelectTipParent, "Value", "Text"), htmlAttributes: new { id = "EntitetID", @class = "form-control", required = "required" })
+            </td>
+        </tr>
+        <tr>
             <td><p>Kodi i fillimit:</p></td>
             <td>@Html.EditorFor(model => Model.EntitetTip.kodifillim)</td>
         </tr>

@@ -59,24 +59,38 @@ namespace TasksManagementSystem.KlasatNdihmese
             }
 
         }
-        public List<SelectListItem> GetTip(string table)
+        public List<SelectListItem> GetTip(string table,string id,string idT)
         {
             using (var context = new taskDb())
             {
+                var list = context.SelectAllActiveRec_nder_Entitet_tip_kategori("tbl_nder_"+table).Where(i => i.Entitet_tip_kategori_id == Convert.ToInt32(id)&&i.aktiv==true).ToList();
+                List<SelectAllActiveRec_Entitet_tip_Result> listTipe = new List<SelectAllActiveRec_Entitet_tip_Result>();
+
                 List<SelectListItem> tipe = new List<SelectListItem>();
-                tipe = context.SelectAllActiveRec_Entitet_tip(table).Where(a => a.aktiv == true).Select(n => new SelectListItem
+                foreach (var item in context.SelectAllActiveRec_Entitet_tip("tbl_" + table).Where(a => a.aktiv == true).ToList())
                 {
-                    Value = n.nrrendor.ToString(),
-                    Text = n.emertimi
-                }).ToList();
-                var entitetTip = new SelectListItem()
-                {
-                    Value = "-1",
-                    Text = "--Zgjidh--"
-                };
-                tipe.Insert(0, entitetTip);
+                    foreach(var item1 in list)
+                    {
+                        if (item.nrrendor == item1.Entitet_tip_id && item.nrrendor!=Convert.ToInt32(idT))
+                        {
+                            listTipe.Add(item);
+                        }
+                    }
+                }
+                
+                    tipe = listTipe.Select(n => new SelectListItem
+                    {
+                        Value = n.nrrendor.ToString(),
+                        Text = n.emertimi
+                    }).ToList();
+                    var entitetTip = new SelectListItem()
+                    {
+                        Value = "-1",
+                        Text = "--Zgjidh--"
+                    };
+                    tipe.Insert(0, entitetTip);
 
-
+                
 
                 return tipe;
             }

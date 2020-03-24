@@ -18,10 +18,11 @@ namespace TasksManagementSystem.Models
         public List<konfigurime> konfigurimet { get; set; }
         public List<SelectListItem> SelectTipParent { get; set; }
         public SelectAllActiveRec_Entitet_tip_Result EntitetTip { get; set; }
-        public List<SelectAllActiveRec_nder_Entitet_tip_kategori_Result> SelectTipKategori { get; set; }
+        public List<SelectAllActiveRec_nder_Entitet_tip_kategori_Result> ListTipKategori { get; set; }
         public List<SelectAllActiveRec_Entitet_tip_Result> EntitetTipList { get; set; }
         public List<Tipe> TipeTree { get; set; }
         public List<SelectListItem> SelectListEntity { get; set; }
+        public int SelectedParent { get; set; }
 
     }
 }

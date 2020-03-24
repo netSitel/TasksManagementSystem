@@ -1,4 +1,4 @@
-﻿@model List<TasksManagementSystem.KlasatNdihmese.Tipe>
+﻿@model List<TasksManagementSystem.KlasatNdihmese.Kategori>
 
 @{
     Layout = null;
@@ -51,52 +51,48 @@
         width: auto;
     }
 </style>
-<h4>Vetite per @ViewBag.Table </h4>
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+
 <div style="border:1px solid black; padding:0px;  background-color:#FAFAFA">
     @{
         <div class="treeview">
             @{
-                <input type="hidden" id="tableVal" value="@ViewBag.Table" />
-                <input type="hidden" id="kategoriVal" value="@ViewBag.SelectedKategoriId" />
                 if (Model != null && Model.Count() > 0)
                 {
 
-
-
+                    <input type="hidden"  id="tableVal" value="@ViewBag.Table" />
                     @*Here I will going to load Treeview menus*@
                     <ul>
                         @foreach (var i in Model)
                         {
+                            
                             <li>
                                 <span class="collapse1 collapsible" data-loaded="false" pid="@i.id">&nbsp;</span>
                                 @* Here I have added the above span for collapsible button for treeview *@
                                 @* and data-loaded="false" means its sub menu not loaded yet from database *@
                                 <span>
-                                    <a style="cursor:pointer" class="edit" value="@i.id">@i.text</a>
+                                    <a class="popup" value="@i.id">@i.text</a>
                                 </span>
                             </li>
                         }
                     </ul>
                 }
-                else
-                {
-                    <p style="font-weight:bold"> Nuk ka rekorde per momentin</p>
-                }
             }
         </div>
     }
-    <div id="dialogTip" style="display:none">
+    <div id="dialog" style="display:none">
 
     </div>
-
 </div>
-<input type="button" id="mybtn" value="New" />
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <script type="text/javascript">
 
-    $(document).ready(function () {
+        $(document).ready(function () {
             $(".collapsible").live("click", function (e) {
                 e.preventDefault();
 
@@ -113,7 +109,7 @@
 
                     // Now Load Data Here
                     $.ajax({
-                        url: "/Admin/GetSubMenuTipe",
+                        url: "/Admin/GetSubMenu",
                         type: "GET",
                         data: data,
                         dataType: "json",
@@ -127,7 +123,7 @@
                                     $ul.append(
                                         $("<li></li>").append(
                                             "<span class='collapse1 collapsible' data-loaded='false' pid='" + ele.id + "'>&nbsp;</span>" +
-                                            "<span><a style='cursor:pointer' class='edit' value='" + ele.id + "'>" + ele.text + "</a></span>"
+                                            "<span><a  class='popup' value='" + ele.id + "'>" + ele.text + "</a></span>"
                                         )
                                     )
                                 });
@@ -157,13 +153,14 @@
 
             });
 
-            $('.edit').live('click', function (e) {
+            $('.popup').live('click', function (e) {
+                
                 var id= $(this).attr('value'); // Find the row
                 alert(id);
 
 
 
-        $('#dialogTip').dialog({
+        $('#dialog').dialog({
             autoOpen: false,
             modal: true,
             title: "Perpuno"
@@ -174,53 +171,19 @@
         $.ajax({
 
             type: "POST",
-            url: '@Url.Action("EditimTipPopUp","Admin")?idKategori=' + $('#kategoriVal').val() + '&name=' + $('#tableVal').val() + '&id=' + id,
+            url: '@Url.Action("EditimKategoriPopUp","Admin")?id=' + id + '&name=' + $('#tableVal').val(),
             contentType: "application/json; charset=utf-8",
             dataType: "html",
              success: function (response) {
-                 $('#dialogTip').html(response);
-                 $("#dialogTip").dialog("option", "width", 450);
-                $("#dialogTip").dialog("option", "height", 500);
-                $('#dialogTip').dialog('open');
+                $('#dialog').html(response);
+                $('#dialog').dialog('open');
             }
 
 
 });
-            });
-
-
-        $("#mybtn").click(function ()
-            {
-
-            alert("Hello");
-            $('#dialogTip').dialog({
-            autoOpen: false,
-            modal: true,
-            title: "Perpuno"
+     });
 
         });
-
-
-        $.ajax({
-
-            type: "POST",
-            url: '@Url.Action("NewTipPopUp","Admin")?idKategori=' + $('#kategoriVal').val() + '&name=' + $('#tableVal').val(),
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-             success: function (response) {
-                 $('#dialogTip').html(response);
-                 $("#dialogTip").dialog("option", "width", 450);
-                $("#dialogTip").dialog("option", "height", 500);
-                $('#dialogTip').dialog('open');
-            }
-
-
-});
-
-        });
-
-        });
-
 </script>
 
 

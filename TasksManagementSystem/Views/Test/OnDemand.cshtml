@@ -60,6 +60,8 @@
             @{
                 if (Model != null && Model.Count() > 0)
                 {
+           
+                   
                     @*Here I will going to load Treeview menus*@
                     <ul>
                         @foreach (var i in Model)
@@ -88,7 +90,8 @@
 
                 var this1 = $(this); // Get Click item
                 var data = {
-                    pid: $(this).attr('pid')
+                    pid: $(this).attr('pid'),
+                    table: $(this).attr('pid')
                 };
 
                 var isLoaded = $(this1).attr('data-loaded'); // Check data already loaded or not

@@ -34,9 +34,9 @@
                 <td>
                     Prindi:
                 </td>
-                @*<td>
-                @Html.DropDownListFor(x => Model.EntitetTip.id_sup, new SelectList(Model.SelectListTipi, "Value", "Text"), htmlAttributes: new { id = "EntitetID", @class = "form-control", required = "required" })
-            </td>*@
+                <td>
+                @Html.DropDownListFor(x => Model.SelectedParent, new SelectList(Model.SelectTipParent, "Value", "Text"), htmlAttributes: new { id = "EntitetID", @class = "form-control", required = "required" })
+            </td>
             </tr>
             <tr>
                 <td><p>Kodi:</p></td>

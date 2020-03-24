@@ -89,16 +89,16 @@ namespace TasksManagementSystem.Controllers
         public ActionResult AfishoTipe(string idKategori, string name)
         {
 
-            TipiViewModel model = new TipiViewModel();
-            model.SelectedKategoriId = Convert.ToInt32(idKategori);
-            model.table = name;
+            
+            ViewBag.SelectedKategoriId = Convert.ToInt32(idKategori);
+            ViewBag.table = name;
+            List<SelectAllActiveRec_Entitet_tip_Result> listaReale1 = new List<SelectAllActiveRec_Entitet_tip_Result>();
             List<Tipe> list = new List<Tipe>();
             using (var db=new taskDb())
             {
                 
-                var lista = db.SelectAllActiveRec_nder_Entitet_tip_kategori("tbl_nder_" + name).ToList();
+                var lista = db.SelectAllActiveRec_nder_Entitet_tip_kategori("tbl_nder_" + name).Where(i=>i.Entitet_tip_kategori_id== Convert.ToInt32(idKategori)).ToList();
                 List<SelectAllActiveRec_Entitet_tip_Result> listaReale = db.SelectAllActiveRec_Entitet_tip("tbl_" + name).Where(a=>a.aktiv==true).ToList();
-                List<SelectAllActiveRec_Entitet_tip_Result> listaReale1 = new List<SelectAllActiveRec_Entitet_tip_Result>();
                 foreach (var item in listaReale)
                 { foreach(var item1 in lista)
                     {
@@ -110,18 +110,57 @@ namespace TasksManagementSystem.Controllers
                     }
 
                 }
-                model.EntitetTipList = listaReale1;
+               
 
             }
+            foreach(var item in listaReale1)
+            {
+                if (item.id_sup == -1)
+                {
+                    Tipe tip = new Tipe();
+                    tip.id = item.nrrendor;
+                    tip.parentId = Convert.ToInt32(item.id_sup);
+                    tip.text = item.emertimi;
+                    list.Add(tip);
+                }
+            }
 
-            return PartialView("_AfishoTipe",model);
+            return PartialView("_AfishoTipe",list);
         }
+
+        public JsonResult GetSubMenuTipe(string pid, string table)
+        {
+            // this action for Get Sub Menus from database and return as json data
+            //System.Threading.Thread.Sleep(5000);
+            List<Tipe> subMenus = new List<Tipe>();
+            int pID = 0;
+            int.TryParse(pid, out pID);
+            using (taskDb dc = new taskDb())
+            {
+                var all = dc.SelectAllActiveRec_Entitet_tip("tbl_" + table).Where(a => a.aktiv = true && a.id_sup == pID).ToList();
+                foreach (var item in all)
+                {
+                    
+                    Tipe tip = new Tipe();
+                    tip.id = item.nrrendor;
+                    tip.parentId = Convert.ToInt32(item.id_sup);
+                    tip.text = item.emertimi;
+                    subMenus.Add(tip);
+                }
+            }
+
+            return new JsonResult { Data = subMenus, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+
 
         public ActionResult NewTipPopUp(string idKategori,string name)
         {
+            Helper hp = new Helper();
             TipiViewModel model = new TipiViewModel();
             model.table = name;
             model.SelectedKategoriId = Convert.ToInt32(idKategori);
+            model.SelectTipParent = hp.GetTip(name, idKategori,"-99");
             return PartialView("_NewTip",model);
         }
 
@@ -130,10 +169,10 @@ namespace TasksManagementSystem.Controllers
             bool True = true;
             using (var db = new taskDb())
             {
-                db.spI_tbl_Analize_tip(model.EntitetTip.id_sup, True, model.EntitetTip.kodi, model.EntitetTip.kodifillim, model.EntitetTip.kodimbarim, model.EntitetTip.kodiaktual, model.EntitetTip.emertimi, model.EntitetTip.pershkrimi, model.EntitetTip.emertimiang, model.EntitetTip.pershkrimiang, model.EntitetTip.rradha, model.EntitetTip.perdorues_id);
+                db.spI_tbl_Analize_tip(model.SelectedParent, True, model.EntitetTip.kodi, model.EntitetTip.kodifillim, model.EntitetTip.kodimbarim, model.EntitetTip.kodiaktual, model.EntitetTip.emertimi, model.EntitetTip.pershkrimi, model.EntitetTip.emertimiang, model.EntitetTip.pershkrimiang, model.EntitetTip.rradha, model.EntitetTip.perdorues_id);
                 db.SaveChanges();
                int a= db.SelectAllActiveRec_Entitet_tip("tbl_Analize").OrderByDescending(i=>i.nrrendor).FirstOrDefault().nrrendor;
-                db.spI_tbl_nder_Analize_tip_kategori(-1, a, model.SelectedKategoriId, model.EntitetTip.perdorues_id);
+                db.spI_tbl_nder_Analize_tip_kategori(model.SelectedParent, a, model.SelectedKategoriId, model.EntitetTip.perdorues_id);
             }
 
             return RedirectToAction("Index");
@@ -145,7 +184,7 @@ namespace TasksManagementSystem.Controllers
             int ID = Convert.ToInt32(id);
             TipiViewModel model = new TipiViewModel();
             model.table = name;
-            model.SelectTipParent = hp.GetKategori("tbl_" + name);
+            model.SelectTipParent = hp.GetTip(name,idKategori,id);
             using (var db = new taskDb())
             {
                 model.EntitetTip = db.SelectAllActiveRec_Entitet_tip("tbl_" + name).Where(i => i.nrrendor == ID && i.aktiv == true).ToList().FirstOrDefault();
@@ -219,12 +258,12 @@ namespace TasksManagementSystem.Controllers
         {
             using (var db = new taskDb())
             {
-                var model = db.SelectAllActiveRec_Entitet_tip("tbl_"+table).Where(i => i.nrrendor == Convert.ToInt32(id)).FirstOrDefault();
+                var model = new SelectAllActiveRecBySup_Entitet_tip_Result();
                 model.aktiv = false;
                 var True = true;
                 if (table == "Analize")
                 {
-                    db.spU_tbl_Analize_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True,model.aktiv, True, model.perdorues_id, True);
+                    db.spU_tbl_Analize_tip(Convert.ToInt32(id), model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True,model.aktiv, True, model.perdorues_id, True);
 
                 }
                 else if (table == "Niveli")
@@ -266,8 +305,9 @@ namespace TasksManagementSystem.Controllers
                     db.spU_tbl_teknologjia_tip(model.nrrendor, model.id_sup, True, 1, True, model.kodi, True, model.kodifillim, True, model.kodiaktual, True, model.kodimbarim, True, model.emertimi, True, model.pershkrimi, True, model.emertimiang, True, model.pershkrimiang, True, model.aktiv, True, model.perdorues_id, True);
 
                 }
+                db.SaveChanges();
             }
-
+            
             return RedirectToAction("Index");
         }
         
@@ -335,7 +375,7 @@ namespace TasksManagementSystem.Controllers
 
 
 
-        public ActionResult NestedTree(string table)
+        public ActionResult OnDemand(string table)
         {
 
             List<Kategori> list = new List<Kategori>();
@@ -350,15 +390,39 @@ namespace TasksManagementSystem.Controllers
                     kategori.id = item.nrrendor;
                     kategori.parentId = Convert.ToInt32(item.id_sup);
                     kategori.text = item.emertimi;
-                    list.Add(kategori);
+                    if (item.id_sup == -1)
+                    {
+                        list.Add(kategori);
+                    }
                 }
             }
             ViewBag.Table = table;
-            return PartialView("NestedTree", list);
+            return PartialView("NestedTreeForKategori", list);
+        }
+        public JsonResult GetSubMenu(string pid,string table)
+        {
+            // this action for Get Sub Menus from database and return as json data
+            //System.Threading.Thread.Sleep(5000);
+            List<Kategori> subMenus = new List<Kategori>();
+            int pID = 0;
+            int.TryParse(pid, out pID);
+            using (taskDb dc = new taskDb())
+            {
+                var all= dc.SelectAllActiveRec_Entitet_kategori("tbl_" + table).Where(a => a.aktiv = true && a.id_sup==pID).ToList();
+                foreach (var item in all)
+                {
+                    Kategori kategori = new Kategori();
+                    kategori.id = item.nrrendor;
+                    kategori.parentId = Convert.ToInt32(item.id_sup);
+                    kategori.text = item.emertimi;
+                    subMenus.Add(kategori);
+                }
+            }
+
+            return new JsonResult { Data = subMenus, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-
-            public ActionResult NestedTreeForTipe(string table)
+        public ActionResult NestedTreeForTipe(string table)
             {
 
                 List<Kategori> list = new List<Kategori>();
@@ -366,7 +430,7 @@ namespace TasksManagementSystem.Controllers
                 using (var db = new taskDb())
                 {
                     List<SelectAllActiveRec_Entitet_kategori_Result> AllCategories = new List<SelectAllActiveRec_Entitet_kategori_Result>();
-                    AllCategories = db.SelectAllActiveRec_Entitet_kategori("tbl_" + table).Where(a => a.aktiv = true).OrderBy(a => a.nrrendor).ToList();
+                    AllCategories = db.SelectAllActiveRec_Entitet_kategori("tbl_" + table).Where(a => a.aktiv = true && a.id_sup==-1 ).ToList();
                     foreach (var item in AllCategories)
                     {
                         Kategori kategori = new Kategori();
@@ -380,7 +444,28 @@ namespace TasksManagementSystem.Controllers
                 return PartialView("NestedTreeForTipe", list);
 
             }
+        public JsonResult GetSubMenuForTipe(string pid, string table)
+        {
+            // this action for Get Sub Menus from database and return as json data
+            //System.Threading.Thread.Sleep(5000);
+            List<Kategori> subMenus = new List<Kategori>();
+            int pID = 0;
+            int.TryParse(pid, out pID);
+            using (taskDb dc = new taskDb())
+            {
+                var all = dc.SelectAllActiveRec_Entitet_kategori("tbl_" + table).Where(a => a.aktiv = true && a.id_sup == pID).ToList();
+                foreach (var item in all)
+                {
+                    Kategori kategori = new Kategori();
+                    kategori.id = item.nrrendor;
+                    kategori.parentId = Convert.ToInt32(item.id_sup);
+                    kategori.text = item.emertimi;
+                    subMenus.Add(kategori);
+                }
+            }
+            return new JsonResult { Data = subMenus, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
 
+        }
         [HttpPost]
         public ActionResult EditimKategoriPopUp(string id, string name)
         {
