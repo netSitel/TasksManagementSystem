@@ -52,7 +52,7 @@
     }
 </style>
 <script src="~/Scripts/jquery-1.7.1.js"></script>
-
+<label>Zgjidhni nje entitet:</label>
 <div style="border:1px solid black; padding:0px;  background-color:#FAFAFA">
     @{
         <div class="treeview">
@@ -60,12 +60,12 @@
                 if (Model != null && Model.Count() > 0)
                 {
 
-                    <input type="hidden"  id="tableVal" value="@ViewBag.Table" />
+                    <input type="hidden" id="tableVal" value="@ViewBag.Table" />
                     @*Here I will going to load Treeview menus*@
                     <ul>
                         @foreach (var i in Model)
                         {
-                            
+
                             <li>
                                 <span class="collapse1 collapsible" data-loaded="false" pid="@i.id">&nbsp;</span>
                                 @* Here I have added the above span for collapsible button for treeview *@
@@ -86,7 +86,7 @@
 </div>
 <script src="~/Scripts/jquery-1.7.1.js"></script>
 <script src="~/Scripts/bootstrap.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -153,8 +153,9 @@
 
             });
 
-            $('.popup').live('click', function (e) {
-                
+        });
+     $('.popup').live('click', function (e) {
+
                 var id= $(this).attr('value'); // Find the row
                 alert(id);
 
@@ -182,8 +183,6 @@
 
 });
      });
-
-        });
 </script>
 
 

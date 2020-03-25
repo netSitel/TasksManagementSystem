@@ -5,7 +5,7 @@
     ViewBag.Title = "OnDemand";
 }
 
-@* Here We will add some css for looks treeview good *@
+<script src="~/Scripts/jquery-1.7.1.js"></script>
 
 <style>
     .loadingP {
@@ -51,7 +51,7 @@
         width: auto;
     }
 </style>
-<h4>Vetite per @ViewBag.Table </h4>
+<label>Vetite per @ViewBag.Table </label>
 <div style="border:1px solid black; padding:0px;  background-color:#FAFAFA">
     @{
         <div class="treeview">
@@ -91,10 +91,73 @@
 
 </div>
 <input type="button" id="mybtn" value="New" />
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <script type="text/javascript">
+      $('#mybtn').click(function (){
+
+            alert("Hello");
+            $('#dialogTip').dialog({
+            autoOpen: false,
+            modal: true,
+            title: "Perpuno"
+
+        });
+
+
+        $.ajax({
+
+            type: "POST",
+            url: '@Url.Action("NewTipPopUp","Admin")?idKategori=' + $('#kategoriVal').val() + '&name=' + $('#tableVal').val(),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+             success: function (response) {
+                 $('#dialogTip').html(response);
+                 $("#dialogTip").dialog("option", "width", 450);
+                $("#dialogTip").dialog("option", "height", 500);
+                $('#dialogTip').dialog('open');
+            }
+
+
+});
+
+      });
+    $('.edit').live('click', function (e) {
+                var id= $(this).attr('value'); // Find the row
+                alert(id);
+
+
+
+        $('#dialogTip').dialog({
+            autoOpen: false,
+            modal: true,
+            title: "Perpuno"
+
+        });
+
+
+        $.ajax({
+
+            type: "POST",
+            url: '@Url.Action("EditimTipPopUp","Admin")?idKategori=' + $('#kategoriVal').val() + '&name=' + $('#tableVal').val() + '&id=' + id,
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+             success: function (response) {
+                 $('#dialogTip').html(response);
+                 $("#dialogTip").dialog("option", "width", 450);
+                $("#dialogTip").dialog("option", "height", 500);
+                $('#dialogTip').dialog('open');
+            }
+
+
+});
+            });
+
 
     $(document).ready(function () {
             $(".collapsible").live("click", function (e) {
@@ -157,67 +220,10 @@
 
             });
 
-            $('.edit').live('click', function (e) {
-                var id= $(this).attr('value'); // Find the row
-                alert(id);
+            
 
 
 
-        $('#dialogTip').dialog({
-            autoOpen: false,
-            modal: true,
-            title: "Perpuno"
-
-        });
-
-
-        $.ajax({
-
-            type: "POST",
-            url: '@Url.Action("EditimTipPopUp","Admin")?idKategori=' + $('#kategoriVal').val() + '&name=' + $('#tableVal').val() + '&id=' + id,
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-             success: function (response) {
-                 $('#dialogTip').html(response);
-                 $("#dialogTip").dialog("option", "width", 450);
-                $("#dialogTip").dialog("option", "height", 500);
-                $('#dialogTip').dialog('open');
-            }
-
-
-});
-            });
-
-
-        $("#mybtn").click(function ()
-            {
-
-            alert("Hello");
-            $('#dialogTip').dialog({
-            autoOpen: false,
-            modal: true,
-            title: "Perpuno"
-
-        });
-
-
-        $.ajax({
-
-            type: "POST",
-            url: '@Url.Action("NewTipPopUp","Admin")?idKategori=' + $('#kategoriVal').val() + '&name=' + $('#tableVal').val(),
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-             success: function (response) {
-                 $('#dialogTip').html(response);
-                 $("#dialogTip").dialog("option", "width", 450);
-                $("#dialogTip").dialog("option", "height", 500);
-                $('#dialogTip').dialog('open');
-            }
-
-
-});
-
-        });
 
         });
 
