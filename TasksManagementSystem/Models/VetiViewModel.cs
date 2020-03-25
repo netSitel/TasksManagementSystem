@@ -9,6 +9,7 @@ namespace TasksManagementSystem.Models
     public class VetiViewModel
     {
         public List<SelectListItem> SelectListEntity { get; set; }
+        public int SelectedEntity { get; set; }
 
     }
 }
